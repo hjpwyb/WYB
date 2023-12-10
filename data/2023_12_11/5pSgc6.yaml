@@ -1,0 +1,335 @@
+#
+#-------------------------------------------------------------#
+#  创建者：https://v2rayse.com
+#  创建时间：2023-12-11 07:37:42
+#  模版：ACL4SSR_Online_Full_MultiMode
+#  节点数量：9
+#-------------------------------------------------------------#
+#
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {"type":"ss","name":"v2rayse_test_1","server":"198.57.27.218","port":5004,"cipher":"aes-256-gcm","password":"g5MeD6Ft3CWlJId"}
+  - {"type":"vmess","name":"v2rayse_test_2","ws-opts":{"path":"/"},"server":"154.23.190.162","port":443,"uuid":"b9984674-f771-4e67-a198-c7e60720ba2c","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"ssr","name":"v2rayse_test_3","server":"20.239.49.44","port":59814,"protocol":"origin","cipher":"dummy","obfs":"plain","password":"3df57276-03ef-45cf-bdd4-4edb6dfaa0ef"}
+  - {"type":"trojan","name":"v2rayse_test_4","server":"ca-trojan.bonds.id","port":443,"password":"bc7593fe-0604-4fbe-a70bYWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTaclWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272","udp":true,"skip-cert-verify":true}
+  - {"type":"http","name":"http_proxy","server":"124.15.12.24","port":251,"username":"username","password":"password","udp":true}
+  - {"type":"socks5","name":"socks5_proxy","server":"124.15.12.24","port":2312,"udp":true}
+  - {"type":"hysteria","name":"Hys-1.2.3.4","server":"1.2.3.4","port":12854,"auth_str":"pekopeko","alpn":"h3","protocol":"udp","up":50,"down":250,"sni":"wechat.com","skip-cert-verify":true,"recv_window":104857600,"recv_window_conn":26214400,"disable_mtu_discovery":true}
+  - {"type":"vless","name":"test","server":"1.2.3.4","port":7777,"uuid":"abc-def-ghi-fge-zsx","skip-cert-verify":true,"network":"tcp","tls":true,"udp":true}
+  - {"type":"socks5","name":"telegram_proxy","server":"1.2.3.4","port":123,"username":"username","password":"password","udp":true}
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🚀 手动切换
+    type: select
+    proxies:
+      - v2rayse_test_1
+      - v2rayse_test_2
+      - v2rayse_test_3
+      - v2rayse_test_4
+      - http_proxy
+      - socks5_proxy
+      - Hys-1.2.3.4
+      - test
+      - telegram_proxy
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - v2rayse_test_1
+      - v2rayse_test_2
+      - v2rayse_test_3
+      - v2rayse_test_4
+      - http_proxy
+      - socks5_proxy
+      - Hys-1.2.3.4
+      - test
+      - telegram_proxy
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - v2rayse_test_1
+      - v2rayse_test_2
+      - v2rayse_test_3
+      - v2rayse_test_4
+      - http_proxy
+      - socks5_proxy
+      - Hys-1.2.3.4
+      - test
+      - telegram_proxy
+  - name: 🔮 负载均衡
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - v2rayse_test_1
+      - v2rayse_test_2
+      - v2rayse_test_3
+      - v2rayse_test_4
+      - http_proxy
+      - socks5_proxy
+      - Hys-1.2.3.4
+      - test
+      - telegram_proxy
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 💬 OpenAi
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🎥 奈飞节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🇨🇳 台湾节点
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🚀 手动切换
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎶 网易音乐
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DIRECT
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🎥 奈飞节点
+    type: select
+    proxies:
+      - DIRECT
+rules:
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
