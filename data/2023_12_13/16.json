@@ -1,0 +1,239 @@
+{
+    "sites": [
+        {
+            "key": "玩偶",
+            "name": "玩偶",
+            "type": 3,
+            "api": "csp_Doll"
+        },
+        {
+            "key": "18AV",
+            "name": "十八",
+            "type": 3,
+            "api": "csp_Eighteen"
+        },
+        {
+            "key": "玉兔",
+            "name": "玉兔",
+            "type": 1,
+            "api": "https://apiyutu.com/api.php/provide/vod/"
+        },
+        {
+            "key": "甜蜜",
+            "name": "甜蜜",
+            "type": 1,
+            "api": "https://timizy10.cc/api.php/provide/vod/"
+        },
+        {
+            "key": "jable.tv",
+            "name": "JABLE",
+            "type": 3,
+            "api": "csp_Jable"
+        },
+        {
+            "key": "MissAV",
+            "name": "MISSAV",
+            "type": 3,
+            "api": "csp_Miss"
+        },
+        {
+            "key": "dadiapi.com",
+            "name": "01",
+            "type": 0,
+            "api": "http://dadiapi.com/api.php"
+        },
+
+        {
+            "key": "apilj.com",
+            "name": "03",
+            "type": 1,
+            "api": "https://apilj.com/api.php/provide/vod/"
+        },
+        {
+            "key": "cjmygzy.com",
+            "name": "06",
+            "type": 0,
+            "api": "http://cjmygzy.com/inc/sapi.php?ac=videolist"
+        },
+        {
+            "key": "bttcj.com",
+            "name": "07",
+            "type": 0,
+            "api": "http://bttcj.com/inc/sapi.php"
+        },
+        {
+            "key": "api.sexnguon.com",
+            "name": "08",
+            "type": 1,
+            "api": "http://api.sexnguon.com/api.php/provide/vod/"
+        },
+        {
+            "key": "f2dcj6.com",
+            "name": "11",
+            "type": 0,
+            "api": "http://f2dcj6.com/sapi?ac=videolist"
+        },
+        {
+            "key": "fhapi9.com",
+            "name": "12",
+            "type": 1,
+            "api": "http://fhapi9.com/api.php/provide/vod/"
+        },
+        {
+            "key": "ggmmzy.com",
+            "name": "15",
+            "type": 0,
+            "api": "http://www.ggmmzy.com:9999/inc/xml",
+            "searchable": 0,
+            "quickSearch": 0
+        },
+        {
+            "key": "feifei67.com",
+            "name": "26",
+            "type": 1,
+            "api": "http://www.feifei67.com/api.php/provide/vod/"
+        },
+        {
+            "key": "madouse.la",
+            "name": "27",
+            "type": 1,
+            "api": "http://madouse.la/api.php/provide/vod/"
+        },
+        {
+            "key": "xrbsp.com",
+            "name": "30",
+            "type": 0,
+            "api": "https://www.xrbsp.com/api/xml.php"
+        },
+        {
+            "key": "msnii.com",
+            "name": "32",
+            "type": 0,
+            "api": "https://www.msnii.com/api/xml.php"
+        },
+        {
+            "key": "api.maozyapi.com",
+            "name": "33",
+            "type": 1,
+            "api": "https://api.maozyapi.com/inc/apijson_vod.php"
+        },
+        {
+            "key": "kkzy.me",
+            "name": "34",
+            "type": 1,
+            "api": "https://kkzy.me/api.php/provide/vod/"
+        },
+        {
+            "key": "888dav.com",
+            "name": "35",
+            "type": 1,
+            "api": "https://www.888dav.com/api.php/provide/vod/"
+        },
+        {
+            "key": "afasu.com",
+            "name": "37",
+            "type": 0,
+            "api": "https://www.afasu.com/api/xml.php"
+        },
+        {
+            "key": "shayuapi.com",
+            "name": "39",
+            "type": 1,
+            "api": "https://shayuapi.com/api.php/provide/vod/"
+        },
+        {
+            "key": "pgxdy.com",
+            "name": "40",
+            "type": 0,
+            "api": "https://www.pgxdy.com/api/xml.php"
+        },
+        {
+            "key": "lbapi9.com",
+            "name": "44",
+            "type": 1,
+            "api": "https://lbapi9.com/api.php/provide/vod/"
+        },
+        {
+            "key": "kxgav.com",
+            "name": "48",
+            "type": 0,
+            "api": "https://www.kxgav.com/api/xml.php"
+        },
+        {
+            "key": "gdlsp.com",
+            "name": "49",
+            "type": 0,
+            "api": "https://www.gdlsp.com/api/xml.php"
+        },
+        {
+            "key": "sewozyapi.com",
+            "name": "50",
+            "type": 1,
+            "api": "https://sewozyapi.com/api.php/provide/vod/"
+        },
+        {
+            "key": "api.apilyzy.com",
+            "name": "52",
+            "type": 1,
+            "api": "https://api.apilyzy.com/api.php/provide/vod/"
+        }
+    ],
+    "lives": [
+        {
+            "name": "默认",
+            "type": 0,
+            "playerType": 1,
+            "ua": "okhttp/4.11.0",
+            "url": "./live/iptv.txt",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "南风",
+            "type": 0,
+            "url": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/live.txt",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "明明",
+            "type": 0,
+            "url": "https://live.fanmingming.com/tv/m3u/global.m3u",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        }
+    ],
+    "rules": [
+        {
+            "name": "索尼",
+            "hosts": ["suonizy"],
+            "regex": [
+                "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7.680000,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+                "#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"
+            ]
+        },
+        {
+            "name": "暴風",
+            "hosts": ["bfzy"],
+            "regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]
+        },
+        {
+            "name": "量子",
+            "hosts": ["vip.lz", "hd.lz", "v.cdnlz"],
+            "regex": [
+                "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+                "#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"
+            ]
+        },
+        {
+            "name": "非凡",
+            "hosts": ["vip.ffzy", "hd.ffzy"],
+            "regex": [
+                "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+                "#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"
+            ]
+        }
+    ],
+    "spider": "https://fm.t4tv.hz.cz/jar/custom_spider.jar",
+    "wallpaper": "https://bing.img.run/rand.php"
+}
