@@ -64,15 +64,20 @@
       "jar": "https://pan.shangui.cc/f/y76EsK/%E5%B0%8F%E6%9A%B4%E8%84%BE%E6%B0%948.jar"
     },
     {
-      "key": "csp_appys_影探",
-      "name": "📛TH┃影探2K",
-      "type": 3,
-      "api": "csp_AppYsV2",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "http://ytcms.lfytyl.com/api.php/app/",
-      "jar": "https://pan.shangui.cc/f/y76EsK/%E5%B0%8F%E6%9A%B4%E8%84%BE%E6%B0%948.jar"
+      "name": "成人TV ",
+      "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-B0Yxy981z3qDZn3V_9au3CpqgC36sp3HYw&usqp=CAU",
+      "webUrl": "https://github.com/eklins/FreedTV/raw/main/tv/%E6%88%90%E4%BA%BATV.m3u",
+      "type": "m3u",
+      "subTitle": "",
+      "click": true,
+      "autoNext": false,
+      "webOpen": false,
+      "keyDownPlay": true,
+      "keyUpPlay": true,
+      "userAgent": "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; BLA-AL00 Build/HUAWEIBLA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/93.0.4535.3 MQQBrowser/8.9 Mobile Safari/537.36",
+      "ads": "",
+      "decoder": 2,
+      "webPlus": {}
     },
     {
       "key":"csp_appysv2_阿里影视",
