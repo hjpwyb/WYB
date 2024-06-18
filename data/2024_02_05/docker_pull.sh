@@ -42,7 +42,7 @@ function docker_pull() {
 
     for mirror in "${mirrors[@]}"; do
         INFO "正在测试${mirror}代理点的连接性……"
-        if timeout 30 docker pull "${mirror}/xiaoya-tvbox:native"; then
+        if timeout 30 docker pull "${mirror}/haroldli/xiaoya-tvbox:native"; then
             INFO "${mirror}代理点连通性测试正常！正在为您下载镜像……"
             for i in {1..2}; do
                 if timeout 120 docker pull "${mirror}/${1}"; then
@@ -58,7 +58,7 @@ function docker_pull() {
                 docker rmi "library/hello-world:latest"
                 [ -n "$(docker images -q "${1}")" ] && return 0
             else
-                docker rmi "${mirror}/library/hello-world:latest"
+                docker rmi "${mirror}/haroldli/xiaoya-tvbox:native"
                 [ -n "$(docker images -q "${mirror}/${1}")" ] && break
             fi
         fi
