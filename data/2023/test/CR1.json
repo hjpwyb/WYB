@@ -1,7 +1,5 @@
 {
 "urls": [
-{"url":"http://xhww.fun:63/小米/DEMO.json",
-"name": "😺影视小米"},
 {"url":"http://肥猫.live",
 "name": "😺影视肥猫"},
 {"url":"http://饭太硬.top/tv",
@@ -14,19 +12,6 @@
 "name": "😺影视巧记"},
 {"url":"https://pastebin.com/raw/5NHaxyGR",
 "name": "😺影视道长"},
-{"url":"https://ghproxy.net/https://raw.githubusercontent.com/chendi0207/TVboy/main/tvboxbb/小米/api.json",
-"name": "😺影视小米"},
-{"url":"https://ghproxy.net/https://raw.githubusercontent.com/chendi0207/TVboy/main/tvboxbb/道长js/api.json",
-"name": "😺影视道长"},
-
-{ "url": "https://ghproxy.net/https://raw.githubusercontent.com/chendi0207/TVboy/main/tvboxbb/香雅情XYQ/api.json", 
-"name": "影视香雅情XYQ" },
-{ "url": "https://ghproxy.net/https://raw.githubusercontent.com/chendi0207/TVboy/main/tvboxbb/多多/api.json", 
-"name": "多多" },
-
-
-{ "url": "https://ghproxy.net/https://raw.githubusercontent.com/chendi0207/TVboy/main/tvboxbb/南风/api.json", 
-"name": "南风" },
 {"url":"https://agit.ai/gk0746/pxy/raw/branch/master/ouge.json",
 "name": "😺影视欧歌"},
 {"url":"https://agit.ai/ddx/TVBox/raw/branch/master/t4.json",
