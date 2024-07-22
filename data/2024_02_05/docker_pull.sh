@@ -14,22 +14,29 @@ INFO="[${Green}INFO${NC}]"
 ERROR="[${Red}ERROR${NC}]"
 WARN="[${Yellow}WARN${NC}]"
 
-function INFO() {
+function log_info() {
     echo -e "${INFO} ${1}"
 }
-function ERROR() {
+
+function log_error() {
     echo -e "${ERROR} ${1}"
 }
-function WARN() {
+
+function log_warn() {
     echo -e "${WARN} ${1}"
 }
 
 function docker_pull() {
-    #[ -z "${config_dir}" ] && get_config_path
     local config_dir=${2:-"/etc/xiaoya"}
     mkdir -p "${config_dir}"
-    local mirrors=(“docker.fxxk.dedyn.io”“dockerproxy.com”“docker.chenby.cn”“hub.uuuadc.top”“docker.jsdelivr.fyi“docker.jsdelivr.fyi"“dockertest.jsdelivr.fyi”“docker.registry.cyou"“dockerhub.anzu.vip”“docker.linyubo211.filegear-sg.me”“docker.mirrors.ustc.edu.cn	“docker.nju.edu.cn”“docker.registry.cyou”“docker-cf.registry.cyou”
-)
+    
+    local mirrors=(
+        "docker.fxxk.dedyn.io" "dockerproxy.com" "docker.chenby.cn"
+        "hub.uuuadc.top" "docker.jsdelivr.fyi" "dockertest.jsdelivr.fyi"
+        "docker.registry.cyou" "dockerhub.anzu.vip" "docker.linyubo211.filegear-sg.me"
+        "docker.mirrors.ustc.edu.cn" "docker.nju.edu.cn" "docker-cf.registry.cyou"
+    )
+    
     if [ -s "${config_dir}/docker_mirrors.txt" ]; then
         mirrors=()
         while IFS= read -r line; do
@@ -42,24 +49,24 @@ function docker_pull() {
     fi
 
     for mirror in "${mirrors[@]}"; do
-        INFO "正在测试${mirror}代理点的连接性……"
-        if timeout 30 docker pull "${mirror}/haroldli/xiaoya-tvbox:native"; then
-            INFO "${mirror}代理点连通性测试正常！正在为您下载镜像……"
+        log_info "正在测试 ${mirror} 代理点的连接性……"
+        if timeout 30 docker pull "${mirror}/haroldli/xiaoya-tvbox:native" >/dev/null 2>&1; then
+            log_info "${mirror} 代理点连通性测试正常！正在为您下载镜像……"
             for i in {1..2}; do
-                if timeout 120 docker pull "${mirror}/${1}"; then
-                    INFO "${1} 镜像拉取成功！"
+                if timeout 120 docker pull "${mirror}/${1}" >/dev/null 2>&1; then
+                    log_info "${1} 镜像拉取成功！"
                     sed -i "/${mirror}/d" "${config_dir}/docker_mirrors.txt"
                     sed -i "1i ${mirror}" "${config_dir}/docker_mirrors.txt"
-                    break;
+                    break
                 else
-                    WARN "${1} 镜像拉取失败，正在进行重试..."
+                    log_warn "${1} 镜像拉取失败，正在进行重试..."
                 fi
             done
-            if [[ "${mirror}" == "docker.io" ]];then
-                docker rmi "library/hello-world:latest"
+            if [[ "${mirror}" == "docker.io" ]]; then
+                docker rmi "library/hello-world:latest" >/dev/null 2>&1
                 [ -n "$(docker images -q "${1}")" ] && return 0
             else
-                docker rmi "${mirror}/haroldli/xiaoya-tvbox:native"
+                docker rmi "${mirror}/haroldli/xiaoya-tvbox:native" >/dev/null 2>&1
                 [ -n "$(docker images -q "${mirror}/${1}")" ] && break
             fi
         fi
@@ -67,16 +74,16 @@ function docker_pull() {
 
     if [ -n "$(docker images -q "${mirror}/${1}")" ]; then
         docker tag "${mirror}/${1}" "${1}"
-        docker rmi "${mirror}/${1}"
+        docker rmi "${mirror}/${1}" >/dev/null 2>&1
         return 0
     else
-        ERROR "已尝试所有镜像代理拉取失败，程序退出，请检查网络后再试！"
+        log_error "已尝试所有镜像代理拉取失败，程序退出，请检查网络后再试！"
         exit 1       
     fi
 }
 
-if [ -n "$1" ];then
-    docker_pull $1 $2
+if [ -n "$1" ]; then
+    docker_pull "$1" "$2"
 else
     while :; do
         read -erp "请输入您要拉取镜像的完整名字（示例：ailg/alist:latest）：" pull_img
