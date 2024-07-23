@@ -11,6 +11,7 @@
     {"name": "🍅腾讯视频(官)", "key": "csp_QQ", "type": 3, "api": "csp_QQ", "searchable": 0, "quickSearch": 0, "filterable": 0},
     {"name": "🥝爱奇艺(官)", "key": "csp_IQIYI", "type": 3, "api": "csp_IQIYI", "searchable": 0, "quickSearch": 0, "filterable": 0},
     {"name": "💫360影视", "key": "csp_SP360", "type": 3, "api": "csp_SP360", "searchable": 0, "quickSearch": 0, "filterable": 0},
+
     {"name": "🌐360影视", "key": "xBPQ_360影视", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/360影视.json"},
     {"name": "🌐LIBVIO", "key": "xBPQ_LIBVIO", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/LIBVIO.json"},
     {"name": "🌐VOFLIX", "key": "xBPQ_VOFLIX", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/VOFLIX.json"},
@@ -23,8 +24,9 @@
     {"name": "🌐莫扎兔", "key": "xBPQ_莫扎兔", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/莫扎兔.json"},
     {"name": "🌐胖虎影视", "key": "xBPQ_胖虎影视", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/胖虎影视.json"},
     {"name": "🌐吼吼", "key": "xBPQ_吼吼", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/吼吼.json"},
-    {"name": "🌐低端影视", "key": "xBPQ_低端影视", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "click": "https://f.jsd.cn/d/LowEndMovie"},
-    {"name": "🌐玖玖电影", "key": "xBPQ_玖玖电影", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "click": "https://f.jsd.cn/d/99Movie"},
-    {"name": "🌐暴风影音", "key": "xBPQ_暴风影音", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "click": "https://f.jsd.cn/d/StormMedia"}
+    {"name": "🌐低端影视", "key": "xBPQ_低端影视", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "click": "ddys.tv;.vjs-big-play-button", "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/低端影视.json"},
+    {"name": "🌐HDIK", "key": "xBPQ_HDIK", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/HDIK.json"},
+    {"name": "🌐Auete", "key": "xBPQ_Auete", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/Auete.json"},
+    {"name": "🌐DVD影院", "key": "xBPQ_DVD影院", "type": 3, "api": "csp_xBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tv/main/XBPQ/DVD影院.json"}
   ]
 }
