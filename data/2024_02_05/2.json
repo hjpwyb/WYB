@@ -1,0 +1,70 @@
+{
+  "sites": [
+    {"name": "🅱豆瓣热播", "key": "js豆瓣", "type": 3, "api": "https://raw.iqiq.io/lyghgx/tv/main/js/drpy2.min.js", "ext": "https://raw.iqiq.io/lyghgx/tv/main/js/豆瓣.js", "searchable": 0, "quickSearch": 0, "filterable": 0},
+    {"name": "🅱豆瓣荐片", "key": "t4豆瓣", "type": 4, "api": "http://t4.ganggang.live:3812/vod", "searchable": 0, "quickSearch": 0, "filterable": 0},
+    {"name": "🌕厂长资源", "key": "csp_Czsapp", "type": 3, "api": "csp_Czsapp", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕酷云七七", "key": "csp_Kunyu77", "type": 3, "api": "csp_Kunyu77", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕快看影视", "key": "csp_Kuaikan", "type": 3, "api": "csp_Kuaikan", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕小苹果源", "key": "csp_LiteApple", "type": 3, "api": "csp_LiteApple", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕图图影视", "key": "csp_AppTT", "type": 3, "api": "csp_AppTT", "playerType": 2, "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "http://121.205.88.126:7788"},
+    {"name": "🌕哔嘀影视", "key": "csp_Bdys01", "type": 3, "api": "csp_Bdys01", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕奥特影视", "key": "csp_Auete", "type": 3, "api": "csp_Auete", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕乐猪影视", "key": "csp_Lezhu", "type": 3, "api": "csp_Lezhu", "filterable": 1, "quickSearch": 1, "searchable": 1},
+    {"name": "🌕剧荒影院", "key": "csp_Juhuang", "type": 3, "api": "csp_Juhuang", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕低端影视", "key": "csp_Ddrk", "type": 3, "api": "csp_Ddrk", "click": "ddys.tv;#vjsp > button", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕追剧喵源", "key": "csp_csp_ZJMiao", "type": 3, "api": "csp_ZJMiao", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕双十影视", "key": "csp_Dy1010", "type": 3, "api": "csp_Dy1010", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕追剧达人", "key": "csp_Zjdr", "type": 3, "api": "csp_Zjdr", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕蓝光影院", "key": "csp_Lgyy", "type": 3, "api": "csp_Lgyy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕农民影视", "key": "csp_Nmys", "type": 3, "api": "csp_Nmys", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://raw.iqiq.io/lyghgx/tvboxs/main/json/XP/农民影视.json"},
+    {"name": "🌕饭团影视", "key": "csp_Fantuan", "type": 3, "api": "csp_Fantuan", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕念影影视", "key": "csp_Nianying", "type": 3, "api": "csp_Nianying", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕神马影视", "key": "csp_Smdyy", "type": 3, "api": "csp_Smdyy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕在线之家", "key": "csp_Zxzj", "type": 3, "api": "csp_Zxzj", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕555影视", "key": "csp_Dy555", "api": "csp_Dy555", "type": 3, "filterable": 1, "quickSearch": 1, "searchable": 1},
+    {"name": "🌕LIBVIO", "key": "csp_Lib", "type": 3, "api": "csp_Lib", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕Cokemv", "key": "csp_Cokemv", "type": 3, "api": "csp_Cokemv", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕美剧星球", "key": "csp_Mjxq", "type": 3, "api": "csp_Mjxq", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕3EDY", "key": "csp_EEEDY", "type": 3, "api": "csp_EEEDY", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕看视界", "key": "csp_KanSJ", "type": 3, "api": "csp_KanSJ", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕VOFLIX", "key": "csp_Voflix", "type": 3, "api": "csp_Voflix", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕两个BT", "key": "csp_Bttoo", "type": 3, "api": "csp_Bttoo", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕新视觉", "key": "csp_Xinsj", "type": 3, "api": "csp_Xinsj", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕南柯电影", "key": "csp_Nkdy", "type": 3, "api": "csp_Nkdy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕天空影视", "key": "csp_Tkys", "type": 3, "api": "csp_Tkys", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕小熊影视", "key": "csp_Xxys", "type": 3, "api": "csp_Xxys", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕天天影视", "key": "csp_Ttys", "type": 3, "api": "csp_Ttys", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕鬼片影院", "key": "csp_Gpyy", "type": 3, "api": "csp_Gpyy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕多多影视", "key": "csp_Ddys", "type": 3, "api": "csp_Ddys", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕喵喵影视", "key": "csp_Mmps", "type": 3, "api": "csp_Mmps", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕影信", "key": "csp_Yx", "type": 3, "api": "csp_Yx", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕剧网", "key": "csp_Jw", "type": 3, "api": "csp_Jw", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕影视之家", "key": "csp_Yszj", "type": 3, "api": "csp_Yszj", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕电视库", "key": "csp_Dsk", "type": 3, "api": "csp_Dsk", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕风暴资源", "key": "csp_Fbzy", "type": 3, "api": "csp_Fbzy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕华夏资源", "key": "csp_Hxzy", "type": 3, "api": "csp_Hxzy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕瞄眼影视", "key": "csp_Myy", "type": 3, "api": "csp_Myy", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕港漫之家", "key": "csp_Gmzz", "type": 3, "api": "csp_Gmzz", "searchable": 1, "quickSearch": 1, "filterable": 1},
+    {"name": "🌕星空影院", "key": "csp_Xkdy", "type": 3, "api": "csp_Xkdy", "searchable": 1, "quickSearch": 1, "filterable": 1}
+  ],
+  "players": [
+    {"name": "浏览器", "key": "browser", "api": "https://player.9lao.com/?url="},
+    {"name": "清风播放器", "key": "p1", "api": "https://v.qq.com/x/cover/1yxfkbp71vqsf2l.html?vid="},
+    {"name": "天猫播放器", "key": "p2", "api": "https://v.qq.com/x/cover/2p0kkwcbcsz7i7b.html?vid="},
+    {"name": "酷播播放器", "key": "p3", "api": "https://v.qq.com/x/cover/2r1xlkpxbhbl1c4.html?vid="},
+    {"name": "聚合播放器", "key": "p4", "api": "https://v.qq.com/x/cover/2sszpf5v5u8yo5n.html?vid="},
+    {"name": "迅雷播放器", "key": "p5", "api": "https://v.qq.com/x/cover/1fksx3jtx9kbi9m.html?vid="}
+  ],
+  "images": [
+    {"name": "壁纸1", "url": "https://example.com/image1.jpg"},
+    {"name": "壁纸2", "url": "https://example.com/image2.jpg"}
+  ],
+  "jars": [
+    {"name": "JAR文件1", "url": "https://example.com/file1.jar"},
+    {"name": "JAR文件2", "url": "https://example.com/file2.jar"}
+  ],
+  "livestreams": [
+    {"name": "直播1", "url": "https://example.com/live1"},
+    {"name": "直播2", "url": "https://example.com/live2"}
+  ]
+}
