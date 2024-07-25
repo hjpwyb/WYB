@@ -1,0 +1,63 @@
+{
+    "iptv": {
+        "default": 1,
+        "data": [
+            {
+                "name": "俊于直播",
+                "url": "http://home.jundie.top:81/Cat/tv/live.txt",
+                "type": "remote",
+                "epg": "http://epg.112114.xyz",
+                "isActive": true,
+                "id": 4
+            },
+            {
+                "name": "xxx Japan 1",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan 1.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 5
+            },
+            {
+                "name": "xxx Japan 2",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan 2.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 6
+            },
+            {
+                "name": "xxx Japan I-L",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan I-L.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 9
+            },
+            {
+                "name": "xxx Japan M-R",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan M-R.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 10
+            },
+            {
+                "name": "xxx Japan S",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan S.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 11
+            },
+            {
+                "name": "xxx Japan X",
+                "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/eklins/FDTV/main/tv/xxx Japan X.m3u",
+                "type": "remote",
+                "epg": "",
+                "isActive": true,
+                "id": 13
+            }
+        ]
+    }
+}
