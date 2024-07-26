@@ -1,111 +1,73 @@
 {
   "urls": [
-    {"name": "🍉采集无敌", "url": "https://codeberg.org/rghy/njyy/raw/branch/main/cjz.json"},
-    {"name": "🚌码点干货", "url": "https://gitee.com/gagakuai/tvbox/raw/master/yyds.json"},
-    {"name": "🎁盒子里面", "url": "https://hezi.tvboxhz.top/TVBOX盒子"},
-    {"name": "🐲️这个接口", "url": "https://www.macms.pro/box/3.json"},
-    {"name": "🦊酷玩影视", "url": "http://qrh.yimkj.cn/kw/酷玩.json"},
-    {"name": "🙈车妹影视", "url": "http://svip.weixine.net:88/uploads/itvbox/svip.json"},
-    {"name": "🍭阿里专线", "url": "https://agit.ai/hu/hcr/raw/branch/master/al.txt"},
-    {"name": "🍚饭太硬好", "url": "http://饭太硬.top/tv"},
-    {"name": "💠小重楼楼", "url": "https://agit.ai/hu/hcr/raw/branch/master/10086.json"},
-    {"name": "🚀多多家庭", "url": "http://tvkj.top/DC/dd/tvkj/svip.json"},
-    {"name": "🚀多多阿里", "url": "http://tvkj.top/DC/al/tvkj/svip.json"},
-    {"name": "🐼肥猫接口", "url": "http://肥猫.live/"},
-    {"name": "🍇玉玉接口", "url": "http://8.210.232.168/xc.json"},
-    {"name": "🐭喵影视源", "url": "http://meowtv.cn/tv"},
-    {"name": "🐳万达广场", "url": "http://sinopacifichk.com/box/56.txt"},
-    {"name": "🎆七夕影视", "url": "http://tvkj.top/七星/svip.json"},
-    {"name": "🏘天薇视讯", "url": "http://tvkj.top/DC/tvys/svip.json"},
-    {"name": "🚸文坤影视", "url": "http://qrh.yimkj.cn/wk/文坤.json"},
-    {"name": "🍑业余打发", "url": "http://111.67.195.139/yydf/yyffjk.json"},
-    {"name": "🥃业余打發", "url": "http://ftp6587948.host121.sanfengyun.cn/yydf/yydfjk.json"},
-    {"name": "🕵道长接口", "url": "https://raw.gitmirror.com/yw88075/tvbox/main/dr/js.json"},
-    {"name": "🍧欧歌线路", "url": "http://tv.nxog.top/m/111.php?ou=公众号欧歌app&mz=index2&jar=index2&123&b=欧歌"},
-    {"name": "🚒运输车车", "url": "https://cf.weixine.net/ysc.json"},
-    {"name": "💧高山流水", "url": "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/XYQ.json"},
-    {"name": "🍟去看4⭕️k", "url": "https://codeberg.org/hengxing/hx/raw/branch/main/qb4k.txt"},
-    {"name": "💠星河大佬", "url": "https://pan.shangui.cc/f/kKGaHR/%E8%9A%82%E8%9A%81%E6%8E%A5%E5%8F%A3.txt"},
-    {"name": "📌量帅接口", "url": "https://notabug.org/qizhen15800/My9394/raw/master/ProfessionalEdition.m3u8"},
-    {"name": "📛公众号丨挺好分享", "url": "http://111.67.196.189/tvbox/thdjk.json"},
-    {"name": "📛TH丨短剧影视", "url": "https://codeberg.org/ztha/tvbox/raw/branch/main/duanju.json"},
-    {"name": "🐧挺好丨阿里专线", "url": "https://yydsys.top/duo/ali"},
-    {"name": "💹挺好丨多多接口", "url": "http://yydsys.top/duo"},
-    {"name": "☁挺好丨云星影视", "url": "http://itvbox.cc/tvbox/云星日记/1.m3u8"},
-    {"name": "🦌挺好丨吾爱影视", "url": "http://52bsj.vip:98/wuai"},
-    {"name": "🧊挺好丨月光宝盒", "url": "https://jihulab.com/bh666/YGBH/-/raw/main/ygbox.json"},
-    {"name": "🦒挺好丨这暴脾气", "url": "http://xhww.fun:63/小米/DEMO.json"},
-    {"name": "🦒挺好丨荷城茶秀", "url": "http://rihou.cc:88/荷城茶秀"},
-    {"name": "🍚挺好丨饭太硬啊", "url": "http://饭太硬.top/tv"},
-    {"name": "🐼挺好丨肥猫肥猫", "url": "http://我不是.肥猫.love:63/接口禁止贩卖"},
-    {"name": "🌨挺好丨高天流云", "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"},
-    {"name": "🍃挺好丨吾爱吾爱", "url": "http://52bsj.vip:98/wuai"},
-    {"name": "💦挺好丨巧技巧技", "url": "http://pandown.pro/tvbox/tvbox.json"},
-    {"name": "📿挺好丨神秘哥哥", "url": "https://神器每日推送.tk/pz.json"},
-    {"name": "🌪挺好丨南风", "url": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json"},
-    {"name": "🏡挺好丨潇洒", "url": "https://la.kstore.space/download/2863/01.txt"},
-    {"name": "🏡应用多多家庭版", "url": "http://yydsys.top/duo"},
-    {"name": "🚀饭太硬线路", "url": "http://饭太硬.top/tv"},
-    {"name": "🚀肥猫线路", "url": "http://肥猫.live"},
-    {"name": "🚀蜂蜜线路", "url": "https://fm.t4tv.hz.cz/json/config.json"},
-    {"name": "🚀道长线路", "url": "https://pastebin.com/raw/5NHaxyGR"},
-    {"name": "🚀香雅情线路", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"},
-    {"name": "🚀OK佬线路", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/okcaptain/okjar/rm/ok.json"},
-    {"name": "🚀小米线路", "url": "http://xhww.fun:63/小米/DEMO.json"},
-    {"name": "🚀菜妮丝线路", "url": "https://tvbox.cainisi.cf"},
-    {"name": "🚀俊佬线路", "url": "http://home.jundie.top:81/top98.json"},
-    {"name": "🚀小雅线路", "url": "http://101.34.67.237/config/1"},
-    {"name": "🚀霜辉月明", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json"},
-    {"name": "🚀dxawi0线路", "url": "https://xhdwc.tk/0"},
-    {"name": "🚀老刘备线路", "url": "https://raw.liucn.cc/box/m.json"},
-    {"name": "🚀运输车(有跑马灯)", "url": "https://weixine.net/ysc.json"},
-    {"name": "🚀多多家庭", "url": "https://meilun.cool/yydf/yydf.json"},
-    {"name": "🚀tvbox", "url": "http://www.itvbox.cc/tvbox/chaoshi.json"},
-    {"name": "🚀云星直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/2zhx/yx/main/yx.json"},
-    {"name": "🚀麻瓜星直播", "url": "http://www.fxyxbox.top/tvbox/ma.json"},
-    {"name": "🚀霜辉月明", "url": "http://xhdwc.tk/0"},
-    {"name": "🚀潮汕在线", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lzmyt/tvbox/master/tvbox.json"},
-    {"name": "🚀悠闲影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wwuustc/Box/master/tv.json"},
-    {"name": "🚀文昌直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/tvbox/tvbox/main/tvbox.json"},
-    {"name": "🚀码点干货", "url": "https://gitee.com/gagakuai/tvbox/raw/master/yyds.json"},
-    {"name": "🚀云盒子", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/dyx2/tvbox/main/tvbox.json"},
-    {"name": "🚀星空直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xingyue666/tvbox/master/tvbox.json"},
-    {"name": "🚀黄橙黑科技", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lanlaz/runtvbox/master/tvbox.json"},
-    {"name": "🚀天宇直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/katc05/tvbox/main/tvbox.json"},
-    {"name": "🚀影视平台", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xr0b/tvbox/master/tvbox.json"},
-    {"name": "🚀酸奶视频", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/zhsfb/tvbox/main/tvbox.json"},
-    {"name": "🚀电竞直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ekebin/tvbox/master/tvbox.json"},
-    {"name": "🚀每日精选", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/jxjz/tvbox/master/tvbox.json"},
-    {"name": "🚀乐天视频", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xinmztv/tvbox/master/tvbox.json"},
-    {"name": "🚀天宇影视", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/katc05/tvbox/master/tvbox.json"},
-    {"name": "🚀非凡影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xmztv/tvbox/master/tvbox.json"},
-    {"name": "🚀梦幻影视", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/dsfgf/tvbox/master/tvbox.json"},
-    {"name": "🚀掌中宝", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/tzqzgf/tvbox/master/tvbox.json"},
-    {"name": "🚀星光影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xtv/tvbox/master/tvbox.json"},
-    {"name": "🚀幻影直播", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/szmyh/tvbox/master/tvbox.json"},
-    {"name": "🚀影院直通车", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ndcz/tvbox/master/tvbox.json"},
-    {"name": "🚀魔力视频", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/molitv/tvbox/master/tvbox.json"},
-    {"name": "🚀星辉视频", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xinghui/tvbox/master/tvbox.json"},
-    {"name": "🚀云游视频", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuntv/tvbox/master/tvbox.json"},
-    {"name": "🚀影视资源", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ymz/tvbox/master/tvbox.json"},
-    {"name": "🚀云视界", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yunshi/tvbox/master/tvbox.json"},
-    {"name": "🚀观影天下", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/gytv/tvbox/master/tvbox.json"},
-    {"name": "🚀经典影视", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/jdtt/tvbox/master/tvbox.json"},
-    {"name": "🚀影视风云", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yunbox/tvbox/master/tvbox.json"},
-    {"name": "🚀欢乐影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/happy/tvbox/master/tvbox.json"},
-    {"name": "🚀未来影视", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wlqtv/tvbox/master/tvbox.json"},
-    {"name": "🚀清新影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/qxbox/tvbox/master/tvbox.json"},
-    {"name": "🚀梦幻影视", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/dream/tvbox/master/tvbox.json"},
-    {"name": "🚀辉煌影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/hhbox/tvbox/master/tvbox.json"},
-    {"name": "🚀趣味影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/qtbox/tvbox/master/tvbox.json"},
-    {"name": "🚀全民影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/qmbox/tvbox/master/tvbox.json"},
-    {"name": "🚀星辰影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xchbox/tvbox/master/tvbox.json"},
-    {"name": "🚀流行影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/lxbox/tvbox/master/tvbox.json"},
-    {"name": "🚀观影助手", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/gybox/tvbox/master/tvbox.json"},
-    {"name": "🚀极限影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/jxbox/tvbox/master/tvbox.json"},
-    {"name": "🚀无限影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wxbox/tvbox/master/tvbox.json"},
-    {"name": "🚀未来影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wlbox/tvbox/master/tvbox.json"},
-    {"name": "🚀极光影院", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/jglbox/tvbox/master/tvbox.json"},
-    {"name": "🚀无限视界", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wxbox/tvbox/master/tvbox.json"}
+    {
+        "name": "🐲️这个接口",
+        "url": "https://www.macms.pro/box/3.json"
+    },
+    {
+        "name": "🐼肥猫接口",
+        "url": "http://肥猫.live/"
+    },
+    {
+        "name": "🐭喵影视源",
+        "url": "http://meowtv.cn/tv"
+    },
+    {
+        "name": "🐳万达广场",
+        "url": "http://sinopacifichk.com/box/56.txt"
+    },
+    {
+        "name": "🕵道长接口",
+        "url": "https://raw.gitmirror.com/yw88075/tvbox/main/dr/js.json"
+    },
+    {
+        "name": "🍧欧歌线路",
+        "url": "http://tv.nxog.top/m/111.php?ou=公众号欧歌app&mz=index2&jar=index2&123&b=欧歌"
+    },
+    {
+        "name": "🚒运输车车",
+        "url": "https://cf.weixine.net/ysc.json"
+    },
+    {
+        "name": "💧高山流水",
+        "url": "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/XYQ.json"
+    },
+    {
+        "name": "📌量帅接口",
+        "url": "https://notabug.org/qizhen15800/My9394/raw/master/ProfessionalEdition.m3u8"
+    },
+    {
+        "name": "🌨挺好丨高天流云",
+        "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"
+    },
+    {
+        "name": "💦挺好丨巧技巧技",
+        "url": "http://pandown.pro/tvbox/tvbox.json"
+    },
+    {
+        "name": "🏡挺好丨潇洒",
+        "url": "https://la.kstore.space/download/2863/01.txt"
+    },
+    {
+        "name": "🚀肥猫线路",
+        "url": "http://肥猫.live"
+    },
+    {
+        "name": "🚀香雅情线路",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
+    },
+    {
+        "name": "🚀俊佬线路",
+        "url": "http://home.jundie.top:81/top98.json"
+    },
+    {
+        "name": "🚀老刘备线路",
+        "url": "https://raw.liucn.cc/box/m.json"
+    },
+    {
+        "name": "🚀运输车(有跑马灯)",
+        "url": "https://weixine.net/ysc.json"
+    }
+
   ]
 }
