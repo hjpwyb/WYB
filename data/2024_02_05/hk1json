@@ -1,5 +1,23 @@
 {
     "sites": [
+         {
+            "key": "slapibf",
+            "name": "森林资源|AV",
+            "type": 1,
+            "api": "https://slapibf.com/api.php/provide/vod/"
+        },
+        {
+            "key": "yikanapi",
+            "name": "易看资源|AV",
+            "type": 1,
+            "api": "https://api.yikanapi.com/api.php/provide/vod/"
+        },
+         {
+            "key": "00CK",
+            "name": "CKv",
+            "type": 1,
+            "api": "https://ckzy.me/api.php/provide/vod/"
+        },
         {
             "key": "xKK写真资源",
             "name": "KK写真资源(切)",
@@ -11,12 +29,6 @@
             "name": "KK写真资源-伦理",
             "type": 1,
             "api": "https://kkzy.me/api.php/provide/vod/"
-        },
-        {
-            "key": "00CK",
-            "name": "CKv",
-            "type": 1,
-            "api": "https://ckzy.me/api.php/provide/vod/"
         },
         {
             "key": "cjmygzy.com",
@@ -103,6 +115,12 @@
             "api": "https://www.jingpinx.com/api.php/provide/vod/"
         },
         {
+            "key": "kkzy",
+            "name": "KK写真资源|AV",
+            "type": 1,
+            "api": "https://kkzy.me/api.php/provide/vod/"
+        },
+        {
             "key": "lbapiby",
             "name": "AIvin|AV",
             "type": 1,
@@ -119,18 +137,6 @@
             "name": "草榴资源|AV",
             "type": 1,
             "api": "https://www.caoliuzyw.com/api.php/prodao/vod/"
-        },
-        {
-            "key": "slapibf",
-            "name": "森林资源|AV",
-            "type": 1,
-            "api": "https://slapibf.com/api.php/provide/vod/"
-        },
-        {
-            "key": "yikanapi",
-            "name": "易看资源|AV",
-            "type": 1,
-            "api": "https://api.yikanapi.com/api.php/provide/vod/"
         },
         {
             "key": "haosezyw",
