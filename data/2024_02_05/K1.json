@@ -1,12 +1,6 @@
 {
     "sites": [
         {
-            "key": "00CK",
-            "name": "CKv",
-            "type": 1,
-            "api": "https://ckzy.me/api.php/provide/vod/"
-        },
-        {
             "key": "xKK写真资源",
             "name": "KK写真资源(切)",
             "type": 1,
@@ -17,6 +11,12 @@
             "name": "KK写真资源-伦理",
             "type": 1,
             "api": "https://kkzy.me/api.php/provide/vod/"
+        },
+        {
+            "key": "00CK",
+            "name": "CKv",
+            "type": 1,
+            "api": "https://ckzy.me/api.php/provide/vod/"
         },
         {
             "key": "cjmygzy.com",
