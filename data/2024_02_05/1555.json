@@ -1,23 +1,163 @@
 {
- "杜比":"https://dubi.tk",
- "菊花盘":"https://pan.142856.xyz",
- "好汉吧":"https://8023.haohanba.cn",
- "小兵组":"https://6vv.app",
- "资源小站":"https://960303.xyz",
- "云播放":"https://quanzi.laoxianghuijia.cn",
- "七米蓝":"https://al.chirmyram.com",
- "帅盘":"https://hi.shuaipeng.wang",
- "梓澪":"https://zi0.cc",
- "秋雨":"https://share.laowang.me",
- "睛园":"https://alist.52qy.repl.co",
- "神族九帝":"https://alist.shenzjd.com",
- "一只鱼":"https://alist.youte.ml",
- "米奇":"https://anime.mqmmw.ga",
- "铃星梦":"https://pan.bashroot.top",
- "DISK":"http://124.222.140.243:8080",
- "小雅A":"http://101.34.67.237:5244",
- "姬路白雪":"https://pan.jlbx.xyz",
- "触光":"https://pan.ichuguang.com",
- "轻弹浅唱":"https://g.xiang.lol"
-
+    "iptv": {
+        "default": 1,
+        "data": [
+            {
+                "name": "森林资源|AV",
+                "url": "https://slapibf.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "探探资源|AV",
+                "url": "https://apittzy.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "奥斯卡资源|AV",
+                "url": "https://aosikazy.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "老鸭资源|AV",
+                "url": "https://api.apilyzy.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "皇冠|AV",
+                "url": "https://hghhh.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "91麻豆|AV",
+                "url": "https://91md.me/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "易看资源|AV",
+                "url": "https://api.yikanapi.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "皇冠资源|AV",
+                "url": "https://hghhh.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "91md|AV",
+                "url": "https://91md.me/api.php/provide/vod/from/mdm3u8/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "番号资源|AV",
+                "url": "http://fhapi9.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "鲨鱼资源|AV",
+                "url": "https://shayuapi.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "KK写真资源|AV",
+                "url": "https://kkzy.me/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "AIvin|AV",
+                "url": "http://lbapiby.com/api.php/provide/vod/at/json",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "好色资源|AV",
+                "url": "https://haosezyw.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "最色资源|AV",
+                "url": "https://zszyw.top/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "色色虎资源|AV",
+                "url": "https://apisesehuzy.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "黄瓜资源|AV",
+                "url": "https://www.zy018.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "玉兔资源|AV",
+                "url": "https://apiyutu.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "麻豆视频|AV",
+                "url": "http://www.madouse.la/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "辣椒资源|AV",
+                "url": "https://apilj.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "甜蜜资源|AV",
+                "url": "https://timizy10.cc/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "奶香香|AV",
+                "url": "https://Naixxzy.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "精品资源|AV",
+                "url": "https://www.jingpinx.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "甜蜜资源|AV",
+                "url": "https://timizy10.cc/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "草榴资源|AV",
+                "url": "https://www.caoliuzyw.com/api.php/prodao/vod/",
+                "type": "remote",
+                "isActive": true
+            },
+            {
+                "name": "老色逼资源|AV",
+                "url": "https://apilsbzy1.com/api.php/provide/vod/",
+                "type": "remote",
+                "isActive": true
+            }
+        ]
+    }
 }
