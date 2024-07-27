@@ -103,12 +103,6 @@
             "api": "https://www.jingpinx.com/api.php/provide/vod/"
         },
         {
-            "key": "kkzy",
-            "name": "KK写真资源|AV",
-            "type": 1,
-            "api": "https://kkzy.me/api.php/provide/vod/"
-        },
-        {
             "key": "lbapiby",
             "name": "AIvin|AV",
             "type": 1,
