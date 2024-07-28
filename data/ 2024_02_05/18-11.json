@@ -120,7 +120,7 @@
         },
         {
             "key": "玉兔专场",
-            "name": "玉兔采集",
+            "name": "玉兔专场",
             "type": 1,
             "api": "https://apiyutu.com/api.php/provide/vod/",
             "playUrl": "",
