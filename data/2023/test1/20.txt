@@ -1,4 +1,4 @@
-[
+{"urls": [
     {
         "url": "https://raw.githubusercontent.com/hjpwyb/tvbox6/master/ \u516c\u4f17\u53f7-\u661f\u6cb3\u79d1\u6280\u56ed.txt"
     },
@@ -1189,7 +1189,7 @@
     },
     {
         "url": "https://raw.githubusercontent.com/hjpwyb/tvbox6/master/\ud83e\udd96\u5f90\u603b\u5f71\u89c6.txt"
-    },
+    }
     {
         "url": "https://raw.githubusercontent.com/hjpwyb/tvbox6/master/\ud83e\udddb\u4eba\u4eba\u8d44\u6e90.txt"
     }
