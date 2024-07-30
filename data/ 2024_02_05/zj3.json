@@ -484,6 +484,16 @@
             "ext": "https://weixine.net/sub/4KHDR.json"
         },
         {
+            "key": "玉米",
+            "name": "🚛玉米┃2K",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://22222.yiyingys.asia/api.php/app/"
+        },
+        {
             "key": "圣城影视",
             "name": "🚛圣城┃2K",
             "type": 3,
@@ -512,6 +522,16 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "https://weixine.net/sub/xiaoxiao.json"
+        },
+        {
+            "key": "蘑菇影视",
+            "name": "🚛蘑菇┃2K",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://www.gvideo.me/api.php/app/"
         },
         {
             "key": "玉米",
@@ -585,6 +605,26 @@
             "ext": "http://11111111.moguys.xyz/api.php/app/"
         },
         {
+            "key": "蚂蚁",
+            "name": "🚛蚂蚁┃秒播",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://wushutvcms.byzz.top/api.php/app/"
+        },
+        {
+            "key": "365",
+            "name": "🚛365┃秒播",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://guan.yy365.vip/api.php/app/"
+        },
+        {
             "key": "348影视",
             "name": "🚛348┃秒播",
             "type": 3,
@@ -602,11 +642,70 @@
             "ext": "https://weixine.net/js/changmeng.js"
         },
         {
+            "key": "农民影视",
+            "name": "🚛农民┃秒播",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/nongmin.json"
+        },
+        {
+            "key": "子子影视",
+            "name": "🚛子子┃秒播",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/zizi.json"
+        },
+        {
             "key": "荐片",
             "name": "🚛荐片┃秒播",
             "type": 3,
             "api": "https://weixine.net/js/lib/drpy2.min.js",
             "ext": "https://weixine.net/js/jianpian.js"
+        },
+        {
+            "key": "酷云77",
+            "name": "🚛酷云┃秒播",
+            "type": 3,
+            "api": "csp_Kunyu77",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
+        },
+        {
+            "key": "厂长",
+            "name": "🚛厂长┃秒播",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/changzhang.json"
+        },
+        {
+            "key": "鸿运当头",
+            "name": "🚛鸿运┃秒播",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "changeable": 1,
+            "ext": "http://jh.dytt996.com:996/api.php/app/"
+        },
+        {
+            "key": "低端影视",
+            "name": "🚛低端┃秒播",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/diduan.json"
         },
         {
             "key": "在线之家",
@@ -623,6 +722,69 @@
             "ext": "https://weixine.net/js/subaibai.js"
         },
         {
+            "key": "徕米影视",
+            "name": "🚛徕米影视",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "playerType": "1",
+            "ext": "https://weixine.net/sub/laimi.json"
+        },
+        {
+            "key": "速看",
+            "name": "🚛速看100",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://sk100.tv/api.php/app/"
+        },
+        {
+            "key": "双十电影",
+            "name": "🚛双十电影",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": "1",
+            "ext": "https://weixine.net/sub/shuangshi.json"
+        },
+        {
+            "key": "饭团影视",
+            "name": "🚛饭团高清",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": "1",
+            "ext": "https://weixine.net/sub/fantuan.json"
+        },
+        {
+            "key": "1080蓝光",
+            "name": "🚛1080蓝光",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://1080dyw.com/icciu_api.php/v1.vod"
+        },
+        {
+            "key": "皮皮鸭",
+            "name": "🚛皮皮鸭",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/pipiya.json"
+        },
+        {
             "key": "TVB云播",
             "name": "🚛TVB云播",
             "type": 3,
@@ -631,6 +793,50 @@
             "quickSearch": 1,
             "filterable": 1,
             "ext": "https://weixine.net/sub/TVB.json"
+        },
+        {
+            "key": "爱看机器人",
+            "name": "🚛爱看机器",
+            "type": 3,
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "ext": "https://weixine.net/js/ikanbot.js"
+        },
+        {
+            "key": "明帝影视",
+            "name": "🚛明帝影视",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://ys.md214.cn/api.php/app/"
+        },
+        {
+            "key": "爱迪影视",
+            "name": "🚛爱迪影视",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "ext": "https://api123.adys.app/xgapp.php/v3/"
+        },
+        {
+            "key": "大豆高清",
+            "name": "🚛大豆高清",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://www.dadou.cm/api.php/app/"
+        },
+        {
+            "key": "灰太狼",
+            "name": "🚛灰太狼",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/htl.json"
         },
         {
             "key": "555影视",
@@ -684,11 +890,116 @@
             "ext": "https://weixine.net/sub/cechi.json"
         },
         {
+            "key": "csp_Voflix",
+            "name": "🚛Voflix",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/voflix.json"
+        },
+        {
+            "key": "🚛宝仙HD",
+            "name": "🚛宝仙HD",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "ext": "https://weixine.net/sub/baoxian.json"
+        },
+        {
+            "key": "101影院",
+            "name": "🚛101影院",
+            "type": 3,
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "ext": "https://weixine.net/js/l0l.js"
+        },
+        {
+            "key": "Vidhub视频",
+            "name": "🚛视频库",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/Vidhub.json"
+        },
+        {
+            "key": "石榴影视",
+            "name": "🚛石榴影视",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/shiliu.json"
+        },
+        {
+            "key": "可乐",
+            "name": "🚛可乐",
+            "type": 3,
+            "api": "https://weixine.net/js/lib/drpy2.min.js",
+            "ext": "https://weixine.net/js/cokemv.js"
+        },
+        {
+            "key": "两个BT",
+            "name": "🚛两个BT",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/bttwo.json"
+        },
+        {
+            "key": "csp_AppYsV2",
+            "name": "🚛69美剧",
+            "type": 3,
+            "api": "csp_AppYsV2",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://www.69mj.com/xgapp.php/v2/"
+        },
+        {
             "key": "大师兄影视",
             "name": "🚛大师兄影视",
             "type": 3,
             "api": "https://weixine.net/js/lib/drpy2.min.js",
             "ext": "https://weixine.net/js/dashixiongyingshi.js"
+        },
+        {
+            "key": "七年影视",
+            "name": "🚛七年影视",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": "1",
+            "ext": "https://weixine.net/sub/qinian.json"
+        },
+        {
+            "key": "看看剧",
+            "name": "🚛看看剧",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/kankanju.json"
+        },
+        {
+            "key": "映迷影院",
+            "name": "🚛映迷影院",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://weixine.net/sub/yingmiyingyuan.json"
         },
         {
             "key": "lzi",
