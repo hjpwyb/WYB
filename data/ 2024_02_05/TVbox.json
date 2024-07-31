@@ -1,14 +1,14 @@
 {
 "wallpaper": "https://picsum.photos/1080/",
 "spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/xyq.jar",
-//"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/爱心.gif",
-//"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/av.png",
+"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/爱心.gif",
+"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/av.png",
 "logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/美.gif",
-//"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/飞鱼.jpg",
+"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/飞鱼.jpg",
 "homeLogo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/美.gif",
-//"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/开车.webp",
-//"spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/xbpq.jar",
-//"spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/XBiubiuLA4.jar",
+"logo": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/开车.webp",
+"spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/xbpq.jar",
+"spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/jar/XBiubiuLA4.jar",
   "sites": [
   
 //type,0表达xml，1表达json，3表达jar内置json
