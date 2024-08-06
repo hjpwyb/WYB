@@ -28,7 +28,8 @@ function docker_pull() {
     #[ -z "${config_dir}" ] && get_config_path
     local config_dir=${2:-"/etc/xiaoya"}
     mkdir -p "${config_dir}"
-    local mirrors=("docker.io" "docker.fxxk.dedyn.io" "docker.m.daocloud.io" "docker.adysec.com" "registry-docker-hub-latest-9vqc.onrender.com" "docker.chenby.cn" "dockerproxy.com" "hub.uuuadc.top" "docker.jsdelivr.fyi" "docker.registry.cyou" "dockerhub.anzu.vip")
+    local mirrors=("docker.linyubo211.filegear-sg.me" "docker.fxxk.dedyn.io" "dockerhub.anzu.vip" "docker.chenby.cn" "hub.uuuadc.top" "docker.jsdelivr.fyi""dockertest.jsdelivr.fyi""docker.registry.cyou""docker.mirrors.ustc.edu.cn""docker.nju.edu.cn""docker.registry.cyou""docker-cf.registry.cyou""docker.fxxk.dedyn.io""docker.io""docker.m.daocloud.io""docker.adysec.com""docker.chenby.cn""hub.uuuadc.top""docker.jsdelivr.fyi""
+docker.registry.cyo")
     if [ -s "${config_dir}/docker_mirrors.txt" ]; then
         mirrors=()
         while IFS= read -r line; do
