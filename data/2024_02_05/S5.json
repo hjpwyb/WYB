@@ -78,10 +78,10 @@
       "changeable": 1,
       "categories": [ ]
     },{
-      "key": "奇虎资源",
-      "name": "奇虎",
+      "key": "玉兔资源",
+      "name": "玉兔",
       "type": 1,
-      "api": "http://qihuzy1.com/api.php/provide/vod/",
+      "api": "https://apiyutu.com/api.php/provide/vod/?ac=list/",
       "searchable": 1,
       "changeable": 1,
       "categories": [ ]
