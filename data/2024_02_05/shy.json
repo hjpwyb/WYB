@@ -1,0 +1,31 @@
+{
+  "sites": [
+    {
+      "key": "shayu", 
+      "name": "鲨鱼资源",
+      "type": 3,
+      "api": "https://shayuapi.com/api.php/provide/vod/at/json/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": {
+        "ac": "list"
+      }
+    }
+  ],
+  "rules": {
+    "playUrl": "https://shayujx.com/?url={playUrl}",
+    "cateNode": "",
+    "cateName": "分类名称",
+    "cateId": "分类ID",
+    "vodNode": "list",
+    "vodName": "vod_name",
+    "vodId": "vod_id",
+    "vodPic": "vod_pic",
+    "vodRemark": "vod_remarks",
+    "vodPlayFrom": "vod_play_from",
+    "vodPlayUrl": "vod_play_url",
+    "searchUrl": "https://shayuapi.com/api.php/provide/vod/at/json/?wd={wd}&ac=list",
+    "detailUrl": "https://shayuapi.com/api.php/provide/vod/at/json/?ac=detail&ids={id}"
+  }
+}
