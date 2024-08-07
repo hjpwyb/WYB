@@ -64,7 +64,7 @@
       "key": "最大资源",
       "name": "最大",
       "type": 1,
-      "api": "https://api.zuidapi.com/api.php/provide/vod/from/zuidam3u8/",
+      "api": "https://api.zuidapi.com/api.php/provide/vod/",
       "searchable": 1,
       "changeable": 1,
       "categories": [ ]
