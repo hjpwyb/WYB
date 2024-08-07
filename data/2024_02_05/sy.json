@@ -1,0 +1,33 @@
+{
+  "sites": [
+    {
+      "name": "鲨鱼资源",
+      "type": 3,
+      "api": "https://shayuapi.com/api.php/provide/vod/at/json/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": {
+        "ac": "list"
+      }
+    }
+  ],
+  "rules": {
+    "playUrl": "https://shayujx.com/?url=",
+    "list": {
+      "id": "vod_id",
+      "name": "vod_name",
+      "pic": "vod_pic",
+      "actor": "vod_actor",
+      "director": "vod_director",
+      "des": "vod_content",
+      "type": "vod_class",
+      "year": "vod_year",
+      "area": "vod_area",
+      "remarks": "vod_remarks"
+    },
+    "detailUrl": "https://shayuapi.com/api.php/provide/vod/at/json/?ac=detail&ids={id}",
+    "playUrl": "https://shayujx.com/?url={playUrl}",
+    "searchUrl": "https://shayuapi.com/api.php/provide/vod/at/json/?wd={wd}&ac=list"
+  }
+}
