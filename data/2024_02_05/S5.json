@@ -89,7 +89,7 @@
       "key": "华为吧资源",
       "name": "华为吧",
       "type": 1,
-      "api": "https://hw8.live/api.php/provide/vod/?ac=list",
+      "api": "https://huawei8.live/api.php/provide/vod",
       "searchable": 1,
       "changeable": 1,
       "categories": [ ]
