@@ -4,21 +4,21 @@
             "key": "https://www.360zy.com/",
             "name": "360资源",
             "type": 0,
-            "api": "https://360zy.com/api.php/provide/vod/at/xml"，
+            "api": "https://360zy.com/api.php/provide/vod/at/xml",
             "searchable": 1
         },
         {
             "key": "http://155zy2.com/",
             "name": "155资源站",
             "type": 0,
-            "api": "https://155api.com/api.php/provide/vod/at/xml"，
+            "api": "https://155api.com/api.php/provide/vod/at/xml",
             "searchable": 1
         },
         {
             "key": "https://wuyuezy.com/",
             "name": "五月资源站",
             "type": 0,
-            "api": "https://www.5yuezyapi.com/api.php/provide/vod/at/xml/?ac=list"
+            "api": "https://www.5yuezyapi.com/api.php/provide/vod/at/xml/?ac=list",
             "searchable": 1
         },
         {
@@ -35,7 +35,7 @@
         },
         {
             "key": "vnzyz.com",
-            "name":" 越南资源"
+            "name": "越南资源",
             "type": 1,
             "api": "https://vnzyz.com/api.php/provide/vod/?ac=list"
         },
@@ -68,156 +68,6 @@
             "name": "精品资源",
             "type": 1,
             "api": "https://www.jingpinx.com/api.php/provide/vod/?ac=list"
-        },
-        {
-            "key": "kkzy",
-            "name": "KK写真资源|AV",
-            "type": 1,
-            "api": "https://kkzy.me/api.php/provide/vod/"
-        },
-        {
-            "key": "lbapiby",
-            "name": "AIvin|AV",
-            "type": 1,
-            "api": "http://lbapiby.com/api.php/provide/vod/at/json"
-        },
-        {
-            "key": "madouse",
-            "name": "麻豆视频|AV",
-            "type": 1,
-            "api": "http://www.madouse.la/api.php/provide/vod/"
-        },
-        {
-            "key": "Naixxzy",
-            "name": "奶香香|AV",
-            "type": 1,
-            "api": "https://Naixxzy.com/api.php/provide/vod/"
-        },
-        {
-            "key": "91md",
-            "name": "91麻豆|AV",
-            "type": 1,
-            "api": "https://91md.me/api.php/provide/vod/"
-        },
-        {
-            "key": "caoliuzyw",
-            "name": "草榴资源|AV",
-            "type": 1,
-            "api": "https://www.caoliuzyw.com/api.php/prodao/vod/"
-        },
-        {
-            "key": "shayuapi",
-            "name": "鲨鱼资源|AV",
-            "type": 1,
-            "api": "https://shayuapi.com/api.php/provide/vod/"
-        },
-        {
-            "key": "slapibf",
-            "name": "森林资源|AV",
-            "type": 1,
-            "api": "https://slapibf.com/api.php/provide/vod/"
-        },
-        {
-            "key": "timizy",
-            "name": "甜蜜资源|AV",
-            "type": 1,
-            "api": "https://timizy10.cc/api.php/provide/vod/"
-        },
-        {
-            "key": "yikanapi",
-            "name": "易看资源|AV",
-            "type": 1,
-            "api": "https://api.yikanapi.com/api.php/provide/vod/"
-        },
-        {
-            "key": "aosikazy",
-            "name": "奥斯卡资源|AV",
-            "type": 1,
-            "api": "https://aosikazy.com/api.php/provide/vod/"
-        },
-        {
-            "key": "91md_m3u8",
-            "name": "91md|AV",
-            "type": 1,
-            "api": "https://91md.me/api.php/provide/vod/from/mdm3u8/"
-        },
-        {
-            "key": "haosezyw",
-            "name": "好色资源|AV",
-            "type": 1,
-            "api": "https://haosezyw.com/api.php/provide/vod/"
-        },
-        {
-            "key": "zszyw",
-            "name": "最色资源|AV",
-            "type": 1,
-            "api": "https://zszyw.top/api.php/provide/vod/"
-        },
-        {
-            "key": "hghhh_crown",
-            "name": "皇冠资源|AV",
-            "type": 1,
-            "api": "https://hghhh.com/api.php/provide/vod/"
-        },
-        {
-            "key": "zy018",
-            "name": "黄瓜资源|AV",
-            "type": 1,
-            "api": "https://www.zy018.com/api.php/provide/vod/"
-        },
-        {
-            "key": "apilj",
-            "name": "辣椒资源|AV",
-            "type": 1,
-            "api": "https://apilj.com/api.php/provide/vod/"
-        },
-        {
-            "key": "aosikazy",
-            "name": "奥斯卡资源|AV",
-            "type": 1,
-            "api": "https://aosikazy.com/api.php/provide/vod/"
-        },
-        {
-            "key": "apittzy",
-            "name": "探探资源|AV",
-            "type": 1,
-            "api": "https://apittzy.com/api.php/provide/vod/"
-        },
-        {
-            "key": "apilsbzy1",
-            "name": "老色逼资源|AV",
-            "type": 1,
-            "api": "https://apilsbzy1.com/api.php/provide/vod/"
-        },
-        {
-            "key": "apisesehuzy",
-            "name": "色色虎资源|AV",
-            "type": 1,
-            "api": "https://apisesehuzy.com/api.php/provide/vod/"
-        },
-        {
-            "key": "apiyutu",
-            "name": "玉兔资源|AV",
-            "type": 1,
-            "api": "https://apiyutu.com/api.php/provide/vod/"
-        },
-        {
-            "key": "fhapi9",
-            "name": "番号资源|AV",
-            "type": 1,
-            "api": "http://fhapi9.com/api.php/provide/vod/"
-        },
-        {
-            "key": "hghhh",
-            "name": "皇冠|AV",
-            "type": 1,
-            "api": "https://hghhh.com/api.php/provide/vod/"
-        },
-        {
-            "key": "jingpinx",
-            "name": "精品资源|AV",
-            "type": 1,
-            "api": "https://www.jingpinx.com/api.php/provide/vod/"
         },
         {
             "key": "kkzy",
