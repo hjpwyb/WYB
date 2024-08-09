@@ -18,7 +18,7 @@
             "key": "https://www.360zy.com/",
             "name": "360资源",
             "type": 0,
-            "api": "https://360zy.com/api.php/provide/vod",
+            "api": "https://360zy.com/api.php/provide/vod/at/xml",
             "searchable": 1
         },
         {
