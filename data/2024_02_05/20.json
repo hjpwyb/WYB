@@ -4,14 +4,14 @@
             "key": "https://www.360zy.com/",
             "name": "360资源",
             "type": 0,
-            "api": "https://360zy.com/api.php/provide/vod/at/xml"
+            "api": "https://360zy.com/api.php/provide/vod/at/xml"，
             "searchable": 1
         },
         {
             "key": "http://155zy2.com/",
             "name": "155资源站",
             "type": 0,
-            "api": "https://155api.com/api.php/provide/vod/at/xml"
+            "api": "https://155api.com/api.php/provide/vod/at/xml"，
             "searchable": 1
         },
         {
