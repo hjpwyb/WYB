@@ -4,7 +4,7 @@
             "key": "http://155zy2.com/",
             "name": "🔞155资源站",
             "type": 0,
-            "api": "https://155api.com/api.php/provide/vod/?ac=list",
+            "api": "https://155api.com/api.php/provide/vod/at/xml",
             "searchable": 1
         },
         {
