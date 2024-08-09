@@ -35,7 +35,7 @@
         },
         {
             "key": "vnzyz.com",
-            "name": 越南资源",
+            "name":" 越南资源"
             "type": 1,
             "api": "https://vnzyz.com/api.php/provide/vod/?ac=list"
         },
@@ -58,16 +58,16 @@
             "api": "http://fhapi9.com/api.php/provide/vod/"
         },
         {
-            "key": "hghhh",
-            "name": "皇冠|AV",
+            "key": "360zy.com",
+            "name": "360资源",
             "type": 1,
-            "api": "https://hghhh.com/api.php/provide/vod/"
+            "api": "https://360zy.com/api.php/provide/vod/at/json"
         },
         {
-            "key": "jingpinx",
-            "name": "精品资源|AV",
+            "key": "https://jingpinx.com",
+            "name": "精品资源",
             "type": 1,
-            "api": "https://www.jingpinx.com/api.php/provide/vod/"
+            "api": "https://www.jingpinx.com/api.php/provide/vod/?ac=list"
         },
         {
             "key": "kkzy",
