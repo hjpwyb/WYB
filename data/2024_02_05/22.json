@@ -49,7 +49,7 @@
             "key": "apiyutu",
             "name": "玉兔资源|AV",
             "type": 1,
-            "api": "https://apiyutu.com/api.php/provide/vod/"
+            "api": "https://apiyutu.com/api.php/provide/vod/?ac=list"
         },
         {
             "key": "fhapi9",
@@ -64,16 +64,16 @@
             "api": "https://360zy.com/api.php/provide/vod/at/json"
         },
         {
-            "key": "https://jingpinx.com",
-            "name": "精品资源",
+            "key": "askzycdn.com",
+            "name": "奥斯卡资源",
             "type": 1,
-            "api": "https://www.jingpinx.com/api.php/provide/vod/?ac=list"
+            "api": "https://aosikazy.com/api.php/provide/vod/?ac=list"
         },
         {
-            "key": "kkzy",
-            "name": "KK写真资源|AV",
+            "key": "www.kkzy4.com/",
+            "name": "Kk资源",
             "type": 1,
-            "api": "https://kkzy.me/api.php/provide/vod/"
+            "api": "https://kkzy.me/api.php/provide/vod/at/xml/?ac=list"
         },
         {
             "key": "lbapiby",
