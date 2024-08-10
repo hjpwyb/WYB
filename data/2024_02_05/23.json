@@ -92,7 +92,14 @@
             "name": "奶香香|AV",
             "type": 1,
             "api": "https://Naixxzy.com/api.php/provide/vod/"
+        },       
+        {
+            "key": "naixxzy.com",
+            "name": "奶香香资源",
+            "type": 1,
+            "api": "https://Naixxzy.com/api.php/provide/vod/?ac=list"
         },
+        
         {
             "key": "91md",
             "name": "91麻豆|AV",
