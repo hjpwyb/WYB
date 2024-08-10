@@ -70,10 +70,10 @@
             "api": "https://aosikazy.com/api.php/provide/vod/?ac=list"
         },
         {
-            "key": "www.kkzy4.com/",
+            "key": "kkzy4/",
             "name": "Kk资源",
             "type": 1,
-            "api": "https://kkzy.me/api.php/provide/vod/at/xml/?ac=list"
+            "api": "https://kkzy.me/api.php/provide/vod/?ac=list"
         },
         {
             "key": "lbapiby",
@@ -116,7 +116,7 @@
             "key": "shayuapi",
             "name": "鲨鱼资源|AV",
             "type": 1,
-            "api": "https://shayuapi.com/api.php/provide/vod/"
+            "api": "https://shayuapi.com/api.php/provide/vod/at/json/?ac=list"
         },
         {
             "key": "slapibf",
