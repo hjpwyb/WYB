@@ -94,10 +94,10 @@
             "api": "https://Naixxzy.com/api.php/provide/vod/"
         },       
         {
-            "key": "naixxzy.com",
-            "name": "奶香香资源",
+            "key": "jkunzy",
+            "name": "jkun资源",
             "type": 1,
-            "api": "https://Naixxzy.com/api.php/provide/vod/?ac=list"
+            "api": "https://jkunzyapi.com/api.php/provide/vod"
         },
         
         {
