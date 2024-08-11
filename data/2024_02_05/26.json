@@ -6,6 +6,20 @@
             "type": 0,
             "api": "https://360zy.com/api.php/provide/vod/at/xml",
             "searchable": 1
+        },        
+        {
+            "key": "heimue",
+            "name": "黑木耳资源",
+            "type": 0,
+            "api": "https://json.heimuer.xyz/api.php/provide/vod/?ac=list",
+            "searchable": 1
+        },
+        {
+            "key": "heimue",
+            "name": "黑木耳资源",
+            "type": 0,
+            "api": "https://xml.heimuer.xyz/api.php/provide/vod/at/xml/?ac=list",
+            "searchable": 1
         },
         {
             "key": "http://155zy2.com/",
