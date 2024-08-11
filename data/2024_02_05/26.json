@@ -36,11 +36,17 @@
             "searchable": 1
         },
         {
-            "key": "yycmszyw.com",
+            "key": "yycmszyw",
             "name": "优优资源",
             "type": 1,
             "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/json"
         },
+        {
+            "key": "yycmszyw",
+            "name": "优优资源",
+            "type": 1,
+            "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/xml/"
+        },  
         {
             "key": "www.avre06.com/",
             "name": "黄瓜资源",
