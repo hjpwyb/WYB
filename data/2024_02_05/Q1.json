@@ -20,6 +20,13 @@
             "type": 0,
             "api": "https://xml.heimuer.xyz/api.php/provide/vod/at/xml/?ac=list",
             "searchable": 1
+        },        
+        {
+            "key": "hsck",
+            "name": "黄色仓库",
+            "type": 0,
+            "api": "http://234444.xyz/api.php/provide/vod/",
+            "searchable": 1
         },
         {
             "key": "http://155zy2.com/",
