@@ -21,13 +21,15 @@
             "api": "https://xml.heimuer.xyz/api.php/provide/vod/at/xml/?ac=list",
             "searchable": 1
         },        
-        {
-            "key": "hsck",
-            "name": "黄色仓库",
-            "type": 0,
-            "api": "http://234444.xyz/api.php/provide/vod/",
-            "searchable": 1
-        },
+        {   "key":"黄色仓库(采集)🔞",
+            "name":"🔞黄色仓库(采集)🔗💯",
+            "type":1,
+            "api":"http://234444.xyz/api.php/provide/vod/",
+            "searchable":1,
+            "quickSearch":1, 
+            "categories": [],
+            "style": {"type": "rect","ratio": 1.6}
+},        
         {
             "key": "http://155zy2.com/",
             "name": "155资源站",
