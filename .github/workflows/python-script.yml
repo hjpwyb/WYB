@@ -23,4 +23,14 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/aaa/test1.py
+          python scripts/aaa/test1.py  # 确保这是 Python 脚本的路径
+
+      - name: Commit generated m3u files
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add scripts/aaa/*.m3u  # 确保路径与实际文件位置匹配
+          git commit -m 'Add generated m3u files'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
