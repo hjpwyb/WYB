@@ -1,0 +1,26 @@
+name: Run Python Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天午夜 12 点执行一次
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 虚拟环境
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Python script
+        run: |
+          python /volume1/docker/python_scripts/aaa/test1.py
