@@ -23,14 +23,19 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/aaa/test1.py  # 确保这是 Python 脚本的路径
+          python scripts/aaa/test1.py
 
-      - name: Commit generated m3u files
+      - name: Check for generated files
+        run: |
+          ls -la scripts/aaa/  # 列出目录中的所有文件，确认 M3U 文件是否存在
+
+      - name: Configure Git
         run: |
           git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
-          git add scripts/aaa/*.m3u  # 确保路径与实际文件位置匹配
-          git commit -m 'Add generated m3u files'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Commit and push M3U files
+        run: |
+          git add scripts/aaa/*.m3u
+          git commit -m "Add generated M3U files" || echo "No changes to commit"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
