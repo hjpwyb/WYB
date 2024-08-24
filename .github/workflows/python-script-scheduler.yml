@@ -14,7 +14,7 @@ jobs:
 
       - name: List repository contents
         run: |
-          ls -la scripts/bbb/
+          ls -la scripts/bbb/  # 确保路径正确
 
       - name: Set up Python
         uses: actions/setup-python@v5  # 更新到最新版本
@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/bbb/baba2.py
+          python scripts/bbb/baba2.py  # 使用正确的文件路径
 
       - name: Check for generated files
         run: |
