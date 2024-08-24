@@ -5,12 +5,8 @@ import os
 
 # 获取子页面链接
 def get_subpage_links(main_url):
-    try:
-        response = requests.get(main_url)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"请求错误: {e}")
-        return []
+    response = requests.get(main_url)
+    response.raise_for_status()
 
     soup = BeautifulSoup(response.text, 'html.parser')
     links = soup.find_all('a', href=True)
@@ -26,12 +22,8 @@ def get_subpage_links(main_url):
 
 # 从子页面提取 M3U8 链接及其他信息
 def extract_m3u8_links(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"请求错误: {e}")
-        return "default_title.m3u", []
+    response = requests.get(url)
+    response.raise_for_status()
 
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -49,11 +41,9 @@ def extract_m3u8_links(url):
 
         # 生成文件名
         safe_title = re.sub(r'[<>:"/\\|?*]', '', title)
-        filename = f"{safe_title}_{episode_info}_{rating_info}.m3u"
-        # 确保文件名长度不超过操作系统限制
-        filename = filename[:255]
+        filename = f"scripts/aaa/{safe_title}_{episode_info}_{rating_info}.m3u"
     else:
-        filename = "default_title.m3u"
+        filename = "scripts/aaa/default_title.m3u"
 
     # 查找所有 <a> 标签内的播放链接
     m3u8_links = []
@@ -68,17 +58,18 @@ def extract_m3u8_links(url):
 
 # 保存 M3U8 链接到文件
 def save_m3u8_links_to_file(filename, m3u8_links):
-    try:
-        with open(filename, 'w') as file:
-            file.write("#EXTM3U\n")
-            for episode_title, link in m3u8_links:
-                # 移除 $ 和后续部分
-                cleaned_title = episode_title.split('$')[0]
-                file.write(f"#EXTINF:-1,{cleaned_title}\n")
-                file.write(f"{link}\n")
-        print(f"M3U8 链接已成功写入 {filename} 文件中")
-    except IOError as e:
-        print(f"文件写入错误: {e}")
+    # 确保目录存在
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+
+    with open(filename, 'w') as file:
+        file.write("#EXTM3U\n")
+        for episode_title, link in m3u8_links:
+            cleaned_title = episode_title.split('$')[0]
+            file.write(f"#EXTINF:-1,{cleaned_title}\n")
+            file.write(f"{link}\n")
+    
+    print(f"M3U8 链接已成功写入 {filename} 文件中")
+    print(f"文件路径：{os.path.abspath(filename)}")  # 打印文件的绝对路径
 
 # 主函数
 def main():
