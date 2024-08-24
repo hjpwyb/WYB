@@ -23,4 +23,4 @@ jobs:
 
       - name: Run Python script
         run: |
-          python /volume1/docker/python_scripts/aaa/test1.py
+          python scripts/aaa/test1.py
