@@ -12,6 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4  # 更新到最新版本
 
+      - name: List repository contents
+        run: |
+          ls -la scripts/bbb/
+
       - name: Set up Python
         uses: actions/setup-python@v5  # 更新到最新版本
         with:
@@ -27,14 +31,14 @@ jobs:
 
       - name: Check for generated files
         run: |
-          ls -la scripts/bbb/  # 列出目录中的所有文件，确认生成的 M3U 文件是否存在
+          ls -la scripts/bbb/  # 列出目录中的所有文件，确认 M3U 文件是否存在
 
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
 
-      - name: Commit and push M3U files
+      - name: Commit and push changes
         run: |
           git add scripts/bbb/*.m3u || echo "No M3U files found to add"
           git commit -m "Add generated M3U files" || echo "No changes to commit"
