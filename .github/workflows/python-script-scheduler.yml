@@ -1,0 +1,41 @@
+name: Run Python Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天午夜 12 点执行一次
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 虚拟环境
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # 更新到最新版本
+
+      - name: Set up Python
+        uses: actions/setup-python@v5  # 更新到最新版本
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Python script
+        run: |
+          python scripts/bbb/baba2.py
+
+      - name: Check for generated files
+        run: |
+          ls -la scripts/bbb/  # 列出目录中的所有文件，确认生成的 M3U 文件是否存在
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Commit and push M3U files
+        run: |
+          git add scripts/bbb/*.m3u || echo "No M3U files found to add"
+          git commit -m "Add generated M3U files" || echo "No changes to commit"
+          git push
