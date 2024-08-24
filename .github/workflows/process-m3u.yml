@@ -16,8 +16,7 @@ jobs:
 
       - name: Run your script
         run: |
-          # 你的 Python 脚本或其他命令
-          python scripts/bbb/your_script.py
+          python3 scripts/bbb/baba2.py
 
       - name: Verify M3U files
         run: |
