@@ -2,28 +2,35 @@ name: Run Python Script
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天午夜 12 点执行一次
+    - cron: '0 16 * * *'  # 根据 UTC 时间，调整到本地午夜 0 点运行
   workflow_dispatch:  # 允许手动触发
 
 jobs:
   run-script:
     runs-on: ubuntu-latest  # 使用最新的 Ubuntu 虚拟环境
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # 更新到最新版本
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5  # 更新到最新版本
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
+      
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4
-
+        run: pip install -r requirements.txt
+        
       - name: Run Python script
-        run: |
-          python scripts/aaa/test1.py
+        run: python scripts/aaa/test1.py
 
       - name: Check for generated files
         run: |
@@ -36,6 +43,10 @@ jobs:
 
       - name: Commit and push M3U files
         run: |
-          git add scripts/aaa/*.m3u || echo "No M3U files found to add"
-          git commit -m "Add generated M3U files" || echo "No changes to commit"
-          git push
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add scripts/aaa/*.m3u
+            git commit -m "Add generated M3U files"
+            git push
+          fi
