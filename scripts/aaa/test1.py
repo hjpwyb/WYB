@@ -2,6 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import re
+import random
 
 # 删除指定文件夹中的所有 .m3u 文件
 def delete_old_m3u_files(folder_path):
@@ -13,11 +14,20 @@ def delete_old_m3u_files(folder_path):
 
 # 获取子页面链接
 def get_subpage_links(main_url):
+    # 添加防缓存的请求头
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
     }
-    response = requests.get(main_url, headers=headers)
+    
+    def get_random_url(url):
+        random_query = f"?t={random.randint(1, 100000)}"
+        return url + random_query
+    
+    url_with_random_query = get_random_url(main_url)
+    response = requests.get(url_with_random_query, headers=headers)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -34,18 +44,23 @@ def get_subpage_links(main_url):
 
 # 从子页面提取 M3U8 链接及其他信息
 def extract_m3u8_links(url):
+    # 添加防缓存的请求头
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
     }
-    response = requests.get(url, headers=headers)
+    
+    def get_random_url(url):
+        random_query = f"?t={random.randint(1, 100000)}"
+        return url + random_query
+    
+    url_with_random_query = get_random_url(url)
+    response = requests.get(url_with_random_query, headers=headers)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.content, 'html.parser')
-
-    # 输出网页内容，便于调试
-    print(f"Processing {url}...")
-    print(soup.prettify())  # 调试输出网页内容
 
     # 提取标题、集数和评分
     info_div = soup.find('div', class_='vodInfo')
@@ -102,9 +117,10 @@ def main():
     for main_url in base_urls:
         subpage_urls = get_subpage_links(main_url)
         for url in subpage_urls:
+            print(f"Processing {url}...")
             filename, m3u8_links = extract_m3u8_links(url)
             if m3u8_links:
-                save_m3u8_links_to_file(os.path.join(folder_path, filename), m3u8_links)
+                save_m3u8_links_to_file(filename, m3u8_links)
             else:
                 print(f"No M3U8 links found for {url}")
 
