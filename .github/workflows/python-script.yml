@@ -34,12 +34,8 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
 
-      - name: Commit and push M3U files
+      - name: Commit and push changes
         run: |
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add scripts/aaa/*.m3u
-            git commit -m "Add generated M3U files"
-            git push
-          fi
+          git add -A  # 添加所有更改，包括删除的文件
+          git commit -m "Update M3U files"
+          git push
