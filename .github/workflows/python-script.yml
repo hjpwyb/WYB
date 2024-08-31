@@ -1,36 +1,41 @@
-name: Update M3U Files
+name: Run Python Script
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 每小时运行一次
+    - cron: '0 16 * * *'  # 根据 UTC 时间，调整到本地午夜 0 点运行
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
-  update-files:
-    runs-on: ubuntu-latest
+  run-script:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 虚拟环境
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-
+          python-version: '3.9'
+      
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # 如果需要安装依赖
+          pip install requests beautifulsoup4
+        
+      - name: Run Python script
+        run: python scripts/aaa/test1.py
 
-      - name: Run script to generate M3U files
+      - name: Check for generated files
         run: |
-          chmod +x generate_m3u.sh  # 确保脚本有可执行权限
-          ./generate_m3u.sh
+          ls -la scripts/aaa/  # 列出目录中的所有文件，确认 M3U 文件是否存在
 
-      - name: Commit changes
+      - name: Configure Git
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add -A
-          git commit -m "Update M3U files" || echo "No changes to commit"
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add -A  # 添加所有更改，包括删除的文件
+          git commit -m "Update M3U files"
           git push
