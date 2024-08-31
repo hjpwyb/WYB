@@ -37,5 +37,5 @@ jobs:
       - name: Commit and push changes
         run: |
           git add -A  # 添加所有更改，包括删除的文件
-          git commit -m "Update M3U files"
-          git push
+          git commit -m "Update M3U files" || echo "No changes to commit"
+          git push || echo "Nothing to push"
