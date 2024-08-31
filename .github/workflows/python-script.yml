@@ -25,6 +25,10 @@ jobs:
       - name: Run Python script
         run: python scripts/aaa/test1.py
 
+      - name: Force update file timestamps
+        run: |
+          touch scripts/aaa/*.m3u
+
       - name: Check for generated files
         run: |
           ls -la scripts/aaa/  # 列出目录中的所有文件，确认 M3U 文件是否存在
