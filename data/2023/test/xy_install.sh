@@ -229,7 +229,7 @@ function get_config_path() {
     done
     if [ ${#results[@]} -eq 0 ]; then
         #read -p "没有找到任何符合条件的容器，请输入docker_name： " docker_name
-        read -p "请输入alist/g-box的配置目录路径：(直接回车将使用/etc/xiaoya目录) " config_dir
+        read -erp "请输入alist/g-box的配置目录路径：(直接回车将使用/etc/xiaoya目录) " config_dir
         config_dir=${config_dir:-"/etc/xiaoya"}
         check_path $config_dir
     elif [ ${#results[@]} -eq 1 ]; then
@@ -731,37 +731,37 @@ function user_select4() {
         1)
             emby_ailg="emby-ailg.mp4"
             emby_img="emby-ailg.img"
-            space_need=110
+            space_need=140
             break
             ;;
         2)
             emby_ailg="emby-ailg-lite.mp4"
             emby_img="emby-ailg-lite.img"
-            space_need=95
+            space_need=125
             break
             ;;
         3)
             emby_ailg="jellyfin-ailg.mp4"
             emby_img="jellyfin-ailg.img"
-            space_need=130
+            space_need=160
             break
             ;;
         4)
             emby_ailg="jellyfin-ailg-lite.mp4"
             emby_img="jellyfin-ailg-lite.img"
-            space_need=100
+            space_need=130
             break
             ;;
         5)
             emby_ailg="jellyfin-10.9.6-ailg.mp4"
             emby_img="jellyfin-10.9.6-ailg.img"
-            space_need=130
+            space_need=160
             break
             ;;
         6)
             emby_ailg="jellyfin-10.9.6-ailg-lite.mp4"
             emby_img="jellyfin-10.9.6-ailg-lite.img"
-            space_need=100
+            space_need=130
             break
             ;;
         [Bb])
@@ -782,7 +782,7 @@ function user_select4() {
 
     if [[ $st_alist =~ "未安装" ]] && [[ $st_gbox =~ "未安装" ]]; then
         ERROR "请先安装G-Box/小雅ALIST老G版，再执行本安装！"
-        read -p '按任意键返回主菜单'
+        read -erp '按任意键返回主菜单'
         main
         return
     fi
@@ -793,6 +793,9 @@ function user_select4() {
     docker exec $docker_name ali_clear -1 > /dev/null 2>&1
     echo -e "\033[1;35m请输入您的小雅emby/jellyfin镜像存放路径（请确保大于${space_need}G剩余空间！）:\033[0m"
     read -r image_dir
+    echo -e "\033[1;35m请输入镜像下载后需要扩容的空间（单位：GB，默认60G可直接回车，请确保大于${space_need}G剩余空间！）:\033[0m"
+    read -r expand_size
+    expand_size=${expand_size:-60}
     check_path $image_dir
     check_path $image_dir
     if [ -f "${image_dir}/${emby_ailg}" ] || [ -f "${image_dir}/${emby_img}" ]; then
@@ -881,10 +884,10 @@ function user_select4() {
     if [ "$local_size" -eq "$remote_size" ]; then
         if [ -f "$image_dir/$emby_img" ]; then
             docker run -i --privileged --rm --net=host -v ${image_dir}:/ailg -v $media_dir:/mount_emby ailg/ggbond:latest \
-                exp_ailg "/ailg/$emby_img" "/mount_emby" 30
+                exp_ailg "/ailg/$emby_img" "/mount_emby" ${expand_size}
         else
             docker run -i --privileged --rm --net=host -v ${image_dir}:/ailg -v $media_dir:/mount_emby ailg/ggbond:latest \
-                exp_ailg "/ailg/$emby_ailg" "/mount_emby" 30
+                exp_ailg "/ailg/$emby_ailg" "/mount_emby" ${expand_size}
         fi
     else
         INFO "本地已有镜像，无需重新下载！"
@@ -1134,24 +1137,23 @@ happy_emby() {
 }
 
 get_img_path() {
-    read -erp "请输入您要挂载的镜像的完整路径：" img_path
+    read -erp "请输入您要挂载的镜像的完整路径：（示例：/volume3/emby/emby-ailg-lite.img）" img_path
     img_name=$(basename "${img_path}")
     case "${img_name}" in
     "emby-ailg.img" | "emby-ailg-lite.img" | "jellyfin-ailg.img" | "jellyfin-ailg-lite.img" | "jellyfin-10.9.6-ailg-lite.img" | "jellyfin-10.9.6-ailg.img") ;;
-
     *)
         ERROR "您输入的不是老G的镜像，或已改名，确保文件名正确后重新运行脚本！"
         exit 1
         ;;
     esac
     img_mount=${img_path%/*.img}/emby-xy
-    read -p "$(echo img_mount is: $img_mount)"
+    # read -p "$(echo img_mount is: $img_mount)"
     check_path ${img_mount}
 }
 
 mount_img() {
     declare -ga img_order
-    search_img="emby/embyserver|amilys/embyserver|nyanmisaka/jellyfin"
+    search_img="emby/embyserver|amilys/embyserver|nyanmisaka/jellyfin|jellyfin/jellyfin"
     get_emby_status > /dev/null
     update_ailg ailg/ggbond:latest
     if [ ! -f /usr/bin/mount_ailg ]; then
@@ -1238,8 +1240,79 @@ mount_img() {
     fi
 }
 
+expand_img() {
+    declare -ga img_order
+    search_img="emby/embyserver|amilys/embyserver|nyanmisaka/jellyfin|jellyfin/jellyfin"
+    get_emby_status > /dev/null
+    update_ailg ailg/ggbond:latest
+    if [ ! -f /usr/bin/mount_ailg ]; then
+        docker cp xiaoya_jf:/var/lib/mount_ailg "/usr/bin/mount_ailg"
+        chmod 777 /usr/bin/mount_ailg
+    fi
+    if [ ${#emby_list[@]} -ne 0 ]; then
+        for op_emby in "${!emby_list[@]}"; do
+            if docker inspect --format '{{ range .Mounts }}{{ println .Source .Destination }}{{ end }}' "${op_emby}" | grep -qE "\.img /media\.img"; then
+                img_order+=("${op_emby}")
+            fi
+        done
+        if [ ${#img_order[@]} -ne 0 ]; then
+            echo -e "\033[1;37m请选择你要扩容的镜像：\033[0m"
+            for index in "${!img_order[@]}"; do
+                name=${img_order[$index]}
+                printf "[ %-1d ] 容器名: \033[1;33m%-20s\033[0m 镜像路径: \033[1;33m%s\033[0m\n" $((index + 1)) $name ${emby_list[$name]}
+            done
+            printf "[ 0 ] \033[1;33m手动输入需要扩容的老G速装版镜像的完整路径\n\033[0m"
+            while :; do
+                read -erp "输入序号：" img_select
+                WARN "注：扩容后的镜像体积不能超过物理磁盘空间的70%！当前安装完整小雅emby扩容后镜像不低于160G！建议扩容至200G及以上！"
+                read -erp "输入您要扩容的大小（单位：GB）：" expand_size
+                if [ "${img_select}" -gt 0 ] && [ "${img_select}" -le ${#img_order[@]} ]; then
+                    img_path=${emby_list[${img_order[$((img_select - 1))]}]}
+                    img_mount=${img_path%/*.img}/emby-xy
+                    emby_name=${img_order[$((img_select - 1))]}
+                    expand_diy_img_path
+                    break
+                elif [ "${img_select}" -eq 0 ]; then
+                    get_img_path
+                    expand_diy_img_path
+                    losetup -d "${loop_order}" > /dev/null 2>&1
+                    break
+                else
+                    ERROR "您输入的序号无效，请输入一个在 0 到 ${#img_order[@]} 的数字。"
+                fi
+            done
+        else
+            get_img_path
+            expand_diy_img_path
+            losetup -d "${loop_order}" > /dev/null 2>&1
+        fi
+    else
+        get_img_path
+        expand_diy_img_path
+        losetup -d "${loop_order}" > /dev/null 2>&1
+    fi
+}
+
+expand_diy_img_path() { 
+    image_dir="$(dirname "${img_path}")"
+    emby_img="$(basename "${img_path}")"
+    for op_emby in "${img_order[@]}"; do
+        docker stop "${op_emby}"
+        INFO "${op_emby}容器已关闭！"
+    done
+    docker ps -a | grep 'ddsderek/xiaoya-emd' | awk '{print $1}' | xargs docker stop
+    INFO "小雅爬虫容器已关闭！"
+    [[ $(basename "${img_path}") == emby*.img ]] && loop_order=/dev/loop7 || loop_order=/dev/loop6
+    umount "${loop_order}" > /dev/null 2>&1
+    losetup -d "${loop_order}" > /dev/null 2>&1
+    mount | grep -qF "${img_mount}" && umount "${img_mount}"
+    docker run -i --privileged --rm --net=host -v ${image_dir}:/ailg -v ${img_mount}:/mount_emby ailg/ggbond:latest \
+        exp_ailg "/ailg/$emby_img" "/mount_emby" ${expand_size}
+    [ $? -eq 0 ] && docker start ${emby_name} || WARN "如扩容失败，请重启设备手动关闭emby/jellyfin和小雅爬虫容器后重试！"
+}
+
 sync_config() {
-    if [[ $st_alist =~ "未安装" ]]; then
+    if [[ $st_alist =~ "未安装" ]] && [[ $st_gbox =~ "未安装" ]]; then
         ERROR "请先安装小雅ALIST老G版，再执行本安装！"
         main
         return
@@ -1419,6 +1492,8 @@ user_selecto() {
         echo -e "\n"
         echo -e "\033[1;32m5、老G的alist/G-box自动更新\033[0m"
         echo -e "\n"
+        echo -e "\033[1;32m6、速装emby/jellyfin镜像扩容\033[0m"
+        echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
         read -erp "请输入您的选择（1-2，按b返回上级菜单或按q退出）；" fo_select
         case "$fo_select" in
@@ -1440,6 +1515,10 @@ user_selecto() {
             ;;
         5)
             sync_plan
+            break
+            ;;
+        6)
+            expand_img
             break
             ;;
         [Bb])
@@ -1491,8 +1570,8 @@ function sync_plan() {
 
     while :; do
         echo -e "\033[1;37m请设置您希望${docker_name}每次检查更新的时间：\033[0m"
-        read -ep "注意：24小时制，格式：\"hh:mm\"，小时分钟之间用英文冒号分隔，示例：23:45）：" sync_time
-        read -ep "您希望几天检查一次？（单位：天）" sync_day
+        read -erp "注意：24小时制，格式：\"hh:mm\"，小时分钟之间用英文冒号分隔，示例：23:45）：" sync_time
+        read -erp "您希望几天检查一次？（单位：天）" sync_day
         [[ -f /etc/synoinfo.conf ]] && is_syno="syno"
         time_value=${sync_time//：/:}
         hour=${time_value%%:*}
@@ -1519,7 +1598,7 @@ function sync_plan() {
         echo -e "\n"	
         INFO "已经添加下面的记录到crontab定时任务，每${sync_day}天更新一次${docker_name}镜像"
         echo -e "\033[1;35m"
-        echo "$(cat /tmp/cronjob.tmp| grep xy_install )"
+        grep xy_install /tmp/cronjob.tmp
         echo -e "\033[0m"
         INFO "您可以在 > ${config_dir}/cron.log < 中查看同步执行日志！"
         echo -e "\n"
@@ -1536,7 +1615,7 @@ function sync_plan() {
         echo -e "\n"	
         INFO "已经添加下面的记录到crontab定时任务，每$4天更新一次config"
         echo -e "\033[1;35m"
-        echo "$(cat /etc/crontab | grep xy_install )"
+        grep xy_install /tmp/cronjob.tmp
         echo -e "\033[0m"
         INFO "您可以在 > ${config_dir}/cron.log < 中查看同步执行日志！"
         echo -e "\n"
@@ -1668,7 +1747,7 @@ function main() {
     echo -e "\n"
     echo -e "\033[1;35m4、安装/重装小雅emby/jellyfin（老G速装版）\033[0m"
     echo -e "\n"
-    echo -e "\033[1;35m5、安装/重装G-Box（实验功能：支持小雅alist+tvbox+emby/jf的融合怪）\033[0m"
+    echo -e "\033[1;35m5、安装/重装G-Box（融合小雅alist+tvbox+emby/jellyfin）\033[0m"
     echo -e "\n"
     echo -e "\033[1;35mo、有问题？选我看看\033[0m"
     echo -e "\n"
@@ -1776,7 +1855,24 @@ rm_alist() {
 
 choose_mirrors() {
     [ -z "${config_dir}" ] && get_config_path check_docker
-    mirrors=("docker.io" "docker.fxxk.dedyn.io" "docker.adysec.com" "registry-docker-hub-latest-9vqc.onrender.com" "docker.chenby.cn" "dockerproxy.com" "hub.uuuadc.top" "docker.jsdelivr.fyi" "docker.registry.cyou" "dockerhub.anzu.vip")
+    mirrors=(
+        "docker.io"
+        "docker.chenby.cn"
+        "docker.nastool.de"
+        "hub.rat.dev"
+        "docker.fxxk.dedyn.io"
+        "docker.adysec.com"
+        "registry-docker-hub-latest-9vqc.onrender.com"
+        "docker.chenby.cn"
+        "dockerproxy.com"
+        "hub.uuuadc.top"
+        "docker.jsdelivr.fyi"
+        "docker.registry.cyou"
+        "dockerhub.anzu.vip"
+        "docker.1panel.live"
+        "docker.aidenxin.xyz"
+        "dhub.kubesre.xyz"
+        )
     declare -A mirror_total_delays
     if [ ! -f "${config_dir}/docker_mirrors.txt" ]; then
         echo -e "\033[1;32m正在进行代理测速，为您选择最佳代理……\033[0m"
