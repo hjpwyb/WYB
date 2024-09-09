@@ -23,12 +23,12 @@ jobs:
       run: pip install requests
 
     - name: Run Python script to update proxy list
-      run: python add_port_script.py
+      run: python scripts/bbb/add_port_script.py  # 确保此路径和文件名与仓库中的一致
 
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add bestproxy_with_port.txt
-        git commit -m "Update bestproxy_with_port.txt with port 443"
+        git add scripts/bbb/port.txt
+        git commit -m "Update port.txt with port 443"
         git push
