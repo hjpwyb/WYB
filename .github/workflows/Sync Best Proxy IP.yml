@@ -23,7 +23,7 @@ jobs:
       run: pip install requests
 
     - name: Run Python script to update proxy list
-      run: python your_script.py
+      run: python add_port_script.py
 
     - name: Commit and push changes
       run: |
