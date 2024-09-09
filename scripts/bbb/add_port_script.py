@@ -1,7 +1,7 @@
 import requests
 
 # 源文件的 GitHub 原始地址
-source_url = "https://raw.githubusercontent.com/ymyuuu/IPDB/main/proxy.txt"
+source_url = "https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestproxy.txt"
 
 # 目标文件路径
 destination_file = "bestproxy_with_port.txt"
