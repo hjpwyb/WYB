@@ -18,7 +18,7 @@
             "key": "jinyingzy",
             "name": "金鹰资源",
             "type": 0,
-            "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/json",
+            "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/",
             "searchable": 1
         }       
     ]
