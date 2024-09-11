@@ -1,0 +1,25 @@
+{
+    "sites": [
+        {
+            "key": "https://www.360zy.com/",
+            "name": "360资源",
+            "type": 0,
+            "api": "https://360zy.com/api.php/provide/vod/at/xml",
+            "searchable": 1
+        },
+        {
+            "key": "heimue",
+            "name": "黑木耳资源",
+            "type": 0,
+            "api": "https://json.heimuer.xyz/api.php/provide/vod/?ac=list",
+            "searchable": 1
+        },
+        {
+            "key": "jinyingzy",
+            "name": "金鹰资源",
+            "type": 0,
+            "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/",
+            "searchable": 1
+        }       
+    ]
+}
