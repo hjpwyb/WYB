@@ -15,10 +15,10 @@
             "searchable": 1
         },
         {
-            "key": "heimue",
-            "name": "黑木耳资源",
+            "key": "jinyingzy",
+            "name": "金鹰资源",
             "type": 0,
-            "api": "https://xml.heimuer.xyz/api.php/provide/vod/at/xml/?ac=list",
+            "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/",
             "searchable": 1
         },        
         {   "key":"黄色仓库(采集)🔞",
