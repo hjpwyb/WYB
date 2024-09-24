@@ -15,6 +15,13 @@
             "searchable": 1
         },
         {
+            "key": "wolongzy",
+            "name": "卧龙资源",
+            "type": 0,
+            "api": "https://collect.wolongzy.cc/api.php/provide/vod/at/xml/?ac=list",
+            "searchable": 1
+        },    
+        {
             "key": "jinyingzy",
             "name": "金鹰资源",
             "type": 0,
