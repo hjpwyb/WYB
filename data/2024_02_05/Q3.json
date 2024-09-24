@@ -8,10 +8,10 @@
             "searchable": 1
         },
         {
-            "key": "heimue",
-            "name": "黑木耳资源",
+            "key": "haohuazy",
+            "name": "豪华资源",
             "type": 0,
-            "api": "https://json.heimuer.xyz/api.php/provide/vod/?ac=list",
+            "api": "https://hhzyapi.com/api.php/provide/vod/at/xml",
             "searchable": 1
         },
         {
