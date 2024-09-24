@@ -57,10 +57,10 @@
             "api": "https://www.avre06.com/api.php/Prodao/vod/?ac=list"
         },
         {
-            "key": "vnzyz.com",
-            "name": "越南资源",
+            "key": "gqzy.me",
+            "name": "搞起资源",
             "type": 1,
-            "api": "https://vnzyz.com/api.php/provide/vod/?ac=list"
+            "api": "https://caiji.gqjiexi.com/api.php/provide/vod/at/xml/"
         },
         {
             "key": "apisesehuzy",
@@ -81,10 +81,10 @@
             "api": "http://fhapi9.com/api.php/provide/vod/"
         },
         {
-            "key": "360zy.com",
-            "name": "360资源",
+            "key": "thzy1.me",
+            "name": "桃花资源",
             "type": 1,
-            "api": "https://360zy.com/api.php/provide/vod/at/json"
+            "api": "https://thzy1.me/api.php/provide/vod/at/xml"
         },
         {
             "key": "askzycdn.com",
@@ -93,10 +93,10 @@
             "api": "https://aosikazy.com/api.php/provide/vod/?ac=list"
         },
         {
-            "key": "kkzy4/",
-            "name": "Kk资源",
+            "key": "semaozy",
+            "name": "色猫资源",
             "type": 1,
-            "api": "https://kkzy.me/api.php/provide/vod/?ac=list"
+            "api": "https://caiji.semaozy.net/inc/api.php"
         },
         {
             "key": "lbapiby",
