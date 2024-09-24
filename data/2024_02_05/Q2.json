@@ -45,16 +45,10 @@
             "searchable": 1
         },
         {
-            "key": "yycmszyw",
-            "name": "优优资源",
-            "type": 1,
-            "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/xml/"
-        },
-        {
             "key": "jingpinx",
             "name": "精品X资源",
             "type": 1,
-            "api": "https://wwwjingpinx.com/api.php/provide/vod/at/xml"
+            "api": "https://www.jingpinx.com/api.php/provide/vod/?ac=list"
         },
         {
             "key": "www.avre06.com/",
