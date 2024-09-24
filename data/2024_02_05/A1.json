@@ -36,13 +36,6 @@
             "searchable": 1
         }, 
         {
-            "key": "ikunzyapi",
-            "name": "ikun资源",
-            "type": 0,
-            "api": "https://ikunzyapi.com/api.php/provide/vod/at/json",
-            "searchable": 1
-        }, 
-        {
             "key": "wolongzy",
             "name": "卧龙资源",
             "type": 0,
@@ -55,6 +48,15 @@
             "type": 0,
             "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/",
             "searchable": 1
-        }       
+        },  
+        {   "key":"黄色仓库(采集)",
+            "name":"黄色仓库(采集)🔗💯",
+            "type":1,
+            "api":"http://234444.xyz/api.php/provide/vod/",
+            "searchable":1,
+            "quickSearch":1, 
+            "categories": [],
+            "style": {"type": "rect","ratio": 1.6}
+        }     
     ]
 }
