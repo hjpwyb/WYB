@@ -36,10 +36,10 @@
             "searchable": 1
         }, 
         {
-            "key": "ikun",
+            "key": "ikunzyapi",
             "name": "ikun资源",
             "type": 0,
-            "api": "https://ikunzyapi.com/api.php/seaxml/vod/at/xml",
+            "api": "https://ikunzyapi.com/api.php/provide/vod/at/json",
             "searchable": 1
         }, 
         {
