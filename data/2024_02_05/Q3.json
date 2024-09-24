@@ -48,13 +48,13 @@
             "key": "yycmszyw",
             "name": "优优资源",
             "type": 1,
-            "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/json"
+            "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/xml/"
         },
         {
-            "key": "yycmszyw",
-            "name": "优优资源",
+            "key": "jingpinx",
+            "name": "精品X资源",
             "type": 1,
-            "api": "https://jk1.yycmszywapi.cc/api.php/provide/vod/at/xml/"
+            "api": "https://wwwjingpinx.com/api.php/provide/vod/at/xml"
         },
         {
             "key": "www.avre06.com/",
