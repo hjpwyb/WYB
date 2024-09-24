@@ -15,6 +15,34 @@
             "searchable": 1
         },
         {
+            "key": "jszyapi",
+            "name": "极速资源",
+            "type": 0,
+            "api": "https://jszyapi.com/api.php/provide/vod/at/xml",
+            "searchable": 1
+        },
+        {
+            "key": "suoni",
+            "name": "索尼资源",
+            "type": 0,
+            "api": "https://suoniapi.com/api.php/provide/vod/from/snm3u8/at/xml",
+            "searchable": 1
+        },
+        {
+            "key": "huyaapi",
+            "name": "虎牙资源",
+            "type": 0,
+            "api": "https://www.huyaapi.com/api.php/provide/vod/at/xml/",
+            "searchable": 1
+        }, 
+        {
+            "key": "ikun",
+            "name": "ikun资源",
+            "type": 0,
+            "api": "https://ikunzyapi.com/api.php/seaxml/vod/at/xml",
+            "searchable": 1
+        }, 
+        {
             "key": "wolongzy",
             "name": "卧龙资源",
             "type": 0,
