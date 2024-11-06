@@ -24,12 +24,11 @@ function WARN() {
     echo -e "${WARN} ${1}"
 }
 
-# 函数：拉取镜像并统计时间
 function docker_pull() {
+    #[ -z "${config_dir}" ] && get_config_path
     local config_dir=${2:-"/etc/xiaoya"}
-    local image=$1
-    local mirrors=("docker.registry.cyou" "docker-cf.registry.cyou" "docker.jsdelivr.fyi" "dockercf.jsdelivr.fyi" "dockertest.jsdelivr.fyi" "dockerpull.com" "dockerproxy.cn" "hub.uuuadc.top" "docker.1panel.live" "hub.rat.dev" "docker.anyhub.us.kg" "docker.chenby.cn" "dockerhub.jobcher.com" "dockerhub.icu" "docker.ckyl.me" "docker.awsl9527.cn" "docker.hpcloud.cloud" "docker.m.daocloud.io" "docker.linyubo211.filegear-sg.me" "docker.fxxk.dedyn.io" "dockerhub.anzu.vip" "dockerproxy.com" "docker.mirrors.ustc.edu.cn" "docker.nju.edu.cn" "docker.io" "docker.adysec.com")
-    
+    mkdir -p "${config_dir}"
+        local mirrors=("docker.registry.cyou" "docker-cf.registry.cyou" "docker.jsdelivr.fyi" "dockercf.jsdelivr.fyi" "dockertest.jsdelivr.fyi" "dockerpull.com" "dockerproxy.cn" "hub.uuuadc.top" "docker.1panel.live" "hub.rat.dev" "docker.anyhub.us.kg" "docker.chenby.cn" "dockerhub.jobcher.com" "dockerhub.icu" "docker.ckyl.me" "docker.awsl9527.cn" "docker.hpcloud.cloud" "docker.m.daocloud.io" "docker.linyubo211.filegear-sg.me" "docker.fxxk.dedyn.io" "dockerhub.anzu.vip" "dockerproxy.com" "docker.mirrors.ustc.edu.cn" "docker.nju.edu.cn" "docker.io" "docker.adysec.com")
     if [ -s "${config_dir}/docker_mirrors.txt" ]; then
         mirrors=()
         while IFS= read -r line; do
@@ -40,65 +39,100 @@ function docker_pull() {
             printf "%s\n" "$mirror" >> "${config_dir}/docker_mirrors.txt"
         done
     fi
-
-    # 存放能下载和不能下载的代理
-    local successful_mirrors=()
-    local failed_mirrors=()
-
-    # 统计响应时间
-    for mirror in "${mirrors[@]}"; do
-        start_time=$(date +%s)
-        INFO "正在测试${mirror}代理点的连接性……"
-
-        # 测试代理点的连接性
-        if timeout 30 docker pull "${mirror}/library/hello-world:latest" > /dev/null 2>&1; then
-            end_time=$(date +%s)
-            response_time=$((end_time - start_time))
-            INFO "${mirror}代理点连通性测试正常！响应时间：${response_time}秒"
-
-            # 记录可用代理，拉取镜像并计算下载时间
-            start_time=$(date +%s)
-            INFO "正在从${mirror}拉取镜像 ${image}……"
-            if timeout 300 docker pull "${mirror}/${image}" > /dev/null 2>&1; then
-                end_time=$(date +%s)
-                download_time=$((end_time - start_time))
-                INFO "镜像 ${image} 成功拉取！下载时间：${download_time}秒"
-                successful_mirrors+=("${mirror}")
-            else
-                WARN "${mirror} 拉取镜像失败"
-                failed_mirrors+=("${mirror}")
+    if command -v timeout > /dev/null 2>&1;then
+        for mirror in "${mirrors[@]}"; do
+            INFO "正在测试${mirror}代理点的连接性……"
+            if timeout 30 docker pull "${mirror}/library/hello-world:latest"; then
+                INFO "${mirror}代理点连通性测试正常！正在为您下载镜像……"
+                for i in {1..2}; do
+                    if timeout 300 docker pull "${mirror}/${1}"; then
+                        INFO "${1} 镜像拉取成功！"
+                        sed -i "/${mirror}/d" "${config_dir}/docker_mirrors.txt"
+                        sed -i "1i ${mirror}" "${config_dir}/docker_mirrors.txt"
+                        break;
+                    else
+                        WARN "${1} 镜像拉取失败，正在进行重试..."
+                    fi
+                done
+                if [[ "${mirror}" == "docker.io" ]];then
+                    docker rmi "library/hello-world:latest"
+                    [ -n "$(docker images -q "${1}")" ] && return 0
+                else
+                    docker rmi "${mirror}/library/hello-world:latest"
+                    [ -n "$(docker images -q "${mirror}/${1}")" ] && break
+                fi
             fi
-        else
-            end_time=$(date +%s)
-            response_time=$((end_time - start_time))
-            ERROR "${mirror} 代理点连通性测试失败！"
-            failed_mirrors+=("${mirror}")
-        fi
-    done
+        done
+    else
+        timeout=20
+        for mirror in "${mirrors[@]}"; do
+            INFO "正在测试${mirror}代理点的连接性……"       
+            docker pull "${mirror}/library/hello-world:latest" || true &
+            pid=$!
+            count=0
+            while kill -0 $pid 2>/dev/null; do
+                sleep 5
+                count=$((count+5))
+                if [ $count -ge $timeout ]; then
+                    echo "Command timed out"
+                    kill $pid
+                    break
+                fi
+            done
 
-    # 输出测试结果
-    INFO "=== 拉取成功的代理 ==="
-    for success in "${successful_mirrors[@]}"; do
-        echo -e "${Green}${success}${NC}"
-    done
+            if [ $? -eq 0 ]; then
+                INFO "${mirror}代理点连通性测试正常！正在为您下载镜像……"
+                timeout=200
+                for i in {1..2}; do
+                    docker pull "${mirror}/${1}" || true &
+                    pid=$!
+                    count=0
+                    while kill -0 $pid 2>/dev/null; do
+                        sleep 5
+                        count=$((count+5))
+                        if [ $count -ge $timeout ]; then
+                            echo "Command timed out"
+                            kill $pid
+                            break
+                        fi
+                    done
+                done
+                if [[ "${mirror}" == "docker.io" ]];then
+                    docker rmi "library/hello-world:latest"
+                    if [ -n "$(docker images -q "${1}")" ]; then
+                        INFO "${1} 镜像拉取成功！"
+                        sed -i "/${mirror}/d" "${config_dir}/docker_mirrors.txt"
+                        sed -i "1i ${mirror}" "${config_dir}/docker_mirrors.txt"
+                        return 0
+                    else
+                        WARN "${1} 镜像拉取失败，正在进行重试..."
+                    fi
+                else
+                    docker rmi "${mirror}/library/hello-world:latest"
+                    if [ -n "$(docker images -q "${mirror}/${1}")" ]; then
+                        INFO "${1} 镜像拉取成功！"
+                        sed -i "/${mirror}/d" "${config_dir}/docker_mirrors.txt"
+                        sed -i "1i ${mirror}" "${config_dir}/docker_mirrors.txt"
+                        break
+                    else
+                        WARN "${1} 镜像拉取失败，正在进行重试..."
+                    fi
+                fi
+            fi
+        done
+    fi
 
-    INFO "=== 拉取失败的代理 ==="
-    for fail in "${failed_mirrors[@]}"; do
-        echo -e "${Red}${fail}${NC}"
-    done
-
-    # 返回拉取成功的镜像
-    if [ -n "$(docker images -q "${image}")" ]; then
-        INFO "${image} 镜像拉取成功!"
+    if [ -n "$(docker images -q "${mirror}/${1}")" ]; then
+        docker tag "${mirror}/${1}" "${1}"
+        docker rmi "${mirror}/${1}"
         return 0
     else
-        ERROR "所有代理均无法拉取镜像 ${image}，程序退出！"
-        exit 1
+        ERROR "已尝试所有镜像代理拉取失败，程序退出，请检查网络后再试！"
+        exit 1       
     fi
 }
 
-# 主脚本部分
-if [ -n "$1" ]; then
+if [ -n "$1" ];then
     docker_pull $1 $2
 else
     while :; do
