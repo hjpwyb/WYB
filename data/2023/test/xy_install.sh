@@ -485,6 +485,20 @@ update_ailg() {
 }
 
 function user_select1() {
+    docker_name="$(docker ps -a | grep -E 'ailg/g-box' | awk '{print $NF}' | head -n1)"
+    if [ -n "${docker_name}" ]; then
+        WARN "您已安装g-box，包含老G版alist的所有功能，无需重复安装！继续安装将自动卸载已安装的g-box容器！"
+        read -erp "是否继续安装？（确认按Y/y，否则按任意键返回！）：" ow_install
+        if [[ $ow_install == [Yy] ]]; then
+            config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${docker_name}")
+            INFO "正在停止和删除${docker_name}容器……"
+            docker rm -f $docker_name
+            INFO "$docker_name 容器已删除"
+        else
+            main
+            return
+        fi
+    fi
     echo -e "———————————————————————————————————— \033[1;33mA  I  老  G\033[0m —————————————————————————————————"
     echo -e "\n"
     echo -e "\033[1;32m1、host版 - 无🍉十全大补瓜🍉第三方播放器$NC"
@@ -1133,8 +1147,10 @@ function user_select4() {
     current_time=$(date +%s)
     elapsed_time=$(awk -v start=$start_time -v end=$current_time 'BEGIN {printf "%.2f\n", (end-start)/60}')
     INFO "${Blue}恭喜您！小雅emby/jellyfin安装完成，安装时间为 ${elapsed_time} 分钟！$NC"
-    INFO "请登陆${Blue} $host:2345/2346 ${NC}访问小雅emby/jellyfin，用户名：${Blue} xiaoya/ailg ${NC}，密码：${Blue} 1234/5678 ${NC}"
-    INFO "注：如果$host:6908/6909/5908/5909可访问，$host:2345/2346访问失败（502/500等错误），按如下步骤排障：\n\t1、检查$config_dir/emby/jellyfin_server.txt文件中的地址是否正确指向emby的访问地址，即：$host:6908/6909/5908/5909或http://127.0.0.1:6908/6909/5908/5909\n\t2、地址正确重启你的小雅alist容器即可。"
+    INFO "小雅emby请登陆${Blue} $host:2345 ${NC}访问，用户名：${Blue} xiaoya ${NC}，密码：${Blue} 1234 ${NC}"
+    INFO "小雅jellyfin请登陆${Blue} $host:2346 ${NC}访问，用户名：${Blue} ailg ${NC}，密码：${Blue} 5678 ${NC}"
+    INFO "注：Emby如果$host:6908可访问，而$host:2345访问失败（502/500等错误），按如下步骤排障：\n\t1、检查$config_dir/emby_server.txt文件中的地址是否正确指向emby的访问地址，即：$host:6908或http://127.0.0.1:6908\n\t2、地址正确重启你的小雅alist容器即可。"
+    INFO "注：Jellyfin如果$host:6909可访问（10.9.6版本端口为6910），而$host:2346访问失败（502/500等错误），按如下步骤排障：\n\t1、检查$config_dir/jellyfin_server.txt文件中的地址是否正确指向jellyfin的访问地址，即：$host:6909（10.9.6版是6910）或http://127.0.0.1:6909\n\t2、地址正确重启你的小雅alist容器即可。"
     echo -e "\n"
     echo -e "\033[1;33m是否继续安装小雅元数据爬虫同步？${NC}"
     answer=""
@@ -1939,7 +1955,6 @@ function sync_plan() {
         echo -e "\033[1;32m请输入您的选择：\033[0m"
         echo -e "\033[1;32m1、设置G-Box自动更新\033[0m"
         echo -e "\033[1;32m2、取消G-Box自动更新\033[0m"
-        echo -e "\n"
         echo -e "\033[1;32m3、立即更新G-Box\033[0m"
         echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
@@ -1960,7 +1975,7 @@ function sync_plan() {
                 rm -f /tmp/cronjob.tmp
                 INFO "已取消G-Box自动更新"
             fi
-            break
+            exit 0
             ;;
         3)
             docker_name="$(docker ps -a | grep -E 'ailg/g-box' | awk '{print $NF}' | head -n1)"
@@ -1969,6 +1984,7 @@ function sync_plan() {
             else
                 ERROR "未找到G-Box容器，请先安装G-Box！"
             fi
+            exit 0
             ;;
         *)
             ERROR "输入错误，按任意键重新输入！"
@@ -2064,7 +2080,11 @@ function sync_ailg() {
             exit 1
         fi
 
-        docker run -d --name "${docker_name}" --net=host --restart=always ${mounts} "${image_name}"
+        if docker run -d --name "${docker_name}" --net=host --restart=always ${mounts} "${image_name}"; then
+            INFO "Nice!更新成功了哦！"
+        else
+            WARN "竟然更新失败了！您可能需要重新安装G-Box！"
+        fi
     else
         ERROR "${docker_name} 容器未安装，程序退出！${NC}" && exit 1
     fi
@@ -2109,10 +2129,37 @@ function user_gbox() {
         INFO "小雅g-box老G版配置路径为：$config_dir"
     fi
 
-    docker run -d --name=g-box --net=host \
-        -v "$config_dir":/data \
-        --restart=always \
-        ailg/g-box:hostmode
+    read -erp "$(INFO "是否打开docker容器管理功能？（y/n）")" open_warn
+    if [[ $open_warn == [Yy] ]]; then
+        echo -e "${Yellow}风险警示："
+        echo -e "打开docker容器管理功能会挂载/var/run/docker.sock！"
+        echo -e "想在G-Box首页Sun-Panel中管理docker容器必须打开此功能！！"
+        echo -e "想实现G-Box重启自动更新或添加G-Box自定义挂载必须打开此功能！！"
+        echo -e "${Red}打开此功能会获取所有容器操作权限，有一定安全风险，确保您有良好的风险防范意识和妥当操作能力，否则不要打开此功能！！！"
+        echo -e "如您已打开此功能想要关闭，请重新安装G-Box，重新进行此项选择！${NC}"
+        read -erp "$(WARN "是否继续开启docker容器管理功能？（y/n）")" open_sock
+    fi
+
+    if [[ $open_sock == [Yy] ]]; then
+        if [ -S /var/run/docker.sock ]; then
+            docker run -d --name=g-box --net=host \
+                -v "$config_dir":/data \
+                -v /var/run/docker.sock:/var/run/docker.sock \
+                --restart=always \
+                ailg/g-box:hostmode
+        else
+            WARN "您系统不存在/var/run/docker.sock，可能它在其他位置，请定位文件位置后自行挂载，此脚本不处理特殊情况！"
+            docker run -d --name=g-box --net=host \
+                -v "$config_dir":/data \
+                --restart=always \
+                ailg/g-box:hostmode
+        fi
+    else
+        docker run -d --name=g-box --net=host \
+                -v "$config_dir":/data \
+                --restart=always \
+                ailg/g-box:hostmode
+    fi
 
     if command -v ifconfig &> /dev/null; then
         localip=$(ifconfig -a|grep inet|grep -v 172. | grep -v 127.0.0.1|grep -v 169. |grep -v inet6|awk '{print $2}'|tr -d "addr:"|head -n1)
@@ -2345,7 +2392,76 @@ emby_list=()
 emby_order=()
 img_order=()
 if [ "$1" == "g-box" ] || [ "$1" == "xiaoya_jf" ]; then
+    config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${1}")
+    [ $? -eq 1 ] && ERROR "您未安装${1}容器" && exit 1
+    if [ ! -f "{config_dir}/docker_mirrors.txt" ]; then
+        skip_choose_mirror="y"
+    fi
     sync_ailg "$1"
+elif [ "$1" == "update_data" ]; then
+    INFO "正在为你更新小雅的data文件……"
+    docker_name="$(docker ps -a | grep -E 'ailg/g-box' | awk '{print $NF}' | head -n1)"
+    if [ -n "${docker_name}" ]; then
+        files=("version.txt" "index.zip" "update.zip" "tvbox.zip")
+        url_base="https://ailg.ggbond.org/"
+        download_dir="/www/data"
+        docker_container="${docker_name}"
+
+        mkdir -p /tmp/data
+        cd /tmp/data
+        rm -rf /tmp/data/*
+
+        download_file() {
+            local file=$1
+            local retries=3
+            local success=1
+
+            for ((i=1; i<=retries; i++)); do
+                if curl -s -O ${url_base}${file}; then
+                    INFO "${file}下载成功"
+                    if [[ ${file} == *.zip ]]; then
+                        if [[ $(stat -c%s "${file}") -gt 500000 ]]; then
+                            success=0
+                            break
+                        else
+                            WARN "${file}文件大小不足，重试..."
+                        fi
+                    else
+                        success=0
+                        break
+                    fi
+                else
+                    ERROR "${file}下载失败，重试..."
+                fi
+            done
+
+            return ${success}
+        }
+
+        all_success=1
+        for file in "${files[@]}"; do
+            if download_file ${file}; then
+                docker exec ${docker_container} mkdir -p ${download_dir}
+                docker cp ${file} ${docker_container}:${download_dir}
+            else
+                all_success=0
+                ERROR "${file}下载失败，程序退出！"
+                exit 1
+            fi
+        done
+
+        if [[ ${all_success} -eq 1 ]]; then
+            INFO "所有文件更新成功，正在为您重启G-Box容器……"
+            docker restart ${docker_container}
+            INFO "G-Box容器已成功重启，请检查！"
+        else
+            ERROR "部分文件下载失败，程序退出！"
+            exit 1
+        fi
+    else
+        ERROR "未找到G-Box容器，程序退出！"
+        exit 1
+    fi
 else
     fuck_docker
     if ! [[ "$skip_choose_mirror" == [Yy] ]]; then
