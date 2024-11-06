@@ -1,0 +1,35 @@
+{
+  "sites": [
+        {
+            "key": "js_6V",
+            "name": "✡️|六维|磁力",
+            "type": 3,
+            "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/libs/drpy2.js",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/libs/6V.js"
+        },
+	          {
+            "key": "XYQH_电影港",
+            "name": "🛳|港口|磁力",
+            "type": 3,
+            "playerType": 1,
+            "api": "csp_XYQHiker",
+            "jar": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/spider.txt",
+            "ext": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/libs/%E6%B8%AF%E5%8F%A3.json"
+        },
+	          {
+            "key": "js_荐片",
+            "name": "⏳|荐片|影视",
+            "type": 3,
+            "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/libs/drpy2.js",
+            "ext": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/niubihu1/tvbox-/main/js/xduo-main/libs/%E8%8D%90%E7%89%87.js",
+            "playerType": 1,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
+        }
+           ]  
+
+}
