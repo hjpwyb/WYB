@@ -10,9 +10,9 @@ source_urls = [
 # 目标文件路径
 destination_file = "scripts/bbb/port.txt"
 
-def add_port_to_ip(ip_list):
-    """为每个 IP 地址添加端口号 443"""
-    return [f"{ip}:443" for ip in ip_list]
+def add_port_and_label(ip_list):
+    """为每个 IP 地址添加 '优选' 前缀和端口号 443，格式为 '优选 IP:443 #优选443'"""
+    return [f"优选 {ip}:443 #优选443" for ip in ip_list]
 
 def main():
     combined_ip_list = []
@@ -26,8 +26,8 @@ def main():
         else:
             print(f"Failed to download the file from {url}")
 
-    # 为每个 IP 地址加上端口号 443
-    updated_ip_list = add_port_to_ip(combined_ip_list)
+    # 为每个 IP 地址加上前缀、端口号和注释
+    updated_ip_list = add_port_and_label(combined_ip_list)
 
     # 保存到目标文件
     with open(destination_file, "w") as f:
