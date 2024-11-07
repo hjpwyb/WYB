@@ -1,37 +1,32 @@
 name: Update IP List
 
-# 定义何时运行该工作流
 on:
   push:
     branches:
-      - main  # 当推送到主分支时触发
+      - main
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 时间凌晨运行一次
+    - cron: "0 0 * * *"
 
 jobs:
   update_ip_list:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出代码库
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 设置 Python 环境
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"  # 指定 Python 版本
+          python-version: "3.x"
 
-      # 安装请求库
       - name: Install dependencies
         run: pip install requests
 
-      # 运行脚本
+      # 运行脚本：假设脚本在根目录
       - name: Run IP update script
-        run: python scripts/bbb/update_script.py  # 假设脚本文件名为 update_script.py
+        run: python update_script.py
 
-      # 提交更新后的文件并推送到 GitHub
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
