@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      # 运行脚本：假设脚本在根目录
+      # 使用正确的脚本路径运行脚本
       - name: Run IP update script
-        run: python update_script.py
+        run: python scripts/bbb/add_port_script.py
 
       - name: Commit and push changes
         run: |
