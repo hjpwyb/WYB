@@ -12,7 +12,7 @@ destination_file = "scripts/bbb/port.txt"
 
 def format_ip_with_port(ip_list):
     """为每个 IP 地址添加格式 '<IP地址>:443 #优选443'"""
-    return [f"{ip}:443 #优选443" for ip in ip_list]
+    return [f"{ip}:443#优选443" for ip in ip_list]
 
 def main():
     combined_ip_list = []
