@@ -2,8 +2,7 @@ name: Update CCC File
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天凌晨运行
-
+    - cron: "0 0 * * *"  # 每天定时运行（此处为每天凌晨）
   workflow_dispatch:  # 允许手动触发工作流程
 
 jobs:
@@ -34,6 +33,6 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add scripts/ccc/ccc.txt
-        git commit -m "Update ccc.txt with latest commit info"
-        git push
+        git add scripts/ccc/ccc.txt  # 将生成的文件添加到 Git
+        git commit -m "Update ccc file"  # 提交更改
+        git push  # 推送到 GitHub 仓库
