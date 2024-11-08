@@ -1,0 +1,40 @@
+# .github/workflows/update_file.yml
+name: Update CCC File
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天定时运行（此处为每天凌晨）
+
+  workflow_dispatch:  # 允许手动触发工作流程
+
+jobs:
+  update-ccc-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install requests
+
+    - name: Run Python script
+      env:
+        GITHUB_USER: "xinyex"  # 仓库用户名
+        GITHUB_REPO: "ks"  # 仓库名称
+      run: |
+        python scripts/ccc/update_ccc.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add scripts/ccc/ccc
+        git commit -m "Update ccc file"
+        git push
