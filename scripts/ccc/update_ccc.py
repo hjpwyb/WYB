@@ -1,5 +1,5 @@
-import requests
 import os
+import requests
 from datetime import datetime
 
 # GitHub 用户名和仓库名
@@ -12,7 +12,7 @@ commits_url = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/commits
 def fetch_latest_commit():
     try:
         response = requests.get(commits_url)
-        response.raise_for_status()
+        response.raise_for_status()  # 如果请求失败，会抛出异常
         commits = response.json()
         
         # 获取最近的提交信息
@@ -20,7 +20,7 @@ def fetch_latest_commit():
         commit_message = latest_commit["commit"]["message"]
         commit_date = latest_commit["commit"]["committer"]["date"]
 
-        # 确保 scripts/ccc 文件夹存在
+        # 确保目标文件夹存在
         os.makedirs("scripts/ccc", exist_ok=True)
 
         # 将信息写入 ccc.txt 文件
@@ -29,7 +29,7 @@ def fetch_latest_commit():
             file.write(f"Commit date: {commit_date}\n")
             file.write(f"Fetched on: {datetime.now().isoformat()}\n")
 
-        print("ccc.txt file updated successfully.")
+        print("ccc file updated successfully.")
     except requests.RequestException as e:
         print("Failed to fetch commits:", e)
 
