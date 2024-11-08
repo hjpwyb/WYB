@@ -5,121 +5,137 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 科技网络 🇺🇸, server: 137.175.23.162, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.57126026.xyz}}, udp: true}
-  - {name: 科技网络, server: fbi.gov, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
-  - {name: 科技网络 2, server: icook.tw, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 2, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 3, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 4, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 5, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 6, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730194244147, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 7, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.17330585.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 8, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 9, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.63575583.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 10, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.65320526.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 11, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.63575583.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 12, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.65320526.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 13, server: 38.33.57.11, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.43539481.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 14, server: 137.175.54.198, port: 37007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.35743578.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 15, server: 142.4.106.4, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.29675080.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 16, server: 142.4.106.4, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.29675080.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 17, server: 38.33.23.99, port: 30003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.92511133.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 18, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.30565785.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 19, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.30565785.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 20, server: 137.175.54.198, port: 37007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.35743578.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 21, server: 137.175.54.198, port: 37007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.35743578.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 22, server: 156.146.38.168, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
+  - {name: 科技网络 🇬🇧, server: 141.98.101.182, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
+  - {name: 科技网络 🇺🇸 23, server: 38.33.55.65, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.18999379.xyz}}, udp: true}
   - {name: 科技网络 🇨🇳, server: 183.236.51.23, port: 51002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: 科技网络 3, server: malaysia.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 2, server: 38.33.19.66, port: 37004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.25902523.xyz}}, udp: true}
-  - {name: 科技网络 4, server: russia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip18.6929198.xyz}}, udp: true}
-  - {name: 科技网络 5, server: russia.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip11.6016725.xyz}}, udp: true}
-  - {name: 科技网络 6, server: malaysia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip3.6929198.xyz}}, udp: true}
+  - {name: 科技网络, server: russia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip18.6929198.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 24, server: 37.19.198.160, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
+  - {name: 科技网络 🇺🇸 25, server: 38.33.55.65, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.18999379.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 26, server: 38.33.55.65, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.18999379.xyz}}, udp: true}
+  - {name: 科技网络 2, server: icook.tw, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
+  - {name: 科技网络 3, server: fbi.gov, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 27, server: 38.33.19.66, port: 37004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.25902523.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 28, server: 38.48.150.59, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.61974602.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 29, server: 199.180.101.23, port: 38004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.72522209.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 30, server: 38.33.34.33, port: 36002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.63000971.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 31, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.78274451.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 32, server: 38.33.56.38, port: 37000, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.24006857.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 33, server: 38.33.56.38, port: 37000, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.24006857.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 34, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.67266046.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 35, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.89655249.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 36, server: 38.33.34.33, port: 36002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.63000971.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 37, server: 38.11.60.67, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.33937261.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 38, server: 137.175.38.243, port: 36003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.23178778.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 39, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.45174198.xyz}}, udp: true}
+  - {name: 科技网络 4, server: russia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip3.6929198.xyz}}, udp: true}
+  - {name: 科技网络 5, server: malaysia.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 40, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.30448644.xyz}}, udp: true}
+  - {name: 科技网络 6, server: ip.sb, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip20.6016725.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 41, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.55153203.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 42, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.30448644.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 43, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.55153203.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 44, server: 38.11.61.67, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.22796359.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 45, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.99222591.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 46, server: 137.175.23.162, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.57126026.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 47, server: 192.74.239.176, port: 31004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.46554484.xyz}}, udp: true}
   - {name: 科技网络 7, server: ip.sb, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip20.6016725.xyz}}, udp: true}
-  - {name: 科技网络 8, server: singapore.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 3, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730194244147, headers: {Host: www.67266046.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 4, server: 38.48.150.49, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.61974602.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 5, server: 142.4.99.52, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.90469567.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 6, server: 142.4.99.52, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.90469567.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 7, server: 38.33.34.33, port: 36002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.63000971.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 8, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.27306103.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 9, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.30448644.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 10, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.89655249.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 11, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.89655249.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 12, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.27306103.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 13, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.45174198.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 14, server: 38.33.56.38, port: 37000, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.24006857.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 15, server: 38.11.61.67, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.22796359.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 16, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.96601962.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 17, server: 38.33.23.247, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.62813234.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 18, server: 38.33.55.65, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.18999379.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 19, server: 38.33.23.99, port: 30003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.92511133.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 20, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.55153203.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 21, server: 137.175.20.214, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.15303197.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 22, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.99222591.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 23, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.55153203.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 24, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.27306103.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 25, server: 38.33.34.33, port: 36002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.63000971.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 26, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.45174198.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 27, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.89655249.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 28, server: 38.11.60.67, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.33937261.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 29, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.30448644.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 30, server: 137.175.8.37, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.17440040.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 31, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.30448644.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 32, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.78274451.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 33, server: 198.2.196.8, port: 36007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.66836245.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 34, server: 198.2.196.6, port: 36007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.66836245.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 35, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.78274451.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 36, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.23355292.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 37, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.45174198.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 38, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.23355292.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 39, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.96601962.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 40, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.78274451.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 41, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.55153203.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 42, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.30448644.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 43, server: 38.11.60.67, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.33937261.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 44, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.67266046.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 45, server: 198.2.196.6, port: 36007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.66836245.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 46, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.67266046.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 47, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.96601962.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 48, server: 198.2.196.6, port: 36007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.66836245.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 49, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.67266046.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 50, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.23355292.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 51, server: 38.33.19.66, port: 37004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.25902523.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 52, server: 38.33.23.99, port: 30003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.92511133.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 53, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.67266046.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 54, server: 192.74.239.176, port: 31004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.46554484.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 55, server: 38.33.55.65, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.18999379.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 56, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.99222591.xyz}}, udp: true}
-  - {name: 科技网络 9, server: russia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip3.6929198.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 57, server: 38.11.61.67, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.22796359.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 58, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.99222591.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 59, server: 137.175.20.214, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.15303197.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 60, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.55153203.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 61, server: 192.74.240.238, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.93326012.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 62, server: 38.33.23.99, port: 30003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.92511133.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 63, server: 137.175.54.198, port: 37007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.35743578.xyz}}, udp: true}
-  - {name: 科技网络 10, server: 45.87.175.192, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: cvII85TrW6n0OGyfpHVS1u, udp: true}
-  - {name: 科技网络 🇺🇸 64, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730194244147, headers: {Host: www.73276259.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 65, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.73276259.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 66, server: 192.74.240.238, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.93326012.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 67, server: 192.74.240.238, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.93326012.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 68, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.65320526.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 69, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.73276259.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 70, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.73276259.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 71, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.73276259.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 72, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.30565785.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 73, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.30565785.xyz}}, udp: true}
-  - {name: 科技网络 11, server: 45.87.175.181, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: 1RWwXhwfAB5gAEozU4G2Pg, udp: true}
-  - {name: 科技网络 🇺🇸 74, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.30565785.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 75, server: 38.63.0.83, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.24364264.xyz}}, udp: true}
-  - {name: 科技网络 12, server: singapore.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 76, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.63575583.xyz}}, udp: true}
-  - {name: 科技网络 13, server: speed.cloudflare.com, port: 80, type: vmess, uuid: 76221bfb-e92f-4e80-81c5-6fe48f50ac0b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /glweidf.sbs/linkws, headers: {Host: 7ehhjdelicate-unit-e634.bowik41429.workers.dev}}, udp: true}
+  - {name: 科技网络 🇺🇸 48, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.27306103.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 49, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.27306103.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 50, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.30565785.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 51, server: 137.175.23.162, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.57126026.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 52, server: 137.175.23.162, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.57126026.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 53, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.55153203.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 54, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.67266046.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 55, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.67266046.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 56, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.78274451.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 57, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.45174198.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 58, server: 142.4.99.52, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.90469567.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 59, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.45174198.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 60, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.55153203.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 61, server: 38.11.20.85, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.45174198.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 62, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.96601962.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 63, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 64, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.89655249.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 65, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.89655249.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 66, server: 142.4.99.52, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.90469567.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 67, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.96601962.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 68, server: 198.2.195.6, port: 38005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.27306103.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 69, server: 137.175.42.234, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.30565785.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 70, server: 137.175.20.214, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.15303197.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 71, server: 38.11.61.67, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.22796359.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 72, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.96601962.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 73, server: 38.11.61.67, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.22796359.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 74, server: 192.74.231.218, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.96601962.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 75, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.23355292.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 76, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.23355292.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 77, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.67266046.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 78, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.99222591.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 79, server: 38.33.34.33, port: 36002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.63000971.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 80, server: 38.33.24.80, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.89655249.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 81, server: 38.11.60.67, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.33937261.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 82, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.23355292.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 83, server: 142.4.99.52, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.90469567.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 84, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.99222591.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 85, server: 38.11.50.80, port: 31005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.67266046.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 86, server: 142.0.136.5, port: 31005, type: vmess, uuid: 051b844f-efe3-4847-92aa-66b5de0b6d4e, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.99222591.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 87, server: 192.74.239.176, port: 31004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.46554484.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 88, server: 198.200.48.230, port: 37006, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.23355292.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 89, server: 192.74.242.242, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.62813234.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 90, server: 137.175.20.214, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.15303197.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 91, server: 137.175.20.214, port: 37001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.15303197.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 92, server: 192.74.241.180, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731055779012, headers: {Host: www.88674577.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 93, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.30448644.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 94, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.78274451.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 95, server: 38.33.34.26, port: 38003, type: vmess, uuid: b65da4af-a12a-4a59-9316-4549e12ba62c, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.78274451.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 96, server: 38.33.0.239, port: 38001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.30448644.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 97, server: 38.11.49.41, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.55153203.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 98, server: 38.33.19.66, port: 37004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.25902523.xyz}}, udp: true}
+  - {name: 科技网络 8, server: malaysia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip3.6929198.xyz}}, udp: true}
   - {name: 科技网络 🇳🇱, server: 208.67.105.196, port: 42029, type: ss, cipher: chacha20-ietf-poly1305, password: SjdGCHwafjktt1rzpGxTKYTvVBWb8Xa6E5DTr6MzbdHQSwvpLiDczj3n6MBjy2uyFSzgqgvCWsDQmpM4VQzfPzyGYF58wdyD, udp: true}
-  - {name: 科技网络 🇺🇸 77, server: 142.4.106.4, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.29675080.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 78, server: 142.4.106.4, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.29675080.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 79, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.63575583.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 80, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730797905280, headers: {Host: www.63575583.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 81, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.65320526.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 82, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.17330585.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 83, server: 38.11.71.66, port: 37002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.64786755.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 84, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.65320526.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 85, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.17330585.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 86, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.17330585.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 87, server: 156.146.38.168, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
-  - {name: 科技网络 🇺🇸 88, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.91334565.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 89, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.84626764.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 90, server: 192.74.236.157, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1729850945832, headers: {Host: www.91334565.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 91, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.91334565.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 92, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.91334565.xyz}}, udp: true}
-  - {name: 科技网络 14, server: russia.com, port: 2082, type: vmess, uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /github.com/Alvin9999, headers: {Host: ip18.6929198.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 93, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714588108, headers: {Host: www.91334565.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 94, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.84626764.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 95, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.84626764.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 96, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1729850945832, headers: {Host: www.84626764.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 97, server: 137.175.54.198, port: 37007, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.35743578.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 98, server: 38.33.57.11, port: 38003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.43539481.xyz}}, udp: true}
-  - {name: 科技网络 🇺🇸 99, server: 137.175.23.162, port: 30001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.57126026.xyz}}, udp: true}
+  - {name: 科技网络 9, server: speed.cloudflare.com, port: 80, type: vmess, uuid: 76221bfb-e92f-4e80-81c5-6fe48f50ac0b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /glweidf.sbs/linkws, headers: {Host: 7ehhjdelicate-unit-e634.bowik41429.workers.dev}}, udp: true}
+  - {name: 科技网络 🇺🇸 99, server: 192.74.236.131, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 100, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.17330585.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 101, server: 142.4.106.4, port: 31001, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.29675080.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 102, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 103, server: 192.74.236.157, port: 30004, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1729850945832, headers: {Host: www.91334565.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 104, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.17330585.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 105, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1729850945832, headers: {Host: www.84626764.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 106, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.84626764.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 107, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971761356, headers: {Host: www.84626764.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 108, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730714243143, headers: {Host: www.65320526.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 109, server: 38.11.18.99, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730193985655, headers: {Host: www.65320526.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 110, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730882390901, headers: {Host: www.63575583.xyz}}, udp: true}
+  - {name: 科技网络 10, server: singapore.com, port: 2095, type: vmess, uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: github.com/Alvin9999, headers: {Host: ip2.6016725.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 111, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.84626764.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 112, server: 192.74.247.202, port: 30005, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1731056038662, headers: {Host: www.84626764.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 113, server: 212.102.47.131, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
+  - {name: 科技网络 🇺🇸 114, server: 150.241.102.95, port: 21771, type: ss, cipher: chacha20-ietf-poly1305, password: 5mgZJzPv7hrLX4KMdPIeAW, udp: true}
+  - {name: 科技网络 🇺🇸 115, server: 192.74.237.149, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.73276259.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 116, server: 192.74.250.211, port: 38002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730971482357, headers: {Host: www.63575583.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 117, server: 38.33.23.99, port: 30003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730883002954, headers: {Host: www.92511133.xyz}}, udp: true}
+  - {name: 科技网络 🇺🇸 118, server: 192.74.244.163, port: 31003, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1730798192257, headers: {Host: www.17330585.xyz}}, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -127,16 +143,7 @@ proxy-groups:
       - ♻️ 自动选择
       - DIRECT
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -157,10 +164,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -174,7 +186,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -182,6 +197,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -191,7 +207,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -199,7 +214,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -210,13 +224,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -233,14 +243,36 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -248,16 +280,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -278,10 +301,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -295,7 +323,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -303,6 +334,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -312,7 +344,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -320,7 +351,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -331,13 +361,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -354,14 +380,36 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -369,16 +417,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -399,10 +438,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -416,7 +460,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -424,6 +471,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -433,7 +481,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -441,7 +488,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -452,13 +498,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -475,30 +517,43 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -519,10 +574,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -536,7 +596,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -544,6 +607,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -553,7 +617,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -561,7 +624,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -572,13 +634,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -595,30 +653,43 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -639,10 +710,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -656,7 +732,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -664,6 +743,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -673,7 +753,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -681,7 +760,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -692,13 +770,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -715,30 +789,43 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -759,10 +846,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -776,7 +868,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -784,6 +879,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -793,7 +889,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -801,7 +896,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -812,13 +906,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -835,14 +925,36 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -850,16 +962,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -880,10 +983,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -897,7 +1005,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -905,6 +1016,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -914,7 +1026,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -922,7 +1033,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -933,13 +1043,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -956,14 +1062,36 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -987,16 +1115,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 科技网络 🇺🇸
-      - 科技网络
-      - 科技网络 2
-      - 科技网络 🇨🇳
-      - 科技网络 3
       - 科技网络 🇺🇸 2
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
       - 科技网络 🇺🇸 3
       - 科技网络 🇺🇸 4
       - 科技网络 🇺🇸 5
@@ -1017,10 +1136,15 @@ proxy-groups:
       - 科技网络 🇺🇸 20
       - 科技网络 🇺🇸 21
       - 科技网络 🇺🇸 22
+      - 科技网络 🇬🇧
       - 科技网络 🇺🇸 23
+      - 科技网络 🇨🇳
+      - 科技网络
       - 科技网络 🇺🇸 24
       - 科技网络 🇺🇸 25
       - 科技网络 🇺🇸 26
+      - 科技网络 2
+      - 科技网络 3
       - 科技网络 🇺🇸 27
       - 科技网络 🇺🇸 28
       - 科技网络 🇺🇸 29
@@ -1034,7 +1158,10 @@ proxy-groups:
       - 科技网络 🇺🇸 37
       - 科技网络 🇺🇸 38
       - 科技网络 🇺🇸 39
+      - 科技网络 4
+      - 科技网络 5
       - 科技网络 🇺🇸 40
+      - 科技网络 6
       - 科技网络 🇺🇸 41
       - 科技网络 🇺🇸 42
       - 科技网络 🇺🇸 43
@@ -1042,6 +1169,7 @@ proxy-groups:
       - 科技网络 🇺🇸 45
       - 科技网络 🇺🇸 46
       - 科技网络 🇺🇸 47
+      - 科技网络 7
       - 科技网络 🇺🇸 48
       - 科技网络 🇺🇸 49
       - 科技网络 🇺🇸 50
@@ -1051,7 +1179,6 @@ proxy-groups:
       - 科技网络 🇺🇸 54
       - 科技网络 🇺🇸 55
       - 科技网络 🇺🇸 56
-      - 科技网络 9
       - 科技网络 🇺🇸 57
       - 科技网络 🇺🇸 58
       - 科技网络 🇺🇸 59
@@ -1059,7 +1186,6 @@ proxy-groups:
       - 科技网络 🇺🇸 61
       - 科技网络 🇺🇸 62
       - 科技网络 🇺🇸 63
-      - 科技网络 10
       - 科技网络 🇺🇸 64
       - 科技网络 🇺🇸 65
       - 科技网络 🇺🇸 66
@@ -1070,13 +1196,9 @@ proxy-groups:
       - 科技网络 🇺🇸 71
       - 科技网络 🇺🇸 72
       - 科技网络 🇺🇸 73
-      - 科技网络 11
       - 科技网络 🇺🇸 74
       - 科技网络 🇺🇸 75
-      - 科技网络 12
       - 科技网络 🇺🇸 76
-      - 科技网络 13
-      - 科技网络 🇳🇱
       - 科技网络 🇺🇸 77
       - 科技网络 🇺🇸 78
       - 科技网络 🇺🇸 79
@@ -1093,14 +1215,36 @@ proxy-groups:
       - 科技网络 🇺🇸 90
       - 科技网络 🇺🇸 91
       - 科技网络 🇺🇸 92
-      - 科技网络 14
       - 科技网络 🇺🇸 93
       - 科技网络 🇺🇸 94
       - 科技网络 🇺🇸 95
       - 科技网络 🇺🇸 96
       - 科技网络 🇺🇸 97
       - 科技网络 🇺🇸 98
+      - 科技网络 8
+      - 科技网络 🇳🇱
+      - 科技网络 9
       - 科技网络 🇺🇸 99
+      - 科技网络 🇺🇸 100
+      - 科技网络 🇺🇸 101
+      - 科技网络 🇺🇸 102
+      - 科技网络 🇺🇸 103
+      - 科技网络 🇺🇸 104
+      - 科技网络 🇺🇸 105
+      - 科技网络 🇺🇸 106
+      - 科技网络 🇺🇸 107
+      - 科技网络 🇺🇸 108
+      - 科技网络 🇺🇸 109
+      - 科技网络 🇺🇸 110
+      - 科技网络 10
+      - 科技网络 🇺🇸 111
+      - 科技网络 🇺🇸 112
+      - 科技网络 🇺🇸 113
+      - 科技网络 🇺🇸 114
+      - 科技网络 🇺🇸 115
+      - 科技网络 🇺🇸 116
+      - 科技网络 🇺🇸 117
+      - 科技网络 🇺🇸 118
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
