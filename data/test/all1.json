@@ -23,15 +23,15 @@
         {
             "url": "https://ghp.ci/https://raw.githubusercontent.com/hjpwyb/WYB/refs/heads/main/data/test/ysc.json",
             "name": "ysc"
-        },   
+        },
         {
             "url": "https://ghp.ci/https://raw.githubusercontent.com/hjpwyb/WYB/refs/heads/main/data/test/xc.json",
             "name": "xc"
         },
-         {
+        {
             "url": "https://ghp.ci/https://raw.githubusercontent.com/hjpwyb/WYB/refs/heads/main/data/test/js.json",
             "name": "js"
-        },       
+        },
         {
             "url": "https://ghp.ci/https://raw.githubusercontent.com/hjpwyb/WYB/refs/heads/main/data/test/49.json",
             "name": "49"
