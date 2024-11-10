@@ -14,17 +14,28 @@ def read_ip_list(file_path):
 
 # 测试连接每个 IP
 def check_ip(ip):
-    host, port = ip.split(":")
-    port = int(port)
+    # 去掉端口后的注释部分，只保留IP和端口
+    ip = ip.split('#')[0].strip()
     
-    try:
-        # 尝试连接目标 IP 和端口
-        with socket.create_connection((host, port), timeout=5) as sock:
-            print(f"IP {ip} is accessible.")
-            return ip  # 返回可访问的 IP
-    except (socket.timeout, socket.error) as e:
-        print(f"IP {ip} is not accessible. Error: {e}")
-        return None  # 返回 None 如果不可访问
+    # 分割IP和端口
+    if ":" in ip:
+        host, port = ip.split(":")
+        try:
+            port = int(port)
+        except ValueError:
+            print(f"Invalid port value: {port} in IP {ip}")
+            return None  # 返回 None 如果端口无效
+
+        try:
+            # 尝试连接目标 IP 和端口
+            with socket.create_connection((host, port), timeout=5) as sock:
+                print(f"IP {ip} is accessible.")
+                return ip  # 返回可访问的 IP
+        except (socket.timeout, socket.error) as e:
+            print(f"IP {ip} is not accessible. Error: {e}")
+            return None  # 返回 None 如果不可访问
+    else:
+        return None  # 返回 None 如果格式不正确
 
 def main():
     ip_list = read_ip_list("scripts/bbb/port.txt")  # 假设文件路径是这个
