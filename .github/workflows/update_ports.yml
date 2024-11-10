@@ -1,9 +1,10 @@
 name: Update Port List
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # 每小时执行一次
-  workflow_dispatch: # 允许手动触发工作流
+  workflow_run:
+    workflows: ["update_ip_list"]  # 监听名为 update_ip_list 的工作流
+    types:
+      - completed  # 仅在工作流完成时触发
 
 jobs:
   update_ports:
