@@ -1,8 +1,12 @@
 import socket
-import concurrent.futures
+import os
 
 # 从文件读取 IP 地址列表，忽略带有注释的部分
 def read_ip_list(file_path):
+    if not os.path.exists(file_path):
+        print(f"Error: {file_path} does not exist.")
+        return []
+    
     with open(file_path, "r") as file:
         ip_list = []
         for line in file:
@@ -21,29 +25,30 @@ def check_ip(ip):
         # 尝试连接目标 IP 和端口
         with socket.create_connection((host, port), timeout=5) as sock:
             print(f"IP {ip} is accessible.")
-            return f"{ip}#优选443"  # 返回带有 #优选443 后缀的可访问 IP
+            return True
     except (socket.timeout, socket.error) as e:
         print(f"IP {ip} is not accessible. Error: {e}")
-        return None  # 返回 None 如果不可访问
+        return False
 
-def main():
-    ip_list = read_ip_list("scripts/bbb/port.txt")  # 假设文件路径是这个
+# 生成符合原格式的 port.txt 文件
+def generate_port_txt(input_file, output_file):
+    ip_list = read_ip_list(input_file)  # 读取原始 IP 列表
     accessible_ips = []
 
-    # 使用 ThreadPoolExecutor 进行并行连接测试
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        # 使用 map 来并行执行 check_ip 函数
-        results = executor.map(check_ip, ip_list)
-        
-        # 收集所有可访问的 IP
-        accessible_ips = [ip for ip in results if ip is not None]
+    # 遍历 IP 地址，进行连接测试
+    for ip in ip_list:
+        if check_ip(ip):
+            accessible_ips.append(f"{ip}#优选443")  # 保留原格式
 
     # 将可访问的 IP 保存回文件
-    with open("scripts/bbb/port.txt", "w") as file:
+    with open(output_file, "w") as file:
         for ip in accessible_ips:
             file.write(f"{ip}\n")
     
-    print(f"Total {len(accessible_ips)} accessible IPs.")
+    print(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
 
+# 执行函数
 if __name__ == "__main__":
-    main()
+    input_file = "scripts/bbb/port.txt"  # 原始 port.txt 路径
+    output_file = input_file  # 直接覆盖原文件
+    generate_port_txt(input_file, output_file)  # 生成新的 port.txt
