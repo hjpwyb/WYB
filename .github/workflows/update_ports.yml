@@ -18,9 +18,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+    # 删除安装依赖的步骤，因为没有requirements.txt
+    # - name: Install dependencies
+    #   run: |
+    #     pip install -r requirements.txt  # 删除或跳过这一步
 
     - name: Run add_port_script.py to generate port.txt
       run: |
