@@ -44,10 +44,15 @@ def generate_port_txt(input_file, output_file):
             if result:  # 仅添加可访问的 IP
                 accessible_ips.append(result)
 
+    # 打印调试信息
+    print(f"Accessible IPs: {accessible_ips}")
+    print(f"Total {len(accessible_ips)} accessible IPs")
+
     # 将可访问的 IP 保存回文件
     with open(output_file, "w") as file:
         for ip in accessible_ips:
             file.write(f"{ip}\n")
+        file.flush()  # 强制刷新缓存
     
     print(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
 
