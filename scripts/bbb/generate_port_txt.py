@@ -6,16 +6,14 @@ def read_ip_list(file_path):
     with open(file_path, "r") as file:
         ip_list = []
         for line in file:
-            # 将 IP 和注释分开处理
+            # 清理行并去掉注释部分
             clean_line = line.split('#')[0].strip()
-            comment = "#" + line.split('#')[1].strip() if "#" in line else ""
             if clean_line:  # 如果不是空行
-                ip_list.append((clean_line, comment))
+                ip_list.append(line.strip())  # 保留原始行，保留注释部分
     return ip_list
 
 # 测试连接每个 IP
-def check_ip(ip_tuple):
-    ip, comment = ip_tuple
+def check_ip(ip):
     host, port = ip.split(":")
     port = int(port)
     
@@ -23,7 +21,7 @@ def check_ip(ip_tuple):
         # 尝试连接目标 IP 和端口
         with socket.create_connection((host, port), timeout=5) as sock:
             print(f"IP {ip} is accessible.")
-            return (ip, comment)  # 返回可访问的 IP 和注释
+            return ip  # 返回可访问的 IP
     except (socket.timeout, socket.error) as e:
         print(f"IP {ip} is not accessible. Error: {e}")
         return None  # 返回 None 如果不可访问
@@ -38,12 +36,16 @@ def main():
         results = executor.map(check_ip, ip_list)
         
         # 收集所有可访问的 IP
-        accessible_ips = [ip_tuple for ip_tuple in results if ip_tuple is not None]
+        accessible_ips = [ip for ip in results if ip is not None]
 
-    # 将可访问的 IP 和注释保存回文件
+    # 将可访问的 IP 保存回文件
     with open("scripts/bbb/port.txt", "w") as file:
-        for ip, comment in accessible_ips:
-            file.write(f"{ip} {comment}\n")
+        for ip in accessible_ips:
+            # 保证格式：IP和注释在同一行，使用一个空格分隔
+            for original_line in ip_list:
+                if ip in original_line:
+                    file.write(f"{ip} {original_line.split('#')[1].strip()}\n" if '#' in original_line else f"{ip}\n")
+                    break
     
     print(f"Total {len(accessible_ips)} accessible IPs.")
 
