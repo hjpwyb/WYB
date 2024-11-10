@@ -1,4 +1,5 @@
 import socket
+import concurrent.futures
 
 # 从文件读取 IP 地址列表，忽略带有注释的部分
 def read_ip_list(file_path):
@@ -20,19 +21,22 @@ def check_ip(ip):
         # 尝试连接目标 IP 和端口
         with socket.create_connection((host, port), timeout=5) as sock:
             print(f"IP {ip} is accessible.")
-            return True
+            return ip  # 返回可访问的 IP
     except (socket.timeout, socket.error) as e:
         print(f"IP {ip} is not accessible. Error: {e}")
-        return False
+        return None  # 返回 None 如果不可访问
 
 def main():
     ip_list = read_ip_list("scripts/bbb/port.txt")  # 假设文件路径是这个
     accessible_ips = []
 
-    # 遍历 IP 地址，进行连接测试
-    for ip in ip_list:
-        if check_ip(ip):
-            accessible_ips.append(ip)
+    # 使用 ThreadPoolExecutor 进行并行连接测试
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        # 使用 map 来并行执行 check_ip 函数
+        results = executor.map(check_ip, ip_list)
+        
+        # 收集所有可访问的 IP
+        accessible_ips = [ip for ip in results if ip is not None]
 
     # 将可访问的 IP 保存回文件
     with open("scripts/bbb/port.txt", "w") as file:
