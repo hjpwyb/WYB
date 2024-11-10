@@ -1,4 +1,4 @@
-name: Fetch Table Data
+name: Fetch Table Data (IP Only)
 
 on:
   schedule:
@@ -27,12 +27,12 @@ jobs:
         run: |
           python scripts/bbb/fetch_table_data.py  # 更新为正确的脚本路径
 
-      - name: Commit and push CSV file if updated
+      - name: Commit and push TXT file if updated
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add scripts/bbb/port_data.csv  # 更新 CSV 文件
-          git commit -m "Update port data CSV" || echo "No changes to commit"
+          git add scripts/bbb/port_data.txt  # 更新 TXT 文件
+          git commit -m "Update IP list in TXT" || echo "No changes to commit"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 进行认证
