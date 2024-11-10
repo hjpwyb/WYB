@@ -1,4 +1,5 @@
 import socket
+import concurrent.futures
 
 # 从文件读取 IP 地址列表，忽略带有注释的部分
 def read_ip_list(file_path):
@@ -25,8 +26,11 @@ def check_ip(ip):
 
 def main():
     ip_list = read_ip_list("scripts/bbb/port.txt")  # 假设文件路径是这个
-    for ip in ip_list:
-        check_ip(ip)
+    
+    # 使用 ThreadPoolExecutor 并行处理 IP 测试
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        # 将所有 IP 地址传递给 executor，开始并行处理
+        executor.map(check_ip, ip_list)
 
 if __name__ == "__main__":
     main()
