@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add scripts/bbb/port_data.txt  # 更新 TXT 文件
-          git commit -m "Update IP list in TXT" || echo "No changes to commit"
+          git commit -m "Update IP list with port and tag" || echo "No changes to commit"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 进行认证
