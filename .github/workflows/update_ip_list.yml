@@ -6,6 +6,7 @@ on:
       - main
   schedule:
     - cron: "0 * * * *"  # 每小时运行一次
+  workflow_dispatch:  # 添加手动触发选项
 
 jobs:
   update_ip_list:
@@ -23,7 +24,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      # 使用正确的脚本路径运行脚本
       - name: Run IP update script
         run: python scripts/bbb/add_port_script.py
 
