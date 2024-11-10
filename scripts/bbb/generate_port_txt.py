@@ -35,8 +35,8 @@ def check_ip(ip):
         logging.error(f"IP {ip} is not accessible. Error: {e}")
         return None
 
-# 生成符合原格式的 port.txt 文件
-def generate_port_txt(input_file, output_file):
+# 生成符合原格式的 addressesapi.txt 文件
+def generate_addresses_file(input_file, output_file):
     ip_list = read_ip_list(input_file)  # 读取原始 IP 列表
     accessible_ips = []
 
@@ -52,7 +52,7 @@ def generate_port_txt(input_file, output_file):
     logging.debug(f"Accessible IPs: {accessible_ips}")
     logging.debug(f"Total {len(accessible_ips)} accessible IPs")
 
-    # 将可访问的 IP 保存回文件
+    # 将可访问的 IP 保存到新文件 addressesapi.txt
     with open(output_file, "w") as file:
         logging.debug(f"Writing {len(accessible_ips)} IPs to {output_file}")
         for ip in accessible_ips:
@@ -65,5 +65,5 @@ def generate_port_txt(input_file, output_file):
 # 执行函数
 if __name__ == "__main__":
     input_file = "scripts/bbb/port.txt"  # 原始 port.txt 路径
-    output_file = input_file  # 直接覆盖原文件
-    generate_port_txt(input_file, output_file)  # 生成新的 port.txt
+    output_file = "scripts/bbb/addressesapi.txt"  # 新生成的文件地址
+    generate_addresses_file(input_file, output_file)  # 生成新的 addressesapi.txt
