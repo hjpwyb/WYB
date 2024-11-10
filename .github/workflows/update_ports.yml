@@ -18,15 +18,6 @@ jobs:
       with:
         python-version: '3.x'
 
-    # 删除安装依赖的步骤，因为没有requirements.txt
-    # - name: Install dependencies
-    #   run: |
-    #     pip install -r requirements.txt  # 删除或跳过这一步
-
-    - name: Run add_port_script.py to generate port.txt
-      run: |
-        python scripts/bbb/add_port_script.py  # 运行原脚本
-
     - name: Run generate_port_txt.py to check IPs
       run: |
-        python scripts/bbb/generate_port_txt.py  # 在 add_port_script.py 执行后，自动触发该脚本
+        python scripts/bbb/generate_port_txt.py  # 自动更新 port.txt 文件
