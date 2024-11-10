@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 
 # 配置 GitHub 用户和仓库信息
@@ -21,14 +21,16 @@ def fetch_and_save_recent_files():
         commits = response.json()
         
         # 计算一天前的时间
-        one_day_ago = datetime.utcnow() - timedelta(days=1)
+        one_day_ago = datetime.now(timezone.utc) - timedelta(days=1)
+        print(f"One day ago: {one_day_ago}")
         
         # 存储文件内容的列表
         file_contents = []
         
         # 遍历提交记录，找到最近一天内的更改
         for commit in commits:
-            commit_date = datetime.strptime(commit["commit"]["committer"]["date"], "%Y-%m-%dT%H:%M:%SZ")
+            commit_date = datetime.strptime(commit["commit"]["committer"]["date"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            print(f"Commit date: {commit_date}")
             if commit_date >= one_day_ago:
                 # 获取此提交中更改的文件
                 files_url = commit["url"]
