@@ -2,41 +2,36 @@ name: Update Port List
 
 on:
   workflow_run:
-    workflows: ["update_ip_list"]  # 监听名为 update_ip_list 的工作流
+    workflows: ["Update IP List"]
     types:
-      - completed  # 仅在工作流完成时触发
+      - completed
+  workflow_dispatch:  # 添加手动触发选项
 
 jobs:
   update_ports:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out the repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'  # 设置 Python 版本
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Install required Python packages
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
+      - name: Install dependencies
+        run: pip install requests
 
-    - name: Run generate_port_txt.py to filter accessible IPs
-      run: |
-        python scripts/bbb/generate_port_txt.py  # 运行你的脚本
+      - name: Run generate_port_txt.py to filter accessible IPs
+        run: python scripts/bbb/generate_port_txt.py
 
-    - name: Commit and push the updated port.txt
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add scripts/bbb/port.txt  # 添加更新的 port.txt 文件
-        git commit -m "Update accessible IPs in port.txt"
-        git push
-
-    - name: Optional - Other steps for further processing
-      run: |
-        # 这里可以添加后续处理步骤
-        echo "Further processing can be added here"
+      - name: Commit and push the updated port.txt
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add scripts/bbb/port.txt
+          git commit -m "Update accessible IPs in port.txt"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
