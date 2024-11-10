@@ -13,13 +13,13 @@ def read_ip_list(file_path):
         return []
     
     with open(file_path, "r") as file:
-        ip_list = []
+        ip_list = set()  # 使用集合去重
         for line in file:
             # 清理行并去掉注释部分
             clean_line = line.split('#')[0].strip()
             if clean_line:  # 如果不是空行
-                ip_list.append(clean_line)
-    return ip_list
+                ip_list.add(clean_line)  # 使用集合去重
+    return list(ip_list)  # 转回列表以方便遍历
 
 # 测试连接每个 IP
 def check_ip(ip):
@@ -48,19 +48,29 @@ def generate_addresses_file(input_file, output_file):
             if result:  # 仅添加可访问的 IP
                 accessible_ips.append(result)
 
-    # 打印调试信息
-    logging.debug(f"Accessible IPs: {accessible_ips}")
-    logging.debug(f"Total {len(accessible_ips)} accessible IPs")
+    # 调试信息：检查 accessible_ips 内容
+    logging.debug(f"Accessible IPs found: {accessible_ips}")
+    logging.debug(f"Total accessible IPs: {len(accessible_ips)}")
+
+    # 检查是否有可写入文件的内容
+    if len(accessible_ips) == 0:
+        logging.warning("No accessible IPs found. The file will not be written.")
+        return
+
+    # 输出文件路径和文件内容
+    logging.debug(f"Output file path: {os.path.abspath(output_file)}")
 
     # 将可访问的 IP 保存到新文件 addressesapi.txt
-    with open(output_file, "w") as file:
-        logging.debug(f"Writing {len(accessible_ips)} IPs to {output_file}")
-        for ip in accessible_ips:
-            file.write(f"{ip}\n")
-        file.flush()
-        os.fsync(file.fileno())  # 确保写入磁盘
-    
-    logging.info(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
+    try:
+        with open(output_file, "w") as file:
+            logging.debug(f"Writing {len(accessible_ips)} IPs to {output_file}")
+            for ip in accessible_ips:
+                file.write(f"{ip}\n")
+            file.flush()
+            os.fsync(file.fileno())  # 确保写入磁盘
+        logging.info(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
+    except Exception as e:
+        logging.error(f"Error writing to {output_file}: {e}")
 
 # 执行函数
 if __name__ == "__main__":
