@@ -1,11 +1,15 @@
 import socket
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import logging
+
+# 设置日志配置
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # 从文件读取 IP 地址列表，忽略带有注释的部分
 def read_ip_list(file_path):
     if not os.path.exists(file_path):
-        print(f"Error: {file_path} does not exist.")
+        logging.error(f"Error: {file_path} does not exist.")
         return []
     
     with open(file_path, "r") as file:
@@ -25,10 +29,10 @@ def check_ip(ip):
     try:
         # 尝试连接目标 IP 和端口
         with socket.create_connection((host, port), timeout=5) as sock:
-            print(f"IP {ip} is accessible.")
+            logging.info(f"IP {ip} is accessible.")
             return f"{ip}#优选443"  # 保留原格式
     except (socket.timeout, socket.error) as e:
-        print(f"IP {ip} is not accessible. Error: {e}")
+        logging.error(f"IP {ip} is not accessible. Error: {e}")
         return None
 
 # 生成符合原格式的 port.txt 文件
@@ -45,16 +49,18 @@ def generate_port_txt(input_file, output_file):
                 accessible_ips.append(result)
 
     # 打印调试信息
-    print(f"Accessible IPs: {accessible_ips}")
-    print(f"Total {len(accessible_ips)} accessible IPs")
+    logging.debug(f"Accessible IPs: {accessible_ips}")
+    logging.debug(f"Total {len(accessible_ips)} accessible IPs")
 
     # 将可访问的 IP 保存回文件
     with open(output_file, "w") as file:
+        logging.debug(f"Writing {len(accessible_ips)} IPs to {output_file}")
         for ip in accessible_ips:
             file.write(f"{ip}\n")
-        file.flush()  # 强制刷新缓存
+        file.flush()
+        os.fsync(file.fileno())  # 确保写入磁盘
     
-    print(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
+    logging.info(f"Total {len(accessible_ips)} accessible IPs written to {output_file}.")
 
 # 执行函数
 if __name__ == "__main__":
