@@ -1,7 +1,7 @@
 import os
 import socket
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 设置日志配置
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,12 +12,12 @@ def read_ip_list(file_path):
         return []
     
     with open(file_path, "r") as file:
-        ip_list = set()  # 使用集合去重
+        ip_list = set()
         for line in file:
             clean_line = line.split('#')[0].strip()
             if clean_line:
                 ip_list.add(clean_line)  # 使用集合去重
-    return list(ip_list)  # 转回列表以方便遍历
+    return list(ip_list)  # 转回列表
 
 def check_ip(ip):
     host, port = ip.split(":")
@@ -54,6 +54,12 @@ def generate_addresses_file(input_file, output_file):
     logging.debug(f"Output file path: {output_file_abs_path}")
 
     try:
+        # 先确认目录是否存在
+        directory = os.path.dirname(output_file_abs_path)
+        if not os.path.exists(directory):
+            logging.warning(f"Directory {directory} does not exist. Attempting to create it.")
+            os.makedirs(directory, exist_ok=True)
+
         with open(output_file, "w") as file:
             logging.debug(f"Writing {len(accessible_ips)} IPs to {output_file}")
             for ip in accessible_ips:
