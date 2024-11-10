@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import csv
 
 # 网页 URL
 url = "https://cf.090227.xyz/"
@@ -19,19 +18,12 @@ table = soup.find('table')
 rows = table.find_all('tr')
 
 # 打开文件并写入数据
-with open('scripts/bbb/port_data.csv', mode='w', newline='', encoding='utf-8') as file:
-    writer = csv.writer(file)
-    writer.writerow(["线路", "IP", "平均延迟", "丢包率", "速度"])  # 表头
-
-    # 遍历表格行并提取数据
+with open('scripts/bbb/port_data.txt', mode='w', encoding='utf-8') as file:
+    # 遍历表格行并提取 IP 数据
     for row in rows[1:]:  # 跳过表头
         columns = row.find_all('td')
         if len(columns) == 5:  # 确保该行有 5 列
-            line = columns[0].text.strip()
-            ip = columns[1].text.strip()
-            latency = columns[2].text.strip()
-            packet_loss = columns[3].text.strip()
-            speed = columns[4].text.strip()
-            writer.writerow([line, ip, latency, packet_loss, speed])
+            ip = columns[1].text.strip()  # 获取第二列（IP列）
+            file.write(f"{ip}\n")  # 将 IP 写入文件，每个 IP 占一行
 
-print("Data fetched and saved to scripts/bbb/port_data.csv")
+print("IP data fetched and saved to scripts/bbb/port_data.txt")
