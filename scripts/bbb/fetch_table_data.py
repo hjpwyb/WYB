@@ -24,6 +24,8 @@ with open('scripts/bbb/port_data.txt', mode='w', encoding='utf-8') as file:
         columns = row.find_all('td')
         if len(columns) == 5:  # 确保该行有 5 列
             ip = columns[1].text.strip()  # 获取第二列（IP列）
-            file.write(f"{ip}\n")  # 将 IP 写入文件，每个 IP 占一行
+            # 拼接 ":443#优选443"
+            ip_with_port = f"{ip}:443#优选443"
+            file.write(f"{ip_with_port}\n")  # 将拼接后的 IP 写入文件，每个 IP 占一行
 
-print("IP data fetched and saved to scripts/bbb/port_data.txt")
+print("IP data with ':443#优选443' fetched and saved to scripts/bbb/port_data.txt")
