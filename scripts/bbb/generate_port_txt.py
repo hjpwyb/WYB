@@ -21,7 +21,7 @@ def check_ip(ip):
         # 尝试连接目标 IP 和端口
         with socket.create_connection((host, port), timeout=5) as sock:
             print(f"IP {ip} is accessible.")
-            return ip  # 返回可访问的 IP
+            return f"{ip}#优选443"  # 返回带有 #优选443 后缀的可访问 IP
     except (socket.timeout, socket.error) as e:
         print(f"IP {ip} is not accessible. Error: {e}")
         return None  # 返回 None 如果不可访问
