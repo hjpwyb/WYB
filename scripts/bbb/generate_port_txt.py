@@ -1,21 +1,21 @@
 import socket
 import concurrent.futures
 
-# 从文件读取 IP 地址列表，忽略带有注释的部分
+# 从文件读取 IP 地址列表，保留原始行内容以便写回
 def read_ip_list(file_path):
     with open(file_path, "r") as file:
         ip_list = []
         for line in file:
-            # 清理行并去掉注释部分
             clean_line = line.split('#')[0].strip()
             if clean_line:  # 如果不是空行
-                ip_list.append(line.strip())  # 保留原始行，保留注释部分
+                ip_list.append(line.strip().replace(" ", ""))  # 去掉空格，保留原始行
     return ip_list
 
 # 测试连接每个 IP
-def check_ip(ip):
+def check_ip(line):
     # 去掉端口后的注释部分，只保留IP和端口
-    ip = ip.split('#')[0].strip()
+    ip_with_comment = line.strip().replace(" ", "")
+    ip = line.split('#')[0].strip()
     
     # 分割IP和端口
     if ":" in ip:
@@ -30,7 +30,7 @@ def check_ip(ip):
             # 尝试连接目标 IP 和端口
             with socket.create_connection((host, port), timeout=5) as sock:
                 print(f"IP {ip} is accessible.")
-                return ip  # 返回可访问的 IP
+                return ip_with_comment  # 返回包含注释的原始行内容
         except (socket.timeout, socket.error) as e:
             print(f"IP {ip} is not accessible. Error: {e}")
             return None  # 返回 None 如果不可访问
@@ -52,12 +52,8 @@ def main():
     # 将可访问的 IP 保存回文件
     with open("scripts/bbb/port.txt", "w") as file:
         for ip in accessible_ips:
-            # 保证格式：IP和注释在同一行，使用一个空格分隔
-            for original_line in ip_list:
-                if ip in original_line:
-                    file.write(f"{ip} {original_line.split('#')[1].strip()}\n" if '#' in original_line else f"{ip}\n")
-                    break
-    
+            file.write(f"{ip}\n")  # 保留注释紧跟在IP和端口后
+
     print(f"Total {len(accessible_ips)} accessible IPs.")
 
 if __name__ == "__main__":
