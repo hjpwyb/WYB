@@ -68,16 +68,11 @@ def extract_m3u8_links(url):
     if info_div:
         title_tag = info_div.find('h2')
         title = title_tag.get_text(strip=True) if title_tag else "default_title"
-        
-        span_tag = info_div.find('span')
-        episode_info = span_tag.get_text(strip=True) if span_tag else "未知集数"
-        
-        label_tag = info_div.find('label')
-        rating_info = label_tag.get_text(strip=True) if label_tag else "未知评分"
 
-        # 生成文件名
+        # 删除集数和评分部分，只保留标题
         safe_title = re.sub(r'[<>:"/\\|?*]', '', title)
-        filename = f"{safe_title}_{episode_info}_{rating_info}.m3u"
+        filename = f"{safe_title}.m3u"  # 只保留标题部分
+
     else:
         filename = "default_title.m3u"
 
