@@ -2,8 +2,10 @@ name: Fetch Table Data (IP Only)
 
 on:
   schedule:
-    # 每天一次，设定在 UTC 时间的凌晨 00:00 执行
+    # 每天三次，设定在 UTC 时间的 00:00、08:00 和 16:00 执行
     - cron: "0 0 * * *"
+    - cron: "0 8 * * *"
+    - cron: "0 16 * * *"
   workflow_dispatch:  # 支持手动触发工作流
 
 jobs:
