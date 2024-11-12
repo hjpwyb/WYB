@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import random
+from concurrent.futures import ThreadPoolExecutor
 
 # 删除指定文件夹中的所有 .m3u 文件
 def delete_old_m3u_files(folder_path):
@@ -25,14 +26,14 @@ def get_subpage_links(main_url):
         'Expires': '0'
     }
     
-    def get_random_url(url):
-        random_query = f"?t={random.randint(1, 100000)}"
-        return url + random_query
+    try:
+        url_with_random_query = f"{main_url}?t={random.randint(1, 100000)}"
+        response = requests.get(url_with_random_query, headers=headers)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"请求失败: {e}")
+        return []
     
-    url_with_random_query = get_random_url(main_url)
-    response = requests.get(url_with_random_query, headers=headers)
-    response.raise_for_status()
-
     soup = BeautifulSoup(response.text, 'html.parser')
     links = soup.find_all('a', href=True)
 
@@ -54,29 +55,25 @@ def extract_m3u8_links(url):
         'Expires': '0'
     }
     
-    def get_random_url(url):
-        random_query = f"?t={random.randint(1, 100000)}"
-        return url + random_query
+    try:
+        url_with_random_query = f"{url}?t={random.randint(1, 100000)}"
+        response = requests.get(url_with_random_query, headers=headers)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"请求失败: {e}")
+        return "default_title.m3u", []
     
-    url_with_random_query = get_random_url(url)
-    response = requests.get(url_with_random_query, headers=headers)
-    response.raise_for_status()
-
     soup = BeautifulSoup(response.content, 'html.parser')
-
     info_div = soup.find('div', class_='vodInfo')
+    
     if info_div:
         title_tag = info_div.find('h2')
         title = title_tag.get_text(strip=True) if title_tag else "default_title"
-
-        # 删除集数和评分部分，只保留标题
         safe_title = re.sub(r'[<>:"/\\|?*]', '', title)
-        filename = f"{safe_title}.m3u"  # 只保留标题部分
-
+        filename = f"{safe_title}.m3u"
     else:
         filename = "default_title.m3u"
 
-    # 查找所有 <a> 标签内的播放链接
     m3u8_links = []
     for a_tag in soup.select('#play_2 a'):
         href = a_tag.get('href')
@@ -102,27 +99,29 @@ def save_m3u8_links_to_file(folder_path, filename, m3u8_links):
     
     print(f"M3U8 链接已成功写入 {file_path} 文件中")
 
+# 处理子页面，提取和保存 M3U8 链接
+def process_subpage(url, folder_path):
+    filename, m3u8_links = extract_m3u8_links(url)
+    if m3u8_links:
+        save_m3u8_links_to_file(folder_path, filename, m3u8_links)
+    else:
+        print(f"No M3U8 links found for {url}")
+
 # 主函数
 def main():
-    # 删除旧的 .m3u 文件
-    folder_path = 'scripts/aaa'  # 指定你要删除文件的文件夹路径
+    folder_path = 'scripts/aaa'
     delete_old_m3u_files(folder_path)
     
-    # 更新后的页面链接
     base_urls = [
         "https://huyazy.com/index.php/vod/type/id/20/page/1.html?ac=detail",
         "https://huyazy.com/index.php/vod/type/id/20/page/2.html?ac=detail"
     ]
     
-    for main_url in base_urls:
-        subpage_urls = get_subpage_links(main_url)
-        for url in subpage_urls:
-            print(f"Processing {url}...")
-            filename, m3u8_links = extract_m3u8_links(url)
-            if m3u8_links:
-                save_m3u8_links_to_file(folder_path, filename, m3u8_links)
-            else:
-                print(f"No M3U8 links found for {url}")
+    with ThreadPoolExecutor() as executor:
+        for main_url in base_urls:
+            subpage_urls = get_subpage_links(main_url)
+            for url in subpage_urls:
+                executor.submit(process_subpage, url, folder_path)
 
 if __name__ == "__main__":
     main()
