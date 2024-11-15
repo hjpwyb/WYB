@@ -18,7 +18,10 @@ try:
 
     # 节点模板
     template = (
-        "vless://90cd4a77-141a-43c9-991b-08263cfe9c10@27.50.49.181:2053?encryption=none&security=tls&sni=tlsjiedian.linyubo216.filegear-sg.me&allowInsecure=1&type=ws&host=tlsjiedian.linyubo216.filegear-sg.me&path=%2F%3Fed%3D2560#HK"
+        "vless://a0f10f2c-ebb5-4ee3-abb0-4ea244308330@{ip}:443"
+        "?encryption=none&security=tls&sni=hao.linyu220.us.kg"
+        "&fp=random&allowInsecure=1&type=ws&host=hao.linyu220.us.kg"
+        "&path=%2F%3Fed%3D2560#hao"
     )
 
     # 生成节点信息
@@ -36,4 +39,3 @@ try:
 
 except Exception as e:
     print(f"Error processing file: {e}")
-
