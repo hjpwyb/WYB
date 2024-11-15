@@ -1,10 +1,36 @@
-2606:4700:57:cfec:87b2:59e6:d94d:9bf6,LAS,North America,Las Vegas,173 ms
-2a06:98c1:3121:ecf8:cd47:2d88:5292:4839,LAS,North America,Las Vegas,196 ms
-2606:4700:a1:f21d:7fe1:f8ed:793d:dcc3,LAX,North America,Los Angeles,206 ms
-2606:4700:3025:c247:4fec:c1b0:2bae:e353,LAX,North America,Los Angeles,207 ms
-2606:4700:3023:71cc:9d1:a398:cb09:acad,LAX,North America,Los Angeles,207 ms
-2606:4700:9648:acbf:6683:4357:351a:98c1,CDG,Europe,Paris,321 ms
-2606:4700:8cab:47f1:4eaa:d087:a946:c6b1,CDG,Europe,Paris,322 ms
-2606:4700:8de0:599f:dfa3:3a28:fbb2:f605,CDG,Europe,Paris,323 ms
-2606:4700:976d:4700:bbc3:5e4e:ac3d:be8b,CDG,Europe,Paris,323 ms
-2606:4700:9a9e:b919:80e4:febc:2f4:7ebb,CDG,Europe,Paris,323 ms
+104.17.85.19,SJC,North America,San Jose,163 ms
+104.16.152.5,SJC,North America,San Jose,164 ms
+104.17.207.121,SJC,North America,San Jose,164 ms
+104.16.162.210,SJC,North America,San Jose,164 ms
+104.16.124.203,SJC,North America,San Jose,164 ms
+104.16.228.13,SJC,North America,San Jose,163 ms
+104.19.175.56,SJC,North America,San Jose,163 ms
+104.16.157.245,SJC,North America,San Jose,164 ms
+104.17.78.1,SJC,North America,San Jose,164 ms
+104.17.109.27,SJC,North America,San Jose,164 ms
+104.18.237.241,SJC,North America,San Jose,163 ms
+104.16.185.118,SJC,North America,San Jose,163 ms
+104.16.150.71,SJC,North America,San Jose,163 ms
+104.17.62.132,SJC,North America,San Jose,163 ms
+104.16.227.94,SJC,North America,San Jose,163 ms
+172.67.69.195,HKG,Asia Pacific,Hong Kong,83 ms
+104.26.11.78,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.135.192,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.134.38,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.76.112,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.68.136,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.71.173,HKG,Asia Pacific,Hong Kong,82 ms
+162.159.136.232,HKG,Asia Pacific,Hong Kong,82 ms
+104.26.14.194,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.74.230,HKG,Asia Pacific,Hong Kong,83 ms
+104.20.16.117,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.77.10,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.67.151,HKG,Asia Pacific,Hong Kong,83 ms
+104.20.22.0,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.68.175,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.160.242,FRA,Europe,Frankfurt,250 ms
+162.159.81.171,FRA,Europe,Frankfurt,265 ms
+162.159.160.223,FRA,Europe,Frankfurt,230 ms
+162.159.81.255,FRA,Europe,Frankfurt,231 ms
+162.159.160.58,FRA,Europe,Frankfurt,244 ms
+162.159.81.201,FRA,Europe,Frankfurt,267 ms
