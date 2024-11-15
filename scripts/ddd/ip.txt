@@ -1,0 +1,23 @@
+2606:4700:90d3:c7db:f15c:b551:d8e8:ccd7,CDG,Europe,Paris,296 ms
+2606:4700:90c2:aa46:dd2b:8415:59fc:d5f6,CDG,Europe,Paris,300 ms
+2606:4700:8dde:2ba4:6aa6:5bc5:f217:a9b,CDG,Europe,Paris,305 ms
+2606:4700:90da:a7e:f65b:d21a:5bc7:9dd5,CDG,Europe,Paris,306 ms
+2606:4700:8dec:3d37:fd2f:c157:7b56:7d3f,CDG,Europe,Paris,308 ms
+
+2a06:98c1:3121:ded4:9d47:1b56:be84:470e,LAS,North America,Las Vegas,172 ms
+2606:4700:57:5977:5beb:7a44:dfd:4fd2,LAS,North America,Las Vegas,173 ms
+2606:4700:3118:9e3d:e4a4:621a:20f:8e10,LAX,North America,Los Angeles,183 ms
+2a06:98c1:3120:2312:801d:d55e:e8a8:4333,LAS,North America,Las Vegas,188 ms
+2606:4700:a9:e7d1:a879:e559:dab7:b2bb,SJC,North America,San Jose,189 ms
+
+2606:4700:57:fe5e:bb62:19a2:b45f:ba23,LAS,North America,Las Vegas,172 ms
+2a06:98c1:56:db0:8eb9:175c:387f:8af1,LAS,North America,Las Vegas,172 ms
+2606:4700:a9:3718:cacb:326e:1ab6:162,SJC,North America,San Jose,173 ms
+2a06:98c1:3121:c190:754b:ef39:bde6:478c,LAS,North America,Las Vegas,184 ms
+2a06:98c1:3120:5ff:5746:aa28:bf82:3c86,LAS,North America,Las Vegas,185 ms
+
+2606:4700:9b07:6bc5:eb6c:191d:7d66:a0df,CDG,Europe,Paris,284 ms
+2606:4700:9c60:e749:7f33:5988:10e9:27f9,CDG,Europe,Paris,286 ms
+2606:4700:9c64:4dda:7aed:d97:162:631c,CDG,Europe,Paris,291 ms
+2606:4700:9ae8:15eb:3dd5:c611:ef73:684,CDG,Europe,Paris,300 ms
+2606:4700:9b0b:29ce:9286:d940:69e2:515a,CDG,Europe,Paris,304 ms
