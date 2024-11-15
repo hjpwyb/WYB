@@ -1,4 +1,4 @@
-name: Run test.py Script
+name: Run Python Script and Push Results
 
 on:
   push:
@@ -7,33 +7,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-script:
+  run-python-script:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出代码
-      - name: Checkout code
-        uses: actions/checkout@v3
+    # 检出仓库代码
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      # 设置 Python 环境
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
+    # 设置 Python 环境
+    - name: Set Up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-      # 安装依赖（如果需要）
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
+    # 安装依赖
+    - name: Install Dependencies
+      run: python -m pip install --upgrade pip
 
-      # 运行脚本
-      - name: Run test.py
-        run: |
-          python ./scripts/ddd/test.py
+    # 运行 Python 脚本
+    - name: Run Python Script
+      run: python ./scripts/ddd/test.py
 
-      # 查看生成的 hao.txt 文件
-      - name: Upload hao.txt as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: hao-txt
-          path: ./scripts/ddd/hao.txt
+    # 提交并推送生成的 hao.txt 文件
+    - name: Commit and Push Generated hao.txt
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add scripts/ddd/hao.txt
+        git commit -m "Add generated hao.txt"
+        git push
