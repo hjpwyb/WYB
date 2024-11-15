@@ -1,23 +1,36 @@
-2606:4700:90d3:c7db:f15c:b551:d8e8:ccd7,CDG,Europe,Paris,296 ms
-2606:4700:90c2:aa46:dd2b:8415:59fc:d5f6,CDG,Europe,Paris,300 ms
-2606:4700:8dde:2ba4:6aa6:5bc5:f217:a9b,CDG,Europe,Paris,305 ms
-2606:4700:90da:a7e:f65b:d21a:5bc7:9dd5,CDG,Europe,Paris,306 ms
-2606:4700:8dec:3d37:fd2f:c157:7b56:7d3f,CDG,Europe,Paris,308 ms
-
-2a06:98c1:3121:ded4:9d47:1b56:be84:470e,LAS,North America,Las Vegas,172 ms
-2606:4700:57:5977:5beb:7a44:dfd:4fd2,LAS,North America,Las Vegas,173 ms
-2606:4700:3118:9e3d:e4a4:621a:20f:8e10,LAX,North America,Los Angeles,183 ms
-2a06:98c1:3120:2312:801d:d55e:e8a8:4333,LAS,North America,Las Vegas,188 ms
-2606:4700:a9:e7d1:a879:e559:dab7:b2bb,SJC,North America,San Jose,189 ms
-
-2606:4700:57:fe5e:bb62:19a2:b45f:ba23,LAS,North America,Las Vegas,172 ms
-2a06:98c1:56:db0:8eb9:175c:387f:8af1,LAS,North America,Las Vegas,172 ms
-2606:4700:a9:3718:cacb:326e:1ab6:162,SJC,North America,San Jose,173 ms
-2a06:98c1:3121:c190:754b:ef39:bde6:478c,LAS,North America,Las Vegas,184 ms
-2a06:98c1:3120:5ff:5746:aa28:bf82:3c86,LAS,North America,Las Vegas,185 ms
-
-2606:4700:9b07:6bc5:eb6c:191d:7d66:a0df,CDG,Europe,Paris,284 ms
-2606:4700:9c60:e749:7f33:5988:10e9:27f9,CDG,Europe,Paris,286 ms
-2606:4700:9c64:4dda:7aed:d97:162:631c,CDG,Europe,Paris,291 ms
-2606:4700:9ae8:15eb:3dd5:c611:ef73:684,CDG,Europe,Paris,300 ms
-2606:4700:9b0b:29ce:9286:d940:69e2:515a,CDG,Europe,Paris,304 ms
+104.17.85.19,SJC,North America,San Jose,163 ms
+104.16.152.5,SJC,North America,San Jose,164 ms
+104.17.207.121,SJC,North America,San Jose,164 ms
+104.16.162.210,SJC,North America,San Jose,164 ms
+104.16.124.203,SJC,North America,San Jose,164 ms
+104.16.228.13,SJC,North America,San Jose,163 ms
+104.19.175.56,SJC,North America,San Jose,163 ms
+104.16.157.245,SJC,North America,San Jose,164 ms
+104.17.78.1,SJC,North America,San Jose,164 ms
+104.17.109.27,SJC,North America,San Jose,164 ms
+104.18.237.241,SJC,North America,San Jose,163 ms
+104.16.185.118,SJC,North America,San Jose,163 ms
+104.16.150.71,SJC,North America,San Jose,163 ms
+104.17.62.132,SJC,North America,San Jose,163 ms
+104.16.227.94,SJC,North America,San Jose,163 ms
+172.67.69.195,HKG,Asia Pacific,Hong Kong,83 ms
+104.26.11.78,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.135.192,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.134.38,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.76.112,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.68.136,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.71.173,HKG,Asia Pacific,Hong Kong,82 ms
+162.159.136.232,HKG,Asia Pacific,Hong Kong,82 ms
+104.26.14.194,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.74.230,HKG,Asia Pacific,Hong Kong,83 ms
+104.20.16.117,HKG,Asia Pacific,Hong Kong,82 ms
+172.67.77.10,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.67.151,HKG,Asia Pacific,Hong Kong,83 ms
+104.20.22.0,HKG,Asia Pacific,Hong Kong,83 ms
+172.67.68.175,HKG,Asia Pacific,Hong Kong,83 ms
+162.159.160.242,FRA,Europe,Frankfurt,250 ms
+162.159.81.171,FRA,Europe,Frankfurt,265 ms
+162.159.160.223,FRA,Europe,Frankfurt,230 ms
+162.159.81.255,FRA,Europe,Frankfurt,231 ms
+162.159.160.58,FRA,Europe,Frankfurt,244 ms
+162.159.81.201,FRA,Europe,Frankfurt,267 ms
