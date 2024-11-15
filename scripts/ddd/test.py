@@ -18,12 +18,11 @@ try:
 
     # 节点模板
     template = (
-        "vless://a0f10f2c-ebb5-4ee3-abb0-4ea244308330@{ip}:443"
-        "?encryption=none&security=tls&sni=hao.linyu220.us.kg"
-        "&fp=random&allowInsecure=1&type=ws&host=hao.linyu220.us.kg"
-        "&path=%2F%3Fed%3D2560#hao"
+        "vless://90cd4a77-141a-43c9-991b-08263cfe9c10@{ip}:443"
+        "?encryption=none&security=tls&sni=tlsjiedian.linyu230.us.kg"
+        "&fp=random&allowInsecure=1&type=ws&host=tlsjiedian.linyu230.us.kg"
+        "&path=%2FproxyIP%3Dproxyip.aliyun.fxxk.dedyn.io#hao"
     )
-
     # 生成节点信息
     nodes = []
     for line in lines:
