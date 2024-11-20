@@ -11,8 +11,8 @@ output_file = os.path.join(script_dir, 'hao.txt')
 if not os.path.exists(input_file):
     raise FileNotFoundError(f"Input file '{input_file}' does not exist.")
 
-# 读取 ip.txt 并处理
 try:
+    # 读取 ip.txt 并处理
     with open(input_file, 'r', encoding='utf-8') as infile:
         lines = infile.readlines()
 
@@ -30,11 +30,33 @@ try:
         if ip:  # 确保 IP 不为空
             nodes.append(template.format(ip=ip))
 
-    # 写入 hao.txt
+    # 检查 hao.txt 是否已存在
+    if os.path.exists(output_file):
+        with open(output_file, 'r', encoding='utf-8') as outfile:
+            old_content = outfile.read()
+    else:
+        old_content = ""
+
+    # 将新内容写入 hao.txt
+    new_content = '\n'.join(nodes)
     with open(output_file, 'w', encoding='utf-8') as outfile:
-        outfile.write('\n'.join(nodes))
+        outfile.write(new_content)
 
     print(f"Nodes saved to '{output_file}'. Total nodes: {len(nodes)}")
+
+    # 比较文件内容，判断是否需要提交
+    if old_content.strip() != new_content.strip():
+        os.system("git config --global user.name 'GitHub Actions'")
+        os.system("git config --global user.email 'actions@github.com'")
+        os.system(f"git add {output_file}")
+        commit_message = "Update IP list with port and tag"
+        result = os.system(f"git commit -m '{commit_message}'")
+        if result != 0:
+            print("No changes to commit.")
+        else:
+            os.system("git push origin main")
+    else:
+        print("No changes detected in 'hao.txt', skipping commit.")
 
 except Exception as e:
     print(f"Error processing file: {e}")
