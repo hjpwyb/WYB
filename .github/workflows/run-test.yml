@@ -1,24 +1,32 @@
+name: Fetch Table Data
+
+on:
+  schedule:
+    # 每 3 小时运行一次
+    - cron: "0 */8 * * *"
+  workflow_dispatch:  # 支持手动触发工作流
+
 jobs:
   fetch_data:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # 检出代码仓库
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.x"  # 使用最新版本的 Python 3
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4
+          pip install requests beautifulsoup4  # 安装依赖
 
       - name: Run the table data fetching script
         run: |
           python scripts/ddd/test.py
-        continue-on-error: true  # 忽略非零退出码
+        continue-on-error: true  # 忽略脚本非零退出码
 
       - name: Commit and push TXT file if updated
         run: |
@@ -28,4 +36,4 @@ jobs:
           git commit -m "Update IP list with port and tag" || echo "No changes to commit"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token
