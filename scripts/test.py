@@ -167,7 +167,7 @@ def save_m3u8_files_for_each_episode(folder_path, title, m3u8_links):
 # 主函数
 def main():
     # 基础文件夹路径
-    base_folder = '/volume1/docker/python_scripts/aaa/aaa/综艺'  # 修改为你的目标文件夹路径
+    base_folder = '/opt/scripts/aaa/综艺'  # 修改为你的目标文件夹路径
 
     # 清空文件夹
     clear_folder(base_folder)
