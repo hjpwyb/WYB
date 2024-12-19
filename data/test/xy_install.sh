@@ -188,7 +188,8 @@ function get_config_path() {
             if command -v jq > /dev/null 2>&1; then
                 config_dir=$(docker inspect $container_name | jq -r '.[].Mounts[] | select(.Destination=="/data") | .Source')
             else
-                config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "$container_name")
+                # config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "$container_name")
+                config_dir=$(docker inspect --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}' "$container_name")
             fi
             results+=("$container_name $config_dir")
         done < <(docker ps -a | grep "$image")
@@ -422,7 +423,11 @@ function docker_pull() {
         else
             ERROR "已尝试docker_mirrors.txt中所有镜像代理拉取失败，程序将退出，请检查网络后再试！"
             WARN "如需重测速选择代理，请手动删除${config_dir}/docker_mirrors.txt文件后重新运行脚本！"
-            exit 1       
+            if [[ "${1}" == "ailg/g-box:hostmode" ]]; then
+                return 1
+            else
+                exit 1
+            fi     
         fi
     else
         tempfile="/tmp/tmp_sha"
@@ -477,7 +482,11 @@ update_ailg() {
         done
         if [ $retries -eq $max_retries ]; then
             ERROR "镜像拉取失败，已达到最大重试次数！"
-            exit 1
+            if [[ "$update_img" == "ailg/g-box:hostmode" ]]; then
+                return 1
+            else
+                exit 1
+            fi
         fi
     elif [ -z "$local_sha" ] &&  [ -z "$remote_sha" ]; then
         docker_pull "${update_img}"
@@ -487,10 +496,11 @@ update_ailg() {
 function user_select1() {
     docker_name="$(docker ps -a | grep -E 'ailg/g-box' | awk '{print $NF}' | head -n1)"
     if [ -n "${docker_name}" ]; then
-        WARN "您已安装g-box，包含老G版alist的所有功能，无需重复安装！继续安装将自动卸载已安装的g-box容器！"
-        read -erp "是否继续安装？（确认按Y/y，否则按任意键返回！）：" ow_install
+        WARN "您已安装g-box，包含老G版alist的所有功能，无需再安装老G版的alist！继续安装将自动卸载已安装的g-box容器！"
+        read -erp "是否卸载G-Box继续安装老G版alist？（确认按Y/y，否则按任意键返回！）：" ow_install
         if [[ $ow_install == [Yy] ]]; then
-            config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${docker_name}")
+            # config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${docker_name}")
+            config_dir=$(docker inspect --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}' "${docker_name}")
             INFO "正在停止和删除${docker_name}容器……"
             docker rm -f $docker_name
             INFO "$docker_name 容器已删除"
@@ -501,9 +511,9 @@ function user_select1() {
     fi
     echo -e "———————————————————————————————————— \033[1;33mA  I  老  G\033[0m —————————————————————————————————"
     echo -e "\n"
-    echo -e "\033[1;32m1、host版 - 无🍉十全大补瓜🍉第三方播放器$NC"
+    echo -e "\033[1;32m1、host版 - 无🍉十全大补瓜🍉第三方播放器（不再更新！）$NC"
     echo -e "\n"
-    echo -e "\033[1;35m2、latest版 - 也是host网络模式！适配小雅emby/jellyfin速装版 有🍉十全大补瓜🍉第三方播放器，推荐安装！$NC"
+    echo -e "\033[1;35m2、latest版 - 也是host网络模式！适配小雅emby/jellyfin速装版 有🍉十全大补瓜🍉第三方播放器，未装G-Box可装！$NC"
     echo -e "\n"
     echo -e "——————————————————————————————————————————————————————————————————————————————————"
     while :;do
@@ -868,7 +878,7 @@ function user_select4() {
         echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
 
-        read -erp "请输入您的选择（1-7，按b返回上级菜单或按q退出）；" f4_select
+        read -erp "请输入您的选择（1-7，按b返回上级菜单或按q退出）：" f4_select
         case "$f4_select" in
         1)
             emby_ailg="emby-ailg-115.mp4"
@@ -1271,7 +1281,7 @@ ailg_uninstall() {
         echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
 
-        read -erp "请输入您的选择（1-7，按b返回上级菜单或按q退出）；" uninstall_select
+        read -erp "请输入您的选择（1-6，按b返回上级菜单或按q退出）：" uninstall_select
         case "$uninstall_select" in
         1)
             general_uninstall "ailg/alist:latest"
@@ -1903,8 +1913,10 @@ user_selecto() {
         echo -e "\n"
         echo -e "\033[1;32m6、速装emby/jellyfin镜像扩容\033[0m"
         echo -e "\n"
+        echo -e "\033[1;32m7、修复docker镜像无法拉取（可手动配置镜像代理）\033[0m\033[0m"
+        echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
-        read -erp "请输入您的选择（1-2，按b返回上级菜单或按q退出）；" fo_select
+        read -erp "请输入您的选择（1-7，按b返回上级菜单或按q退出）：" fo_select
         case "$fo_select" in
         1)
             ailg_uninstall emby
@@ -1930,6 +1942,10 @@ user_selecto() {
             expand_img
             break
             ;;
+        7)
+            fix_docker
+            break
+            ;;
         [Bb])
             clear
             main
@@ -1945,6 +1961,104 @@ user_selecto() {
             ;;
         esac
     done
+}
+
+fix_docker() {
+    DEFAULT_REGISTRY_URLS=('https://hub.rat.dev' 'https://nas.dockerimages.us.kg' 'https://dockerhub.ggbox.us.kg')
+    REGISTRY_URLS=("${DEFAULT_REGISTRY_URLS[@]}")
+    
+    DOCKER_CONFIG_FILE=''
+    BACKUP_FILE=''
+
+    command_exists() {
+        command -v "$1" >/dev/null 2>&1
+    }
+
+    REQUIRED_COMMANDS=('docker' 'awk' 'jq' 'grep' 'cp' 'mv' 'kill')
+    for cmd in "${REQUIRED_COMMANDS[@]}"; do
+        if ! command_exists "$cmd"; then
+            echo "缺少命令: $cmd，请安装后再运行脚本。"
+            exit 1
+        fi
+    done
+
+    docker_pid() {
+        if [ -f /var/run/docker.pid ]; then
+            kill -SIGHUP $(cat /var/run/docker.pid)
+        elif [ -f /var/run/dockerd.pid ]; then
+            kill -SIGHUP $(cat /var/run/dockerd.pid)
+        else
+            echo "Docker进程不存在，脚本中止执行。"
+            cp $BACKUP_FILE $DOCKER_CONFIG_FILE
+            echo "已恢复原配置文件。"
+            exit 1
+        fi 
+    }
+
+    read -p $'\033[1;33m是否使用自定义镜像代理？（y/n）: \033[0m' use_custom_registry
+    if [[ "$use_custom_registry" == [Yy] ]]; then
+        read -p "请输入自定义镜像代理（示例：https://docker.ggbox.us.kg，多个请用空格分开。直接回车将重置为空）: " -a custom_registry_urls
+        if [ ${#custom_registry_urls[@]} -eq 0 ]; then
+            echo "未输入任何自定义镜像代理，镜像代理将重置为空。"
+            REGISTRY_URLS=()
+        else
+            REGISTRY_URLS=("${custom_registry_urls[@]}")
+        fi
+    fi
+
+    echo -e "\033[1;33m正在执行修复，请稍候……\033[0m"
+
+    if [ ${#REGISTRY_URLS[@]} -eq 0 ]; then
+        REGISTRY_URLS_JSON='[]'
+    else
+        REGISTRY_URLS_JSON=$(printf '%s\n' "${REGISTRY_URLS[@]}" | jq -R . | jq -s .)
+    fi
+
+    if [ -f /etc/synoinfo.conf ]; then
+        DOCKER_ROOT_DIR=$(docker info 2>/dev/null | grep 'Docker Root Dir' | awk -F': ' '{print $2}')
+        DOCKER_CONFIG_FILE="${DOCKER_ROOT_DIR%/@docker}/@appconf/ContainerManager/dockerd.json"
+    else
+        DOCKER_CONFIG_FILE='/etc/docker/daemon.json'
+    fi
+
+    if [ ! -f $DOCKER_CONFIG_FILE ]; then
+        echo "配置文件 $DOCKER_CONFIG_FILE 不存在，脚本中止执行。"
+        exit 1
+    fi
+
+    BACKUP_FILE="${DOCKER_CONFIG_FILE}.bak"
+    cp $DOCKER_CONFIG_FILE $BACKUP_FILE
+
+    # if grep -q '"registry-mirrors"' $DOCKER_CONFIG_FILE; then
+    #     awk -v urls="$REGISTRY_URLS_JSON" '{gsub(/"registry-mirrors":\[[^]]*\]/, "\"registry-mirrors\":" urls)}1' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
+    # else
+    #     awk -v urls="$REGISTRY_URLS_JSON" 'BEGIN {FS=OFS="{"} NR==1 {$2="\n  \"registry-mirrors\": " urls ", " $2} 1' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
+    # fi
+    jq --argjson urls "$REGISTRY_URLS_JSON" '
+        if has("registry-mirrors") then
+            .["registry-mirrors"] = $urls
+        else
+            . + {"registry-mirrors": $urls}
+        end
+    ' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
+    if [ "$REGISTRY_URLS_JSON" == '[]' ]; then
+        echo -e "\033[1;33m已清空镜像代理，不再检测docker连接性，直接退出！\033[0m"
+        docker_pid
+        exit 0
+    fi
+    
+    
+    docker_pid
+
+    docker rmi hello-world:latest >/dev/null 2>&1
+    if docker pull hello-world; then
+        echo -e "\033[1;32mNice！Docker下载测试成功，配置更新完成！\033[0m"
+    else
+        echo -e "\033[1;31m哎哟！Docker测试下载失败，恢复原配置文件...\033[0m"
+        cp $BACKUP_FILE $DOCKER_CONFIG_FILE
+        docker_pid
+        echo -e "\033[1;31m已恢复原配置文件！\033[0m"
+    fi
 }
 
 function sync_plan() {
@@ -2066,6 +2180,8 @@ function sync_ailg() {
         mounts=$(docker inspect --format '{{ range .Mounts }}{{ if not .Name }}-v {{ .Source }}:{{ .Destination }} {{ end }}{{ end }}' "${docker_name}")
         docker rm -f "${docker_name}"
         current_sha=$(grep "${image_name}" "${config_dir}/ailg_sha.txt" | awk '{print $2}')
+        docker rmi "${image_name%:hostmode}:old" > /dev/null 2>&1
+        docker tag "${image_name}" "${image_name%:hostmode}:old"
         update_ailg "${image_name}"
         update_status=$?
         if [ ${update_status} -eq 0 ]; then
@@ -2075,13 +2191,20 @@ function sync_ailg() {
             else
                 echo "$(date): ${image_name} 镜像已升级" >> "${config_dir}/ailg_update.txt"
             fi
+            updated="true"
+            docker rmi "${image_name%:hostmode}:old"
         else
-            ERROR "更新 ${image_name} 镜像失败"
-            exit 1
+            ERROR "更新 ${image_name} 镜像失败，将为您恢复旧镜像和容器……"
+            docker tag  "${image_name%:hostmode}:old" "${image_name}"
+            updated="false"
         fi
 
         if docker run -d --name "${docker_name}" --net=host --restart=always ${mounts} "${image_name}"; then
-            INFO "Nice!更新成功了哦！"
+            if [ "${updated}" = "true" ]; then
+                INFO "Nice!更新成功了哦！"
+            else
+                WARN "${image_name} 镜像更新失败！已为您恢复旧镜像和容器！请检查网络或配置${config_dir}/docker_mirrors.txt代理文件后再次尝试更新！"
+            fi
         else
             WARN "竟然更新失败了！您可能需要重新安装G-Box！"
         fi
@@ -2140,26 +2263,66 @@ function user_gbox() {
         read -erp "$(WARN "是否继续开启docker容器管理功能？（y/n）")" open_sock
     fi
 
+    # if [[ $open_sock == [Yy] ]]; then
+    #     if [ -S /var/run/docker.sock ]; then
+    #         docker run -d --name=g-box --net=host \
+    #             -v "$config_dir":/data \
+    #             -v /var/run/docker.sock:/var/run/docker.sock \
+    #             --restart=always \
+    #             ailg/g-box:hostmode
+    #     else
+    #         WARN "您系统不存在/var/run/docker.sock，可能它在其他位置，请定位文件位置后自行挂载，此脚本不处理特殊情况！"
+    #         docker run -d --name=g-box --net=host \
+    #             -v "$config_dir":/data \
+    #             --restart=always \
+    #             ailg/g-box:hostmode
+    #     fi
+    # else
+    #     docker run -d --name=g-box --net=host \
+    #             -v "$config_dir":/data \
+    #             --restart=always \
+    #             ailg/g-box:hostmode
+    # fi
+
+    local extra_volumes=""
+    if [ -s "$config_dir/diy_mount.txt" ]; then
+        while IFS=' ' read -r host_path container_path; do
+            if [[ -z "$host_path" || -z "$container_path" ]]; then
+                continue
+            fi
+
+            if [ ! -d "$host_path" ]; then
+                WARN "宿主机路径 $host_path 不存在，中止处理 diy_mount.txt 文件"
+                extra_volumes=""
+                break
+            fi
+
+            local reserved_paths=("/app" "/etc" "/sys" "/home" "/mnt" "/bin" "/data" "/dev" "/index" "/jre" "/lib" "/opt" "/proc" "/root" "/run" "/sbin" "/tmp" "/usr" "/var" "/www")
+            if [[ " ${reserved_paths[@]} " =~ " $container_path " ]]; then
+                WARN "容器路径 $container_path 是内部保留路径，中止处理 diy_mount.txt 文件"
+                extra_volumes=""
+                break
+            fi
+
+            extra_volumes+="-v $host_path:$container_path "
+        done < "$config_dir/diy_mount.txt"
+    fi
+
     if [[ $open_sock == [Yy] ]]; then
         if [ -S /var/run/docker.sock ]; then
-            docker run -d --name=g-box --net=host \
-                -v "$config_dir":/data \
-                -v /var/run/docker.sock:/var/run/docker.sock \
-                --restart=always \
-                ailg/g-box:hostmode
+            extra_volumes+="-v /var/run/docker.sock:/var/run/docker.sock"
         else
             WARN "您系统不存在/var/run/docker.sock，可能它在其他位置，请定位文件位置后自行挂载，此脚本不处理特殊情况！"
-            docker run -d --name=g-box --net=host \
-                -v "$config_dir":/data \
-                --restart=always \
-                ailg/g-box:hostmode
         fi
-    else
-        docker run -d --name=g-box --net=host \
-                -v "$config_dir":/data \
-                --restart=always \
-                ailg/g-box:hostmode
     fi
+
+    mkdir -p "$config_dir/data"
+    docker run -d --name=g-box --net=host \
+        -v "$config_dir":/data \
+        -v "$config_dir/data":/www/data \
+        --restart=always \
+        $extra_volumes \
+        ailg/g-box:hostmode
 
     if command -v ifconfig &> /dev/null; then
         localip=$(ifconfig -a|grep inet|grep -v 172. | grep -v 127.0.0.1|grep -v 169. |grep -v inet6|awk '{print $2}'|tr -d "addr:"|head -n1)
@@ -2175,6 +2338,8 @@ function user_gbox() {
 
     INFO "${Blue}哇塞！你的小雅g-box老G版安装完成了！$NC"
     INFO "${Blue}如果你没有配置mytoken.txt和myopentoken.txt文件，请登陆\033[1;35mhttp://${localip}:4567\033[0m网页在'账号-详情'中配置！$NC"
+    INFO "G-Box初始登陆${Green}用户名：admin\t密码：admin ${NC}"
+    INFO "内置sun-panel导航初始登陆${Green}用户名：ailg666\t\t密码：12345678 ${NC}"
 }
 
 function main() {
@@ -2196,7 +2361,7 @@ function main() {
     echo -e "\e[0m"
     echo -e "———————————————————————————————————— \033[1;33mA  I  老  G\033[0m —————————————————————————————————"
     echo -e "\n"
-    echo -e "\033[1;35m1、安装/重装小雅ALIST老G版\033[0m"
+    echo -e "\033[1;35m1、安装/重装小雅ALIST老G版（不再更新，建议安装G-Box替代）\033[0m"
     echo -e "\n"
     echo -e "\033[1;35m2、安装/重装小雅姐夫（非速装版）\033[0m"
     echo -e "\n"
@@ -2209,7 +2374,7 @@ function main() {
     echo -e "\033[1;35mo、有问题？选我看看\033[0m"
     echo -e "\n"
     echo -e "——————————————————————————————————————————————————————————————————————————————————"
-    read -erp "请输入您的选择（1-4或q退出）；" user_select
+    read -erp "请输入您的选择（1-5或q退出）；" user_select
     case $user_select in
     1)
         clear
@@ -2302,7 +2467,8 @@ rm_alist() {
             WARN "本安装会删除原有的小雅alist容器，按任意键继续，或按CTRL+C退出！"
             read -r -n 1
             echo "Deleting container $container using image $image ..."
-            config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "$container")
+            # config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "$container")
+            config_dir=$(docker inspect --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}' "$container")
             docker stop "$container"
             docker rm "$container"
             echo "Container $container has been deleted."
@@ -2313,22 +2479,15 @@ rm_alist() {
 choose_mirrors() {
     [ -z "${config_dir}" ] && get_config_path check_docker
     mirrors=(
-        "docker.io"
-        "docker.chenby.cn"
-        "docker.nastool.de"
-        "hub.rat.dev"
-        "docker.fxxk.dedyn.io"
-        "docker.adysec.com"
-        "registry-docker-hub-latest-9vqc.onrender.com"
-        "docker.chenby.cn"
-        "dockerproxy.com"
-        "hub.uuuadc.top"
-        "docker.jsdelivr.fyi"
-        "docker.registry.cyou"
-        "dockerhub.anzu.vip"
-        "docker.1panel.live"
-        "docker.aidenxin.xyz"
-        "dhub.kubesre.xyz"
+        docker.io
+        hub.rat.dev
+        nas.dockerimages.us.kg
+        dockerhub.ggbox.us.kg
+        docker.aidenxin.xyz
+        dockerhub.anzu.vip
+        docker.1panel.live
+        docker.nastool.de
+        docker.adysec.com
     )
     mirror_total_delays=()
 
@@ -2388,13 +2547,23 @@ fuck_docker() {
     read -erp "$(echo -e "\033[1;32m跳过测速将使用您当前网络和环境设置直接拉取镜像，是否跳过？（Y/N）\n\033[0m")" skip_choose_mirror
 }
 
+check_root() {
+    if [[ $EUID -ne 0 ]]; then
+        echo -e "${ERROR} 此脚本必须以 root 身份运行！"
+        echo -e "${INFO} 请在ssh终端输入命令 'sudo -i' 回车，再输入一次当前用户密码，切换到 root 用户后重新运行脚本。"
+        exit 1
+    fi
+}
+
 emby_list=()
 emby_order=()
 img_order=()
+
 if [ "$1" == "g-box" ] || [ "$1" == "xiaoya_jf" ]; then
-    config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${1}")
+    # config_dir=$(docker inspect --format '{{ (index .Mounts 0).Source }}' "${1}")
+    config_dir=$(docker inspect --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}' "${1}")
     [ $? -eq 1 ] && ERROR "您未安装${1}容器" && exit 1
-    if [ ! -f "{config_dir}/docker_mirrors.txt" ]; then
+    if [ ! -f "${config_dir}/docker_mirrors.txt" ]; then
         skip_choose_mirror="y"
     fi
     sync_ailg "$1"
