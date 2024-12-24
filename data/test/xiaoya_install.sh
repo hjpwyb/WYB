@@ -3,7 +3,7 @@
 PATH=${PATH}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:/opt/homebrew/bin
 export PATH
 #
-# ——————————————————————————————————————————————————————————————————————————————————
+# 鈥斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€�
 # __   ___                                    _ _     _
 # \ \ / (_)                             /\   | (_)   | |
 #  \ V / _  __ _  ___  _   _  __ _     /  \  | |_ ___| |_
@@ -17,7 +17,7 @@ export PATH
 #
 # This is free software, licensed under the GNU General Public License v3.0.
 #
-# ——————————————————————————————————————————————————————————————————————————————————
+# 鈥斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€斺€�
 
 Green="\033[32m"
 Red="\033[31m"
@@ -35,8 +35,12 @@ function ERROR() {
 function WARN() {
     echo -e "${WARN} ${1}"
 }
-if [[ $EUID -ne 0 ]]; then
-    ERROR '此脚本必须以 root 身份运行！'
+if [[ $EUID -ne 0 ]] && [ "$(uname -s)" != "Darwin" ]; then
+    ERROR '姝よ剼鏈繀椤讳互 root 韬唤杩愯锛�'
+    exit 1
+fi
+if [ $EUID == 0 ] && [ "$(uname -s)" == "Darwin" ]; then
+    ERROR 'MacOS 杩愯鑴氭湰蹇呴』浣跨敤闈� root 韬唤杩愯锛岃剼鏈細鑷姩鎻愭潈锛�'
     exit 1
 fi
 if [ -f /tmp/xiaoya_install.sh ]; then
@@ -45,7 +49,7 @@ fi
 if [ -n "${XIAOYA_BRANCH}" ]; then
     if ! curl -sL "https://fastly.jsdelivr.net/gh/DDS-Derek/xiaoya-alist@${XIAOYA_BRANCH}/all_in_one.sh" -o /tmp/xiaoya_install.sh; then
         if ! curl -sL "https://raw.githubusercontent.com/DDS-Derek/xiaoya-alist/${XIAOYA_BRANCH}/all_in_one.sh" -o /tmp/xiaoya_install.sh; then
-            ERROR "脚本获取失败！"
+            ERROR "鑴氭湰鑾峰彇澶辫触锛�"
             exit 1
         fi
     fi
@@ -53,13 +57,13 @@ else
     if ! curl -sL https://ddsrem.com/xiaoya/all_in_one.sh -o /tmp/xiaoya_install.sh; then
         if ! curl -sL https://fastly.jsdelivr.net/gh/DDS-Derek/xiaoya-alist@latest/all_in_one.sh -o /tmp/xiaoya_install.sh; then
             if ! curl -sL https://raw.githubusercontent.com/DDS-Derek/xiaoya-alist/master/all_in_one.sh -o /tmp/xiaoya_install.sh; then
-                ERROR "脚本获取失败！"
+                ERROR "鑴氭湰鑾峰彇澶辫触锛�"
                 exit 1
             fi
         fi
     fi
 fi
-INFO "脚本获取成功！"
+INFO "鑴氭湰鑾峰彇鎴愬姛锛�"
 # shellcheck disable=SC2068
 bash /tmp/xiaoya_install.sh $@
 if [ -f /tmp/xiaoya_install.sh ]; then
