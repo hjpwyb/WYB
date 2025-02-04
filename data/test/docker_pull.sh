@@ -28,7 +28,7 @@ function docker_pull() {
     #[ -z "${config_dir}" ] && get_config_path
     local config_dir=${2:-"/etc/xiaoya"}
     mkdir -p "${config_dir}"
-        local mirrors=("docker.1panel.live" "hub.rat.dev" "nas.dockerimages.us.kg" "dockerhub.ggbox.us.kg" "docker.aidenxin.xyz" "dockerhub.anzu.vip" "docker.nastool.de" "docker.adysec.com" "hub.uuuadc.top " "docker.jsdelivr.fyi " "docker.registry.cyou " "dockerhub.anzu.vip" "docker.luyao.dynv6.net" "freeno.xyz" "docker.1panel.live" "docker.registry.cyou" "docker-cf.registry.cyou" "docker.jsdelivr.fyi" "dockercf.jsdelivr.fyi" "dockertest.jsdelivr.fyi" "dockerpull.com" "dockerproxy.cn" "hub.uuuadc.top" "docker.1panel.live" "hub.rat.dev" "docker.anyhub.us.kg" "docker.chenby.cn" "dockerhub.jobcher.com" "dockerhub.icu" "docker.ckyl.me" "docker.awsl9527.cn" "docker.hpcloud.cloud" "docker.m.daocloud.io" "docker.linyubo211.filegear-sg.me" "docker.fxxk.dedyn.io" "dockerhub.anzu.vip" "dockerproxy.com" "docker.mirrors.ustc.edu.cn" "docker.nju.edu.cn" "docker.io" "docker.adysec.com")
+        local mirrors=("docker.1panel.live""hub.rat.dev""nas.dockerimages.us.kg""dockerhub.ggbox.us.kg""docker.aidenxin.xyz""dockerhub.anzu.vip""docker.nastool.de""docker.adysec.com""hub.uuuadc.top ""docker.jsdelivr.fyi ""docker.registry.cyou ""dockerhub.anzu.vip""docker.luyao.dynv6.net""freeno.xyz""docker.1panel.live")
     if [ -s "${config_dir}/docker_mirrors.txt" ]; then
         mirrors=()
         while IFS= read -r line; do
