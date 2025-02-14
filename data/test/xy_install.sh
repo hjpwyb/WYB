@@ -104,22 +104,27 @@ function check_space() {
 }
 
 function get_emby_image() {
+    # 设置默认版本号
+    local version=${1:-"4.9.0.31"}
+    
     cpu_arch=$(uname -m)
     case $cpu_arch in
     "x86_64" | *"amd64"*)
-        emby_image="emby/embyserver:4.8.0.56"
+        emby_image="emby/embyserver:${version}"
         ;;
     "aarch64" | *"arm64"* | *"armv8"* | *"arm/v8"*)
-        emby_image="emby/embyserver_arm64v8:4.8.0.56"
+        emby_image="emby/embyserver_arm64v8:${version}"
         ;;
     "armv7l")
-        emby_image="emby/embyserver_arm32v7:4.8.0.56"
+        emby_image="emby/embyserver_arm32v7:${version}"
         ;;
     *)
         ERROR "不支持你的CPU架构：$cpu_arch"
         exit 1
         ;;
     esac
+
+    # 检查镜像是否存在
     if ! docker images --format '{{.Repository}}:{{.Tag}}' | grep -q ${emby_image}; then
         for i in {1..3}; do
             if docker_pull $emby_image; then
@@ -128,6 +133,8 @@ function get_emby_image() {
             fi
         done
     fi
+
+    # 验证镜像是否成功拉取
     docker images --format '{{.Repository}}:{{.Tag}}' | grep -q ${emby_image} || (ERROR "${emby_image}镜像拉取失败，请手动安装emby，无需重新运行本脚本，小雅媒体库在${media_dir}！" && exit 1)
 }
 
@@ -160,10 +167,10 @@ function get_emby_happy_image() {
     cpu_arch=$(uname -m)
     case $cpu_arch in
     "x86_64" | *"amd64"*)
-        emby_image="amilys/embyserver:4.8.0.56"
+        emby_image="amilys/embyserver:4.9.0.31"
         ;;
     "aarch64" | *"arm64"* | *"armv8"* | *"arm/v8"*)
-        emby_image="amilys/embyserver_arm64v8:4.8.6.0"
+        emby_image="amilys/embyserver_arm64v8:4.8.9.0"
         ;;
     *)
         ERROR "不支持你的CPU架构：$cpu_arch"
@@ -739,7 +746,8 @@ check_loop_support() {
             done
 
             if [ "$contains" = false ]; then
-                ERROR "您系统的/dev/loop7设备已被占用，请手动卸载后重装运行脚本安装！" && exit 1
+                ERROR "您系统的/dev/loop7设备已被占用，可能是你没有用脚本卸载手动删除了emby的img镜像文件！"
+                ERROR "请手动卸载后重装运行脚本安装！不会就删掉爬虫容后重启宿主机设备，再运行脚本安装！" && exit 1
             fi
         else
             for i in {1..3}; do
@@ -827,25 +835,73 @@ check_loop_support() {
 
 function user_select4() {
     down_img() {
+
+        # 先判断是否需要下载，即文件不存在或者存在 aria2 临时文件
         if [[ ! -f $image_dir/$emby_ailg ]] || [[ -f $image_dir/$emby_ailg.aria2 ]]; then
+            # 更新 ailg/ggbond:latest 镜像
             update_ailg ailg/ggbond:latest
+            # 执行清理操作
             docker exec $docker_name ali_clear -1 > /dev/null 2>&1
-            docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
-                aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg"
+
+            if [[ $ok_115 =~ ^[Yy]$ ]]; then
+                # 尝试下载测试文件
+                docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
+                    aria2c -o /image/test.mp4 --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/115/ailg_img/gbox_intro.mp4" > /dev/null 2>&1
+
+                # 判断测试文件是否下载成功
+                test_file_size=$(du -b $image_dir/test.mp4 2>/dev/null | cut -f1)
+                if [[ ! -f $image_dir/test.mp4.aria2 ]] && [[ $test_file_size -eq 17675105 ]]; then
+                    # 测试文件下载成功，删除测试文件
+                    rm -f $image_dir/test.mp4
+                    use_115_path=true
+                else
+                    use_115_path=false
+                fi
+            else
+                use_115_path=false
+            fi
+
+            if $use_115_path; then
+                # 使用 115 路径下载目标文件
+                docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
+                    aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/115/ailg_img/${down_path}/$emby_ailg"
+            else
+                # 使用原路径下载目标文件
+                docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
+                    aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg"
+            fi
         fi
+
+        # 获取本地文件大小
         local_size=$(du -b $image_dir/$emby_ailg | cut -f1)
+
+        # 最多尝试 3 次下载
         for i in {1..3}; do
             if [[ -f $image_dir/$emby_ailg.aria2 ]] || [[ $remote_size -gt "$local_size" ]]; then
                 docker exec $docker_name ali_clear -1 > /dev/null 2>&1
-                docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
-                    aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg"
+                if $use_115_path; then
+                    # 使用 115 路径下载目标文件
+                    docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
+                        aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/115/ailg_img/${down_path}/$emby_ailg"
+                else
+                    # 使用原路径下载目标文件
+                    docker run --rm --net=host -v $image_dir:/image ailg/ggbond:latest \
+                        aria2c -o /image/$emby_ailg --auto-file-renaming=false --allow-overwrite=true -c -x6 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg"
+                fi
                 local_size=$(du -b $image_dir/$emby_ailg | cut -f1)
             else
                 break
             fi
         done
-        [[ -f $image_dir/$emby_ailg.aria2 ]] || [[ $remote_size != "$local_size" ]] && ERROR "文件下载失败，请检查网络后重新运行脚本！" && WARN "未下完的文件存放在${image_dir}目录，以便您续传下载，如不再需要请手动清除！" && exit 1
+
+        # 检查文件是否下载完整，若不完整则输出错误信息并退出
+        if [[ -f $image_dir/$emby_ailg.aria2 ]] || [[ $remote_size != "$local_size" ]]; then
+            ERROR "文件下载失败，请检查网络后重新运行脚本！"
+            WARN "未下完的文件存放在${image_dir}目录，以便您续传下载，如不再需要请手动清除！"
+            exit 1
+        fi
     }
+
     check_qnap
     check_loop_support
     while :; do
@@ -864,7 +920,7 @@ function user_select4() {
         echo -e "\n"
         echo -e "\033[1;32m1、小雅EMBY老G速装 - 115完整版\033[0m"
         echo -e "\n"
-        echo -e "\033[1;35m2、小雅EMBY老G速装 - 115-Lite版\033[0m"
+        echo -e "\033[1;35m2、小雅EMBY老G速装 - 115-Lite版（暂勿安装，待完善）\033[0m"
         echo -e "\n"
         echo -e "\033[1;32m3、小雅JELLYFIN老G速装 - 10.8.13 - 完整版\033[0m"
         echo -e "\n"
@@ -874,22 +930,22 @@ function user_select4() {
         echo -e "\n"
         echo -e "\033[1;35m6、小雅JELLYFIN老G速装 - 10.9.6 - Lite版\033[0m"
         echo -e "\n"
-        echo -e "\033[1;35m7、小雅EMBY老G速装 - Lite版\033[0m"
+        echo -e "\033[1;35m7、小雅EMBY老G速装 - 115-Lite版（4.8.0.56）\033[0m"
         echo -e "\n"
         echo -e "——————————————————————————————————————————————————————————————————————————————————"
 
-        read -erp "请输入您的选择（1-7，按b返回上级菜单或按q退出）：" f4_select
+        read -erp "请输入您的选择（1-6，按b返回上级菜单或按q退出）：" f4_select
         case "$f4_select" in
         1)
             emby_ailg="emby-ailg-115.mp4"
             emby_img="emby-ailg-115.img"
-            space_need=160
+            space_need=130
             break
             ;;
         2)
             emby_ailg="emby-ailg-lite-115.mp4"
             emby_img="emby-ailg-lite-115.img"
-            space_need=140
+            space_need=120
             break
             ;;
         3)
@@ -917,8 +973,8 @@ function user_select4() {
             break
             ;;
         7)
-            emby_ailg="emby-ailg-lite.mp4"
-            emby_img="emby-ailg-lite.img"
+            emby_ailg="emby-ailg-lite-115.mp4"
+            emby_img="emby-ailg-lite-115.img"
             space_need=125
             break
             ;;
@@ -954,6 +1010,8 @@ function user_select4() {
     echo -e "\033[1;35m请输入镜像下载后需要扩容的空间（单位：GB，默认60G可直接回车，请确保大于${space_need}G剩余空间！）:\033[0m"
     read -r expand_size
     expand_size=${expand_size:-60}
+    # 先询问用户 115 网盘空间是否足够
+    read -p "使用115下载镜像请确保cookie正常且网盘剩余空间不低于100G，（按Y/y 确认，按任意键走阿里云盘下载！）: " ok_115
     check_path $image_dir
     check_path $image_dir
     if [ -f "${image_dir}/${emby_ailg}" ] || [ -f "${image_dir}/${emby_img}" ]; then
@@ -962,7 +1020,7 @@ function user_select4() {
         check_space $image_dir $space_need
     fi
 
-    if [[ "${f4_select}" == [127] ]]; then
+    if [[ "${f4_select}" == [12] ]]; then
         search_img="emby/embyserver|amilys/embyserver"
         del_name="emby"
         loop_order="/dev/loop7"
@@ -980,6 +1038,15 @@ function user_select4() {
         init="run_jf"
         emd_name="xiaoya-emd-jf"
         entrypoint_mount="entrypoint_emd_jf"
+    elif [[ "${f4_select}" == [7] ]]; then
+        search_img="emby/embyserver|amilys/embyserver"
+        del_name="emby"
+        loop_order="/dev/loop7"
+        down_path="emby/4.8.0.56"
+        get_emby_image 4.8.0.56
+        init="run"
+        emd_name="xiaoya-emd"
+        entrypoint_mount="entrypoint_emd"
     fi
     get_emby_status
 
@@ -1022,7 +1089,11 @@ function user_select4() {
 
     start_time=$(date +%s)
     for i in {1..5}; do
-        remote_size=$(curl -sL -D - -o /dev/null --max-time 10 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg" | grep "Content-Length" | cut -d' ' -f2 | tail -n 1 | tr -d '\r')
+        if [[ $ok_115 =~ ^[Yy]$ ]]; then
+            remote_size=$(curl -sL -D - -o /dev/null --max-time 10 "$docker_addr/d/ailg_jf/115/ailg_img/${down_path}/$emby_ailg" | grep "Content-Length" | cut -d' ' -f2 | tail -n 1 | tr -d '\r')
+        else
+            remote_size=$(curl -sL -D - -o /dev/null --max-time 10 "$docker_addr/d/ailg_jf/${down_path}/$emby_ailg" | grep "Content-Length" | cut -d' ' -f2 | tail -n 1 | tr -d '\r')
+        fi
         [[ -n $remote_size ]] && echo -e "remotesize is：${remote_size}" && break
     done
     if [[ $remote_size -lt 100000 ]]; then
@@ -1030,6 +1101,7 @@ function user_select4() {
         echo -e "${Yellow}排障步骤：\n1、检查5678打开alist能否正常播放（排除token失效和风控！）"
         echo -e "${Yellow}2、检查alist配置目录的docker_address.txt是否正确指向你的alist访问地址，\n   应为宿主机+5678端口，示例：http://192.168.2.3:5678"
         echo -e "${Yellow}3、检查阿里云盘空间，确保剩余空间大于${space_need}G${NC}"
+        echo -e "${Yellow}4、如果打开了阿里快传115，确保有115会员且添加了正确的cookie，不是115会员不要打开阿里快传115！${NC}"
         exit 1
     fi
     INFO "远程文件大小获取成功！"
@@ -1963,25 +2035,55 @@ user_selecto() {
     done
 }
 
-fix_docker() {
-    DEFAULT_REGISTRY_URLS=('https://hub.rat.dev' 'https://nas.dockerimages.us.kg' 'https://dockerhub.ggbox.us.kg')
-    REGISTRY_URLS=("${DEFAULT_REGISTRY_URLS[@]}")
-    
-    DOCKER_CONFIG_FILE=''
-    BACKUP_FILE=''
+keys="awk jq grep cp mv kill 7z dirname"
+values="gawk jq grep coreutils coreutils procps p7zip coreutils"
 
-    command_exists() {
-        command -v "$1" >/dev/null 2>&1
-    }
-
-    REQUIRED_COMMANDS=('docker' 'awk' 'jq' 'grep' 'cp' 'mv' 'kill')
-    for cmd in "${REQUIRED_COMMANDS[@]}"; do
-        if ! command_exists "$cmd"; then
-            echo "缺少命令: $cmd，请安装后再运行脚本。"
-            exit 1
+get_value() {
+    key=$1
+    keys_array=$(echo $keys)
+    values_array=$(echo $values)
+    i=1
+    for k in $keys_array; do
+        if [ "$k" = "$key" ]; then
+            set -- $values_array
+            eval echo \$$i
+            return
         fi
+        i=$((i + 1))
     done
+    echo "Key not found"
+}
 
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+install_command() {
+    cmd=$1
+    # local pkg=${PACKAGE_MAP[$cmd]:-$cmd}
+    pkg=$(get_value $cmd)
+
+    if command_exists apt-get; then
+        apt-get update && apt-get install -y "$pkg"
+    elif command_exists yum; then
+        yum install -y "$pkg"
+    elif command_exists dnf; then
+        dnf install -y "$pkg"
+    elif command_exists zypper; then
+        zypper install -y "$pkg"
+    elif command_exists pacman; then
+        pacman -Sy --noconfirm "$pkg"
+    elif command_exists brew; then
+        brew install "$pkg"
+    elif command_exists apk; then
+        apk add --no-cache "$pkg"
+    else
+        echo "无法自动安装 $pkg，请手动安装。"
+        return 1
+    fi
+}
+
+fix_docker() {
     docker_pid() {
         if [ -f /var/run/docker.pid ]; then
             kill -SIGHUP $(cat /var/run/docker.pid)
@@ -1989,11 +2091,52 @@ fix_docker() {
             kill -SIGHUP $(cat /var/run/dockerd.pid)
         else
             echo "Docker进程不存在，脚本中止执行。"
-            cp $BACKUP_FILE $DOCKER_CONFIG_FILE
-            echo "已恢复原配置文件。"
-            exit 1
+            if [ "$FILE_CREATED" == false ]; then
+                cp $BACKUP_FILE $DOCKER_CONFIG_FILE
+                echo -e "\033[1;33m原配置文件：${DOCKER_CONFIG_FILE} 已恢复，请检查是否正确！\033[0m"
+            else
+                rm -f $DOCKER_CONFIG_FILE
+                echo -e "\033[1;31m已删除新建的配置文件：${DOCKER_CONFIG_FILE}\033[0m"
+            fi
+            return 1
         fi 
     }
+
+    jq_exec() {
+        jq --argjson urls "$REGISTRY_URLS_JSON" '
+            if has("registry-mirrors") then
+                .["registry-mirrors"] = $urls
+            else
+                . + {"registry-mirrors": $urls}
+            end
+        ' "$DOCKER_CONFIG_FILE" > tmp.$$.json && mv tmp.$$.json "$DOCKER_CONFIG_FILE"
+    }
+
+    clear
+    if ! command_exists "docker"; then
+        echo -e $'\033[1;33m你还没有安装docker，请先安装docker，安装后无法拖取镜像再运行脚本！\033[0m'
+        echo -e "docker一键安装脚本参考："
+        echo -e $'\033[1;32m\tcurl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh\033[0m'
+        echo -e "或者："
+        echo -e $'\033[1;32m\twget -qO- https://get.docker.com | sh\033[0m'
+        exit 1
+    fi
+
+    REGISTRY_URLS=('https://hub.rat.dev' 'https://nas.dockerimages.us.kg' 'https://dockerhub.ggbox.us.kg')
+
+    DOCKER_CONFIG_FILE=''
+    BACKUP_FILE=''
+
+    REQUIRED_COMMANDS=('awk' 'jq' 'grep' 'cp' 'mv' 'kill')
+    for cmd in "${REQUIRED_COMMANDS[@]}"; do
+        if ! command_exists "$cmd"; then
+            echo "缺少命令: $cmd，尝试安装..."
+            if ! install_command "$cmd"; then
+                echo "安装 $cmd 失败，请手动安装后再运行脚本。"
+                exit 1
+            fi
+        fi
+    done
 
     read -p $'\033[1;33m是否使用自定义镜像代理？（y/n）: \033[0m' use_custom_registry
     if [[ "$use_custom_registry" == [Yy] ]]; then
@@ -2017,47 +2160,54 @@ fix_docker() {
     if [ -f /etc/synoinfo.conf ]; then
         DOCKER_ROOT_DIR=$(docker info 2>/dev/null | grep 'Docker Root Dir' | awk -F': ' '{print $2}')
         DOCKER_CONFIG_FILE="${DOCKER_ROOT_DIR%/@docker}/@appconf/ContainerManager/dockerd.json"
+    elif command_exists busybox; then
+        DOCKER_CONFIG_FILE=$(ps | grep dockerd | awk '{for(i=1;i<=NF;i++) if ($i ~ /^--config-file(=|$)/) {if ($i ~ /^--config-file=/) print substr($i, index($i, "=") + 1); else print $(i+1)}}')
     else
-        DOCKER_CONFIG_FILE='/etc/docker/daemon.json'
+        DOCKER_CONFIG_FILE=$(ps -ef | grep dockerd | awk '{for(i=1;i<=NF;i++) if ($i ~ /^--config-file(=|$)/) {if ($i ~ /^--config-file=/) print substr($i, index($i, "=") + 1); else print $(i+1)}}')
     fi
 
-    if [ ! -f $DOCKER_CONFIG_FILE ]; then
-        echo "配置文件 $DOCKER_CONFIG_FILE 不存在，脚本中止执行。"
+    DOCKER_CONFIG_FILE=${DOCKER_CONFIG_FILE:-/etc/docker/daemon.json}
+
+    if [ ! -f "$DOCKER_CONFIG_FILE" ]; then
+        echo "配置文件 $DOCKER_CONFIG_FILE 不存在，创建新文件。"
+        mkdir -p "$(dirname "$DOCKER_CONFIG_FILE")" && echo "{}" > $DOCKER_CONFIG_FILE
+        FILE_CREATED=true
+    else
+        FILE_CREATED=false
+    fi
+
+    if [ "$FILE_CREATED" == false ]; then
+        BACKUP_FILE="${DOCKER_CONFIG_FILE}.bak"
+        cp -f $DOCKER_CONFIG_FILE $BACKUP_FILE
+    fi
+
+    jq_exec
+
+    if ! docker_pid; then
         exit 1
     fi
 
-    BACKUP_FILE="${DOCKER_CONFIG_FILE}.bak"
-    cp $DOCKER_CONFIG_FILE $BACKUP_FILE
-
-    # if grep -q '"registry-mirrors"' $DOCKER_CONFIG_FILE; then
-    #     awk -v urls="$REGISTRY_URLS_JSON" '{gsub(/"registry-mirrors":\[[^]]*\]/, "\"registry-mirrors\":" urls)}1' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
-    # else
-    #     awk -v urls="$REGISTRY_URLS_JSON" 'BEGIN {FS=OFS="{"} NR==1 {$2="\n  \"registry-mirrors\": " urls ", " $2} 1' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
-    # fi
-    jq --argjson urls "$REGISTRY_URLS_JSON" '
-        if has("registry-mirrors") then
-            .["registry-mirrors"] = $urls
-        else
-            . + {"registry-mirrors": $urls}
-        end
-    ' $DOCKER_CONFIG_FILE > tmp.$$.json && mv tmp.$$.json $DOCKER_CONFIG_FILE
     if [ "$REGISTRY_URLS_JSON" == '[]' ]; then
         echo -e "\033[1;33m已清空镜像代理，不再检测docker连接性，直接退出！\033[0m"
-        docker_pid
         exit 0
     fi
-    
-    
-    docker_pid
 
     docker rmi hello-world:latest >/dev/null 2>&1
     if docker pull hello-world; then
         echo -e "\033[1;32mNice！Docker下载测试成功，配置更新完成！\033[0m"
     else
         echo -e "\033[1;31m哎哟！Docker测试下载失败，恢复原配置文件...\033[0m"
-        cp $BACKUP_FILE $DOCKER_CONFIG_FILE
-        docker_pid
-        echo -e "\033[1;31m已恢复原配置文件！\033[0m"
+        if [ "$FILE_CREATED" == false ]; then
+            cp -f $BACKUP_FILE $DOCKER_CONFIG_FILE
+            echo -e "\033[1;33m原配置文件：${DOCKER_CONFIG_FILE} 已恢复，请检查是否正确！\033[0m"
+            docker_pid
+        else
+            REGISTRY_URLS_JSON='[]'
+            jq_exec
+            docker_pid
+            rm -f $DOCKER_CONFIG_FILE
+            echo -e "\033[1;31m已删除新建的配置文件：${DOCKER_CONFIG_FILE}\033[0m"
+        fi  
     fi
 }
 
@@ -2340,6 +2490,10 @@ function user_gbox() {
     INFO "${Blue}如果你没有配置mytoken.txt和myopentoken.txt文件，请登陆\033[1;35mhttp://${localip}:4567\033[0m网页在'账号-详情'中配置！$NC"
     INFO "G-Box初始登陆${Green}用户名：admin\t密码：admin ${NC}"
     INFO "内置sun-panel导航初始登陆${Green}用户名：ailg666\t\t密码：12345678 ${NC}"
+    if ! grep -q 'alias gbox' /etc/profile; then
+        echo -e "alias gbox='bash -c \"\$(curl -sSLf https://gbox.ggbond.org/xy_install.sh)\"'" >> /etc/profile
+    fi
+    source /etc/profile
 }
 
 function main() {
